@@ -2,10 +2,14 @@
 
 ## Option 1: Automated Setup (Recommended)
 
-Run the initialization script:
-
+### macOS/Linux:
 ```bash
 ./init.sh
+```
+
+### Windows:
+```cmd
+init.bat
 ```
 
 This will automatically:
@@ -15,29 +19,53 @@ This will automatically:
 
 ## Option 2: Manual Setup
 
-### 1. Create Virtual Environment
+### macOS/Linux:
 
+**1. Create Virtual Environment**
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 2. Install Dependencies
-
+**2. Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Initialize Database
-
+**3. Initialize Database**
 ```bash
+flask init-db
+```
+
+### Windows:
+
+**1. Create Virtual Environment**
+```cmd
+python -m venv venv
+venv\Scripts\activate
+```
+
+**2. Install Dependencies**
+```cmd
+pip install -r requirements.txt
+```
+
+**3. Initialize Database**
+```cmd
 flask init-db
 ```
 
 ## Create Admin User
 
+### macOS/Linux:
 ```bash
 source venv/bin/activate  # if not already activated
+flask create-admin
+```
+
+### Windows:
+```cmd
+venv\Scripts\activate  REM if not already activated
 flask create-admin
 ```
 
@@ -47,7 +75,13 @@ Follow the prompts to enter email and password.
 
 To quickly test the application with sample questions and exams:
 
+### macOS/Linux:
 ```bash
+python sample_data.py
+```
+
+### Windows:
+```cmd
 python sample_data.py
 ```
 

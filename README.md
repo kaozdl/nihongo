@@ -58,6 +58,8 @@ A Flask-based web application for managing and taking Japanese Language Proficie
 
 ### Setup
 
+#### For macOS/Linux:
+
 1. **Clone or navigate to the project directory**
 ```bash
 cd /path/to/nihongo
@@ -66,7 +68,7 @@ cd /path/to/nihongo
 2. **Create a virtual environment**
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate
 ```
 
 3. **Install dependencies**
@@ -90,23 +92,75 @@ flask init-db
 flask create-admin
 ```
 
+#### For Windows:
+
+1. **Clone or navigate to the project directory**
+```cmd
+cd C:\path\to\nihongo
+```
+
+2. **Create a virtual environment**
+```cmd
+python -m venv venv
+venv\Scripts\activate
+```
+
+3. **Install dependencies**
+```cmd
+pip install -r requirements.txt
+```
+
+4. **Create environment file** (optional)
+```cmd
+copy .env.example .env
+REM Edit .env with your configuration
+```
+
+5. **Initialize the database**
+```cmd
+flask init-db
+```
+
+6. **Create an admin user**
+```cmd
+flask create-admin
+```
+
 ## Running the Application
 
 ### Development Mode
+
+**macOS/Linux:**
 ```bash
 flask run
 # Or
 python app.py
 ```
 
+**Windows:**
+```cmd
+flask run
+REM Or
+python app.py
+```
+
 The application will be available at `http://localhost:5000`
 
 ### Production Mode
-For production, use a WSGI server like Gunicorn:
+
+**macOS/Linux (Gunicorn):**
 ```bash
 pip install gunicorn
 gunicorn -w 4 -b 0.0.0.0:8000 app:app
 ```
+
+**Windows (Waitress):**
+```cmd
+pip install waitress
+waitress-serve --port=8000 app:app
+```
+
+**Note:** Gunicorn doesn't work on Windows. Use Waitress or another WSGI server instead.
 
 ## Usage
 
@@ -149,8 +203,13 @@ nihongo/
 ├── import_exam.py         # Exam JSON import module
 ├── sample_data.py         # Sample data generator
 ├── requirements.txt       # Python dependencies
+├── init.sh                # Setup script (macOS/Linux)
+├── init.bat               # Setup script (Windows)
+├── run_tests.sh           # Test runner (macOS/Linux)
+├── run_tests.bat          # Test runner (Windows)
 ├── exam_example.json      # Example JSON for import
 ├── IMPORT_GUIDE.md        # Import feature documentation
+├── WINDOWS_SETUP.md       # Windows-specific setup guide
 ├── models/               # Database models
 │   ├── __init__.py
 │   ├── user.py
