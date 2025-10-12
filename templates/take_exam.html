@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}{{ test.exam.name }} - JLPT Test Manager{% endblock %}
+
+{% block extra_css %}
+<style>
+    .question-card {
+        margin-bottom: 2rem;
+    }
+    .answer-option {
+        cursor: pointer;
+        transition: all 0.3s;
+        padding: 1rem;
+        border: 2px solid #dee2e6;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+    }
+    .answer-option:hover {
+        background-color: #f8f9fa;
+        border-color: #667eea;
+    }
+    .answer-option.selected {
+        background-color: #e7f1ff;
+        border-color: #667eea;
+    }
+    .answer-option input[type="radio"] {
+        margin-right: 0.5rem;
+    }
+    .section-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+    }
+    .audio-player {
+        margin: 1rem 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>{{ test.exam.name }}</h2>
+                <p class="text-muted">
+                    <i class="bi bi-calendar"></i> Started: {{ test.started_at.strftime('%Y-%m-%d %H:%M') }}
+                </p>
+            </div>
+        </div>
+
+        <form id="examForm">
+            {% set current_section = None %}
+            {% for item in questions %}
+                {% if item.section != current_section %}
+                    {% set current_section = item.section %}
+                    <div class="section-header">
+                        <h4><i class="bi bi-bookmark"></i> {{ current_section }}</h4>
+                    </div>
+                {% endif %}
+
+                <div class="card question-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Question {{ loop.index }}</h5>
+                        
+                        {% if item.question.question_image %}
+                        <div class="mb-3">
+                            <img src="{{ item.question.question_image }}" 
+                                 class="img-fluid" 
+                                 alt="Question image"
+                                 style="max-height: 300px;">
+                        </div>
+                        {% endif %}
+
+                        {% if item.question.question_audio %}
+                        <div class="audio-player mb-3">
+                            <audio controls class="w-100">
+                                <source src="{{ item.question.question_audio }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        {% endif %}
+
+                        <p class="lead">{{ item.question.question_text }}</p>
+
+                        <div class="answers mt-4">
+                            {% for i in range(1, 5) %}
+                            {% set answer_text = item.question['answer_' + i|string] %}
+                            {% set is_selected = answer_dict.get(item.question.id) == i %}
+                            <label class="answer-option {% if is_selected %}selected{% endif %}" 
+                                   data-question-id="{{ item.question.id }}"
+                                   data-answer="{{ i }}">
+                                <input type="radio" 
+                                       name="question_{{ item.question.id }}" 
+                                       value="{{ i }}"
+                                       {% if is_selected %}checked{% endif %}>
+                                <strong>{{ i }}.</strong> {{ answer_text }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="card">
+                <div class="card-body text-center">
+                    <button type="button" 
+                            class="btn btn-success btn-lg" 
+                            id="submitBtn"
+                            onclick="if(confirm('Are you sure you want to submit? You cannot change your answers after submission.')) { document.getElementById('submitForm').submit(); }">
+                        <i class="bi bi-check-circle"></i> Submit Exam
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <form id="submitForm" method="POST" action="{{ url_for('submit_exam', test_id=test.id) }}" style="display: none;">
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle answer selection
+    document.querySelectorAll('.answer-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const questionId = this.dataset.questionId;
+            const answer = this.dataset.answer;
+            
+            // Update UI
+            document.querySelectorAll(`.answer-option[data-question-id="${questionId}"]`).forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            this.classList.add('selected');
+            
+            // Save answer via AJAX
+            fetch(`/test/{{ test.id }}/answer`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `question_id=${questionId}&selected_answer=${answer}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    alert('Error saving answer. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error saving answer. Please try again.');
+            });
+        });
+    });
+});
+</script>
+{% endblock %}
+

@@ -1,0 +1,106 @@
+{
+  "name": "JLPT N5 Practice Test - Easy",
+  "sections": [
+    {
+      "name": "Grammar",
+      "questions": [
+        {
+          "question_text": "わたしは まいにち 七時___おきます。",
+          "answer_1": "に",
+          "answer_2": "で",
+          "answer_3": "を",
+          "answer_4": "が",
+          "correct_answer": 1,
+          "explanation": "Time particle に is used with specific times. 七時に means 'at 7 o'clock'."
+        },
+        {
+          "question_text": "きのう えいが___みました。",
+          "answer_1": "に",
+          "answer_2": "で",
+          "answer_3": "を",
+          "answer_4": "が",
+          "correct_answer": 3,
+          "explanation": "The particle を marks the direct object. えいがを means 'a movie (object)'."
+        },
+        {
+          "question_text": "ここ___たばこを すわないで ください。",
+          "answer_1": "に",
+          "answer_2": "で",
+          "answer_3": "を",
+          "answer_4": "が",
+          "correct_answer": 2,
+          "explanation": "The particle で indicates location of action. ここで means 'here (at this place)'."
+        },
+        {
+          "question_text": "これは 日本語___本です。",
+          "answer_1": "の",
+          "answer_2": "で",
+          "answer_3": "に",
+          "answer_4": "が",
+          "correct_answer": 1,
+          "explanation": "The particle の connects nouns. 日本語の本 means 'Japanese language book'."
+        },
+        {
+          "question_text": "わたしは バス___がっこうへ いきます。",
+          "answer_1": "に",
+          "answer_2": "で",
+          "answer_3": "を",
+          "answer_4": "が",
+          "correct_answer": 2,
+          "explanation": "The particle で indicates means of transportation. バスで means 'by bus'."
+        }
+      ]
+    },
+    {
+      "name": "Vocabulary",
+      "questions": [
+        {
+          "question_text": "あした テストが あります。だから、こんばん___します。",
+          "answer_1": "べんきょう",
+          "answer_2": "りょこう",
+          "answer_3": "しごと",
+          "answer_4": "かいもの",
+          "correct_answer": 1,
+          "explanation": "べんきょう (benkyou) means 'study'. You study before a test."
+        },
+        {
+          "question_text": "まいあさ パンと___を たべます。",
+          "answer_1": "たまご",
+          "answer_2": "くつ",
+          "answer_3": "ほん",
+          "answer_4": "いす",
+          "correct_answer": 1,
+          "explanation": "たまご (tamago) means 'egg'. Bread and eggs are common breakfast foods."
+        },
+        {
+          "question_text": "へやが___です。まどを あけて ください。",
+          "answer_1": "おおきい",
+          "answer_2": "あつい",
+          "answer_3": "あたらしい",
+          "answer_4": "たかい",
+          "correct_answer": 2,
+          "explanation": "あつい (atsui) means 'hot'. Opening windows when it's hot makes sense."
+        },
+        {
+          "question_text": "きょうは___です。うちに います。",
+          "answer_1": "げつようび",
+          "answer_2": "やすみ",
+          "answer_3": "あめ",
+          "answer_4": "さむい",
+          "correct_answer": 2,
+          "explanation": "やすみ (yasumi) means 'day off/holiday'. You stay home on days off."
+        },
+        {
+          "question_text": "この かばんは___です。かいません。",
+          "answer_1": "やすい",
+          "answer_2": "たかい",
+          "answer_3": "おおきい",
+          "answer_4": "あかるい",
+          "correct_answer": 2,
+          "explanation": "たかい (takai) means 'expensive'. You don't buy things that are too expensive."
+        }
+      ]
+    }
+  ]
+}
+

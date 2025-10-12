@@ -1,0 +1,66 @@
+{
+  "name": "JLPT N5 Practice Test - Example",
+  "sections": [
+    {
+      "name": "Vocabulary",
+      "questions": [
+        {
+          "question_text": "彼は___な性格です。",
+          "answer_1": "まじめ",
+          "answer_2": "まじめだ",
+          "answer_3": "まじめの",
+          "answer_4": "まじめで",
+          "correct_answer": 1,
+          "explanation": "「まじめな性格」is the correct form. な-adjectives use な before nouns."
+        },
+        {
+          "question_text": "毎日___勉強します。",
+          "answer_1": "いっしょうけんめい",
+          "answer_2": "いっしょうけんめいに",
+          "answer_3": "いっしょうけんめいで",
+          "answer_4": "いっしょうけんめいな",
+          "correct_answer": 2,
+          "explanation": "いっしょうけんめいに is an adverb modifying the verb 勉強します."
+        }
+      ]
+    },
+    {
+      "name": "Grammar",
+      "questions": [
+        {
+          "question_text": "雨が___きました。",
+          "answer_1": "ふり",
+          "answer_2": "ふって",
+          "answer_3": "ふった",
+          "answer_4": "ふる",
+          "correct_answer": 2,
+          "explanation": "ふってきました indicates the rain has started falling. Use て-form + くる."
+        },
+        {
+          "question_text": "先生___相談したいことがあります。",
+          "answer_1": "に",
+          "answer_2": "を",
+          "answer_3": "が",
+          "answer_4": "へ",
+          "correct_answer": 1,
+          "explanation": "相談する takes に particle to indicate the person being consulted."
+        }
+      ]
+    },
+    {
+      "name": "Reading Comprehension",
+      "questions": [
+        {
+          "question_text": "「彼女は日本語が上手です」の意味は？",
+          "answer_1": "She is good at Japanese",
+          "answer_2": "She is teaching Japanese",
+          "answer_3": "She likes Japanese",
+          "answer_4": "She is from Japan",
+          "correct_answer": 1,
+          "explanation": "上手（じょうず）means skillful or good at something."
+        }
+      ]
+    }
+  ]
+}
+

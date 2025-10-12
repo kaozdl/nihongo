@@ -1,0 +1,105 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="mb-4">Import Exam from JSON</h2>
+            
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Select JSON File</label>
+                            <input type="file" class="form-control" id="file" name="file" accept=".json" required>
+                            <div class="form-text">Upload a JSON file containing exam structure with sections and questions.</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-upload"></i> Import Exam
+                        </button>
+                        <a href="{{ url_for('exam.index_view') }}" class="btn btn-secondary">
+                            <i class="fa fa-times"></i> Cancel
+                        </a>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5>JSON Format</h5>
+                </div>
+                <div class="card-body">
+                    <p>The JSON file should follow this structure:</p>
+                    <pre><code>{
+  "name": "JLPT N5 Practice Test",
+  "sections": [
+    {
+      "name": "Vocabulary",
+      "questions": [
+        {
+          "question_text": "彼は___な性格です。",
+          "question_image": "http://example.com/image.jpg",  // optional
+          "question_audio": "http://example.com/audio.mp3",  // optional
+          "answer_1": "まじめ",
+          "answer_2": "まじめだ",
+          "answer_3": "まじめの",
+          "answer_4": "まじめで",
+          "correct_answer": 1,
+          "explanation": "Explanation here"  // optional
+        }
+      ]
+    },
+    {
+      "name": "Grammar",
+      "questions": [
+        {
+          "question_text": "雨が___きました。",
+          "answer_1": "ふり",
+          "answer_2": "ふって",
+          "answer_3": "ふった",
+          "answer_4": "ふる",
+          "correct_answer": 2,
+          "explanation": "Use て-form + くる"
+        }
+      ]
+    }
+  ]
+}</code></pre>
+                    
+                    <h6 class="mt-3">Required Fields:</h6>
+                    <ul>
+                        <li><strong>name</strong>: Exam name (string)</li>
+                        <li><strong>sections</strong>: Array of section objects</li>
+                        <li><strong>section.name</strong>: Section name (string)</li>
+                        <li><strong>section.questions</strong>: Array of question objects</li>
+                        <li><strong>question.question_text</strong>: The question text (string)</li>
+                        <li><strong>question.answer_1</strong> to <strong>answer_4</strong>: The four answer options (strings)</li>
+                        <li><strong>question.correct_answer</strong>: The correct answer number (1, 2, 3, or 4)</li>
+                    </ul>
+                    
+                    <h6 class="mt-3">Optional Fields:</h6>
+                    <ul>
+                        <li><strong>question.question_image</strong>: URL to question image</li>
+                        <li><strong>question.question_audio</strong>: URL to question audio</li>
+                        <li><strong>question.explanation</strong>: Explanation for the correct answer</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5>Download Example</h5>
+                </div>
+                <div class="card-body">
+                    <p>You can download an example JSON file to use as a template:</p>
+                    <a href="{{ url_for('download_example_json') }}" class="btn btn-success" target="_blank">
+                        <i class="fa fa-download"></i> Download Example JSON
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

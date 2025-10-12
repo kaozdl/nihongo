@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Exams - JLPT Test Manager{% endblock %}
+
+{% block extra_css %}
+<style>
+    .random-exam-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+    }
+    .random-exam-card .card-title {
+        color: white;
+        font-weight: bold;
+    }
+    .section-selector {
+        margin-bottom: 1rem;
+    }
+    .section-selector label {
+        font-weight: 500;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Random Exam Generator -->
+    <div class="col-12 mb-4">
+        <div class="card random-exam-card">
+            <div class="card-body p-4">
+                <h3 class="card-title mb-3">
+                    <i class="bi bi-shuffle"></i> Generate Random Practice Exam
+                </h3>
+                <p class="mb-4">Create a custom practice exam by selecting sections and number of questions.</p>
+                
+                <form method="POST" action="{{ url_for('create_random_exam') }}">
+                    {% if sections %}
+                    <div class="row">
+                        {% for section in sections %}
+                        {% if section.id in section_counts %}
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="section-selector">
+                                <label for="section_{{ section.id }}" class="form-label">
+                                    {{ section.name }} 
+                                    <span class="badge bg-light text-dark">{{ section_counts[section.id].count }} available</span>
+                                </label>
+                                <input type="number" 
+                                       class="form-control" 
+                                       id="section_{{ section.id }}" 
+                                       name="section_{{ section.id }}"
+                                       min="0" 
+                                       max="{{ section_counts[section.id].count }}"
+                                       value="0"
+                                       placeholder="Number of questions">
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="btn btn-light btn-lg">
+                        <i class="bi bi-shuffle"></i> Generate Random Exam
+                    </button>
+                    {% else %}
+                    <p class="mb-0">No sections available. Please create sections and questions in the admin panel.</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Regular Exams -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body p-4">
+                <h2 class="mb-4">
+                    <i class="bi bi-list-check"></i> Available Exams
+                </h2>
+                
+                {% if exams %}
+                <div class="row">
+                    {% for exam in exams %}
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ exam.name }}</h5>
+                                <p class="card-text text-muted">
+                                    <small>
+                                        <i class="bi bi-calendar"></i> 
+                                        Created: {{ exam.created_at.strftime('%Y-%m-%d') }}
+                                    </small>
+                                </p>
+                                <p class="card-text text-muted">
+                                    <small>
+                                        <i class="bi bi-person"></i> 
+                                        By: {{ exam.creator.email }}
+                                    </small>
+                                </p>
+                                
+                                {% set user_test = test_dict.get(exam.id) %}
+                                
+                                {% if user_test %}
+                                    {% if user_test.completed_at %}
+                                        <a href="{{ url_for('test_results', test_id=user_test.id) }}" 
+                                           class="btn btn-success w-100">
+                                            <i class="bi bi-check-circle"></i> View Results
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ url_for('take_exam', test_id=user_test.id) }}" 
+                                           class="btn btn-warning w-100">
+                                            <i class="bi bi-play-circle"></i> Continue Test
+                                        </a>
+                                    {% endif %}
+                                {% else %}
+                                    <form method="POST" action="{{ url_for('start_exam', exam_id=exam.id) }}">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="bi bi-play-fill"></i> Start Exam
+                                        </button>
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle"></i> No exams available yet. 
+                    Contact an administrator to create exams.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

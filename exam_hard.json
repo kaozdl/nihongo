@@ -1,0 +1,151 @@
+{
+  "name": "JLPT N2 Practice Test - Hard",
+  "sections": [
+    {
+      "name": "Grammar",
+      "questions": [
+        {
+          "question_text": "彼の話は 面白いには 面白いが、___。",
+          "answer_1": "信じられない",
+          "answer_2": "信じやすい",
+          "answer_3": "信じている",
+          "answer_4": "信じた",
+          "correct_answer": 1,
+          "explanation": "～には～が pattern expresses 'it is X, but...'. The contrast suggests 信じられない (hard to believe)."
+        },
+        {
+          "question_text": "最近、彼とは___。",
+          "answer_1": "会いにくくなった",
+          "answer_2": "会いっぱなしだ",
+          "answer_3": "会いがちだ",
+          "answer_4": "会わなくなった",
+          "correct_answer": 4,
+          "explanation": "～なくなる means 'to stop doing' or 'to no longer do'. 会わなくなった means 'stopped meeting'."
+        },
+        {
+          "question_text": "忙しい___、この仕事は 引き受けます。",
+          "answer_1": "にしても",
+          "answer_2": "としても",
+          "answer_3": "からには",
+          "answer_4": "ばかりに",
+          "correct_answer": 2,
+          "explanation": "～としても means 'even if'. 忙しいとしても means 'even if busy'."
+        },
+        {
+          "question_text": "一生懸命 勉強した___、試験に 落ちてしまった。",
+          "answer_1": "ものの",
+          "answer_2": "うえに",
+          "answer_3": "おかげで",
+          "answer_4": "せいで",
+          "correct_answer": 1,
+          "explanation": "～ものの means 'although/even though'. Shows contrast between effort and result."
+        },
+        {
+          "question_text": "彼に___、この計画は 実現しなかっただろう。",
+          "answer_1": "よって",
+          "answer_2": "とって",
+          "answer_3": "よれば",
+          "answer_4": "よると",
+          "correct_answer": 1,
+          "explanation": "～によって means 'due to/thanks to'. 彼によって means 'thanks to him'."
+        },
+        {
+          "question_text": "子供___、この問題は 解けないだろう。",
+          "answer_1": "にとって",
+          "answer_2": "に対して",
+          "answer_3": "にしては",
+          "answer_4": "に限って",
+          "correct_answer": 3,
+          "explanation": "～にしては means 'for/considering'. 子供にしては means 'for a child/considering it's a child'."
+        },
+        {
+          "question_text": "彼は 努力した___、成功を 収めた。",
+          "answer_1": "すえに",
+          "answer_2": "ばかりに",
+          "answer_3": "わりに",
+          "answer_4": "ものの",
+          "correct_answer": 1,
+          "explanation": "～すえに means 'as a result of' or 'after'. 努力したすえに means 'as a result of effort'."
+        },
+        {
+          "question_text": "急な 用事___、パーティーを 欠席せざるを えなかった。",
+          "answer_1": "によって",
+          "answer_2": "にもかかわらず",
+          "answer_3": "のため",
+          "answer_4": "にしたがって",
+          "correct_answer": 3,
+          "explanation": "～のため means 'because of'. ～ざるをえない means 'have no choice but to'."
+        }
+      ]
+    },
+    {
+      "name": "Vocabulary",
+      "questions": [
+        {
+          "question_text": "この問題を___するには、もっと データが 必要だ。",
+          "answer_1": "解決",
+          "answer_2": "解散",
+          "answer_3": "解放",
+          "answer_4": "解答",
+          "correct_answer": 1,
+          "explanation": "解決 (kaiketsu) means 'solve/resolve'. 問題を解決する means 'solve a problem'."
+        },
+        {
+          "question_text": "彼の 意見は___がある。",
+          "answer_1": "もくてき",
+          "answer_2": "りゆう",
+          "answer_3": "いぎ",
+          "answer_4": "けっか",
+          "correct_answer": 3,
+          "explanation": "意義 (igi) means 'significance/meaning'. 意義がある means 'has significance'."
+        },
+        {
+          "question_text": "新しい 技術の___により、生産性が 向上した。",
+          "answer_1": "どうにゅう",
+          "answer_2": "はいし",
+          "answer_3": "ていし",
+          "answer_4": "ほぞん",
+          "correct_answer": 1,
+          "explanation": "導入 (dounyuu) means 'introduction/implementation'. 技術の導入 means 'technology introduction'."
+        },
+        {
+          "question_text": "彼女は いつも___な 態度を 取る。",
+          "answer_1": "しんちょう",
+          "answer_2": "てきとう",
+          "answer_3": "いいかげん",
+          "answer_4": "むせき",
+          "correct_answer": 1,
+          "explanation": "慎重 (shinchou) means 'careful/cautious'. 慎重な態度 means 'cautious attitude'."
+        },
+        {
+          "question_text": "この 薬は___が 強い。",
+          "answer_1": "ふくさよう",
+          "answer_2": "こうか",
+          "answer_3": "えいきょう",
+          "answer_4": "けいこう",
+          "correct_answer": 1,
+          "explanation": "副作用 (fukusayou) means 'side effect'. 副作用が強い means 'strong side effects'."
+        },
+        {
+          "question_text": "経済の___が 懸念されている。",
+          "answer_1": "はってん",
+          "answer_2": "こうじょう",
+          "answer_3": "ていたい",
+          "answer_4": "かくだい",
+          "correct_answer": 3,
+          "explanation": "停滞 (teitai) means 'stagnation'. 経済の停滞 means 'economic stagnation'."
+        },
+        {
+          "question_text": "彼の 発言は___を 呼んだ。",
+          "answer_1": "はんきょう",
+          "answer_2": "はんせい",
+          "answer_3": "はんたい",
+          "answer_4": "はんぱつ",
+          "correct_answer": 1,
+          "explanation": "反響 (hankyou) means 'response/reaction'. 反響を呼ぶ means 'to cause a response'."
+        }
+      ]
+    }
+  ]
+}
+

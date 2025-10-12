@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Results - {{ test.exam.name }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .score-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .score-circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: white;
+        color: #667eea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 0 auto 1rem;
+    }
+    .result-item {
+        margin-bottom: 2rem;
+        border-left: 4px solid #dee2e6;
+        padding-left: 1rem;
+    }
+    .result-item.correct {
+        border-left-color: #28a745;
+    }
+    .result-item.incorrect {
+        border-left-color: #dc3545;
+    }
+    .answer-label {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+    .answer-label.correct {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    .answer-label.incorrect {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    .answer-label.user {
+        background-color: #d1ecf1;
+        color: #0c5460;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="score-card">
+            <div class="score-circle">
+                {{ "%.0f"|format(percentage) }}%
+            </div>
+            <h2>{{ test.exam.name }}</h2>
+            <p class="lead mb-0">
+                You got {{ correct }} out of {{ total }} questions correct
+            </p>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Test Details</h5>
+                        <p class="text-muted mb-0">
+                            <i class="bi bi-calendar"></i> Started: {{ test.started_at.strftime('%Y-%m-%d %H:%M') }}<br>
+                            <i class="bi bi-calendar-check"></i> Completed: {{ test.completed_at.strftime('%Y-%m-%d %H:%M') }}
+                        </p>
+                    </div>
+                    <a href="{{ url_for('exams') }}" class="btn btn-primary">
+                        <i class="bi bi-arrow-left"></i> Back to Exams
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-4">Answer Review</h4>
+                
+                {% for result in results %}
+                <div class="result-item {% if result.is_correct %}correct{% else %}incorrect{% endif %}">
+                    <h5>
+                        {% if result.is_correct %}
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                        {% else %}
+                            <i class="bi bi-x-circle-fill text-danger"></i>
+                        {% endif %}
+                        Question {{ loop.index }}
+                    </h5>
+                    
+                    {% if result.question.question_image %}
+                    <div class="mb-3">
+                        <img src="{{ result.question.question_image }}" 
+                             class="img-fluid" 
+                             alt="Question image"
+                             style="max-height: 200px;">
+                    </div>
+                    {% endif %}
+
+                    {% if result.question.question_audio %}
+                    <div class="mb-3">
+                        <audio controls>
+                            <source src="{{ result.question.question_audio }}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    {% endif %}
+
+                    <p><strong>{{ result.question.question_text }}</strong></p>
+                    
+                    <div class="mt-2">
+                        <p class="mb-1">
+                            <span class="answer-label user">Your Answer</span>
+                            {% if result.user_answer %}
+                                {{ result.question['answer_' + result.user_answer|string] }}
+                            {% else %}
+                                <em>Not answered</em>
+                            {% endif %}
+                        </p>
+                        
+                        {% if not result.is_correct %}
+                        <p class="mb-1">
+                            <span class="answer-label correct">Correct Answer</span>
+                            {{ result.question['answer_' + result.question.correct_answer|string] }}
+                        </p>
+                        {% endif %}
+                        
+                        {% if result.question.explanation %}
+                        <div class="alert alert-info mt-3">
+                            <strong><i class="bi bi-lightbulb"></i> Explanation:</strong><br>
+                            {{ result.question.explanation }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if not loop.last %}
+                <hr>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
