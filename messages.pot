@@ -1,0 +1,200 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-10-12 12:49-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app.py:70
+msgid "Language changed successfully"
+msgstr ""
+
+#: templates/base.html:59
+msgid "Exams"
+msgstr ""
+
+#: templates/base.html:64
+msgid "Admin"
+msgstr ""
+
+#: templates/base.html:83
+msgid "Logout"
+msgstr ""
+
+#: templates/base.html:97 templates/login.html:3 templates/login.html:11
+#: templates/login.html:24
+msgid "Login"
+msgstr ""
+
+#: templates/base.html:100 templates/register.html:3 templates/register.html:11
+#: templates/register.html:28
+msgid "Register"
+msgstr ""
+
+#: templates/exams.html:32
+msgid "Generate Random Practice Exam"
+msgstr ""
+
+#: templates/exams.html:34
+msgid ""
+"Create a custom practice exam by selecting sections and number of "
+"questions."
+msgstr ""
+
+#: templates/exams.html:45
+msgid "available"
+msgstr ""
+
+#: templates/exams.html:54
+msgid "Number of questions"
+msgstr ""
+
+#: templates/exams.html:61
+msgid "Generate Random Exam"
+msgstr ""
+
+#: templates/exams.html:64
+msgid ""
+"No sections available. Please create sections and questions in the admin "
+"panel."
+msgstr ""
+
+#: templates/exams.html:76
+msgid "Available Exams"
+msgstr ""
+
+#: templates/exams.html:89
+msgid "Created"
+msgstr ""
+
+#: templates/exams.html:95
+msgid "By"
+msgstr ""
+
+#: templates/exams.html:105
+msgid "View Results"
+msgstr ""
+
+#: templates/exams.html:110
+msgid "Continue Test"
+msgstr ""
+
+#: templates/exams.html:116
+msgid "Start Exam"
+msgstr ""
+
+#: templates/exams.html:127
+msgid "No exams available yet."
+msgstr ""
+
+#: templates/exams.html:128
+msgid "Contact an administrator to create exams."
+msgstr ""
+
+#: templates/login.html:15 templates/register.html:15
+msgid "Email"
+msgstr ""
+
+#: templates/login.html:19 templates/register.html:19
+msgid "Password"
+msgstr ""
+
+#: templates/login.html:30
+msgid "Don't have an account?"
+msgstr ""
+
+#: templates/login.html:31
+msgid "Register here"
+msgstr ""
+
+#: templates/register.html:23
+msgid "Confirm Password"
+msgstr ""
+
+#: templates/register.html:34
+msgid "Already have an account?"
+msgstr ""
+
+#: templates/register.html:35
+msgid "Login here"
+msgstr ""
+
+#: templates/results.html:70
+#, python-format
+msgid "You got %(correct)s out of %(total)s questions correct"
+msgstr ""
+
+#: templates/results.html:78
+msgid "Test Details"
+msgstr ""
+
+#: templates/results.html:80 templates/take_exam.html:49
+msgid "Started"
+msgstr ""
+
+#: templates/results.html:81
+msgid "Completed"
+msgstr ""
+
+#: templates/results.html:85
+msgid "Back to Exams"
+msgstr ""
+
+#: templates/results.html:93
+msgid "Answer Review"
+msgstr ""
+
+#: templates/results.html:103 templates/take_exam.html:66
+msgid "Question"
+msgstr ""
+
+#: templates/results.html:110 templates/take_exam.html:72
+msgid "Question image"
+msgstr ""
+
+#: templates/results.html:127
+msgid "Your Answer"
+msgstr ""
+
+#: templates/results.html:131
+msgid "Not answered"
+msgstr ""
+
+#: templates/results.html:137
+msgid "Correct Answer"
+msgstr ""
+
+#: templates/results.html:144
+msgid "Explanation"
+msgstr ""
+
+#: templates/take_exam.html:81
+msgid "Your browser does not support the audio element."
+msgstr ""
+
+#: templates/take_exam.html:112
+msgid ""
+"Are you sure you want to submit? You cannot change your answers after "
+"submission."
+msgstr ""
+
+#: templates/take_exam.html:113
+msgid "Submit Exam"
+msgstr ""
+
+#: templates/take_exam.html:151 templates/take_exam.html:156
+msgid "Error saving answer. Please try again."
+msgstr ""
+

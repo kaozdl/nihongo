@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('My Exam History') }} - JLPT Test Manager{% endblock %}
+
+{% block content %}
+<div class="container content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-clock-history"></i> {{ _('My Exam History') }}
+                    </h3>
+                </div>
+                <div class="card-body">
+                    {% if test_history %}
+                        <p class="text-muted">
+                            {{ _('You have completed') }} <strong>{{ test_history|length }}</strong> {{ _('exam(s)') }}.
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>{{ _('Exam Name') }}</th>
+                                        <th>{{ _('Started') }}</th>
+                                        <th>{{ _('Completed') }}</th>
+                                        <th>{{ _('Duration') }}</th>
+                                        <th>{{ _('Questions') }}</th>
+                                        <th>{{ _('Score') }}</th>
+                                        <th>{{ _('Grade') }}</th>
+                                        <th>{{ _('Actions') }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in test_history %}
+                                    <tr>
+                                        <td>
+                                            <strong>{{ item.exam_name }}</strong>
+                                        </td>
+                                        <td>
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar"></i>
+                                                {{ item.started_at.strftime('%Y-%m-%d') }}<br>
+                                                <i class="bi bi-clock"></i>
+                                                {{ item.started_at.strftime('%H:%M') }}
+                                            </small>
+                                        </td>
+                                        <td>
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar"></i>
+                                                {{ item.completed_at.strftime('%Y-%m-%d') }}<br>
+                                                <i class="bi bi-clock"></i>
+                                                {{ item.completed_at.strftime('%H:%M') }}
+                                            </small>
+                                        </td>
+                                        <td>
+                                            {% set duration = (item.completed_at - item.started_at).total_seconds() %}
+                                            {% set minutes = (duration / 60)|int %}
+                                            {% set seconds = (duration % 60)|int %}
+                                            <small>
+                                                {% if minutes > 0 %}
+                                                    {{ minutes }}m {{ seconds }}s
+                                                {% else %}
+                                                    {{ seconds }}s
+                                                {% endif %}
+                                            </small>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-info">
+                                                {{ item.correct }} / {{ item.total_questions }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <strong>{{ "%.1f"|format(item.percentage) }}%</strong>
+                                        </td>
+                                        <td>
+                                            {% if item.percentage >= 80 %}
+                                                <span class="badge bg-success">
+                                                    <i class="bi bi-trophy-fill"></i> {{ _('Excellent') }}
+                                                </span>
+                                            {% elif item.percentage >= 70 %}
+                                                <span class="badge bg-primary">
+                                                    <i class="bi bi-star-fill"></i> {{ _('Good') }}
+                                                </span>
+                                            {% elif item.percentage >= 60 %}
+                                                <span class="badge bg-info">
+                                                    <i class="bi bi-check-circle"></i> {{ _('Pass') }}
+                                                </span>
+                                            {% else %}
+                                                <span class="badge bg-warning">
+                                                    <i class="bi bi-x-circle"></i> {{ _('Needs Work') }}
+                                                </span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{{ url_for('test_results', test_id=item.test.id) }}" 
+                                               class="btn btn-sm btn-outline-primary">
+                                                <i class="bi bi-file-text"></i> {{ _('View Details') }}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Summary Statistics -->
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <h4>{{ _('Summary Statistics') }}</h4>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ _('Total Exams') }}</h5>
+                                        <h2 class="text-primary">{{ test_history|length }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ _('Average Score') }}</h5>
+                                        {% set avg_score = (test_history|sum(attribute='percentage') / test_history|length) %}
+                                        <h2 class="text-info">{{ "%.1f"|format(avg_score) }}%</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ _('Best Score') }}</h5>
+                                        {% set best_score = test_history|map(attribute='percentage')|max %}
+                                        <h2 class="text-success">{{ "%.1f"|format(best_score) }}%</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ _('Total Questions') }}</h5>
+                                        {% set total_qs = test_history|sum(attribute='total_questions') %}
+                                        <h2 class="text-warning">{{ total_qs }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% else %}
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i>
+                            {{ _("You haven't completed any exams yet.") }}
+                            <a href="{{ url_for('exams') }}" class="alert-link">{{ _('Start your first exam now!') }}</a>
+                        </div>
+                    {% endif %}
+
+                    <div class="mt-4">
+                        <a href="{{ url_for('exams') }}" class="btn btn-primary">
+                            <i class="bi bi-arrow-left"></i> {{ _('Back to Exams') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+    }
+    
+    .table td {
+        vertical-align: middle;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        margin-top: 1rem;
+    }
+    
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+    }
+</style>
+{% endblock %}
+

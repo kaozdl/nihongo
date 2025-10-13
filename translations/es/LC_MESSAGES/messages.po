@@ -1,0 +1,309 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-10-12 12:49-0300\n"
+"PO-Revision-Date: 2025-10-12 12:46-0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app.py:70
+msgid "Language changed successfully"
+msgstr "Idioma cambiado exitosamente"
+
+#: templates/base.html:59
+msgid "Exams"
+msgstr "Exámenes"
+
+#: templates/base.html:64
+msgid "My Content"
+msgstr "Mi Contenido"
+
+#: templates/base.html:69
+msgid "My History"
+msgstr "Mi Historial"
+
+#: templates/base.html:75
+msgid "Admin"
+msgstr "Administrador"
+
+#: templates/base.html:88
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: templates/base.html:97 templates/login.html:3 templates/login.html:11
+#: templates/login.html:24
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: templates/base.html:100 templates/register.html:3 templates/register.html:11
+#: templates/register.html:28
+msgid "Register"
+msgstr "Registrarse"
+
+#: templates/exams.html:32
+msgid "Generate Random Practice Exam"
+msgstr "Generar Examen de Práctica Aleatorio"
+
+#: templates/exams.html:34
+msgid ""
+"Create a custom practice exam by selecting sections and number of "
+"questions."
+msgstr "Crea un examen de práctica personalizado seleccionando secciones y número de preguntas."
+
+#: templates/exams.html:45
+msgid "available"
+msgstr "disponibles"
+
+#: templates/exams.html:54
+msgid "Number of questions"
+msgstr "Número de preguntas"
+
+#: templates/exams.html:61
+msgid "Generate Random Exam"
+msgstr "Generar Examen Aleatorio"
+
+#: templates/exams.html:64
+msgid ""
+"No sections available. Please create sections and questions in the admin "
+"panel."
+msgstr "No hay secciones disponibles. Por favor, crea secciones y preguntas en el panel de administración."
+
+#: templates/exams.html:76
+msgid "Available Exams"
+msgstr "Exámenes Disponibles"
+
+#: templates/exams.html:89
+msgid "Created"
+msgstr "Creado"
+
+#: templates/exams.html:95
+msgid "By"
+msgstr "Por"
+
+#: templates/exams.html:104
+msgid "View Results"
+msgstr "Ver Resultados"
+
+#: templates/exams.html:108
+msgid "Retake Exam"
+msgstr "Repetir Examen"
+
+#: templates/exams.html:114
+msgid "Continue Test"
+msgstr "Continuar Examen"
+
+#: templates/exams.html:122
+msgid "Start Exam"
+msgstr "Comenzar Examen"
+
+#: templates/exams.html:127
+msgid "No exams available yet."
+msgstr "No hay exámenes disponibles aún."
+
+#: templates/exams.html:128
+msgid "Contact an administrator to create exams."
+msgstr "Contacta a un administrador para crear exámenes."
+
+#: templates/login.html:15 templates/register.html:15
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: templates/login.html:19 templates/register.html:19
+msgid "Password"
+msgstr "Contraseña"
+
+#: templates/login.html:30
+msgid "Don't have an account?"
+msgstr "¿No tienes una cuenta?"
+
+#: templates/login.html:31
+msgid "Register here"
+msgstr "Regístrate aquí"
+
+#: templates/register.html:23
+msgid "Confirm Password"
+msgstr "Confirmar Contraseña"
+
+#: templates/register.html:34
+msgid "Already have an account?"
+msgstr "¿Ya tienes una cuenta?"
+
+#: templates/register.html:35
+msgid "Login here"
+msgstr "Inicia sesión aquí"
+
+#: templates/results.html:70
+#, python-format
+msgid "You got %(correct)s out of %(total)s questions correct"
+msgstr "Obtuviste %(correct)s de %(total)s preguntas correctas"
+
+#: templates/results.html:78
+msgid "Test Details"
+msgstr "Detalles del Examen"
+
+#: templates/results.html:80 templates/take_exam.html:49
+msgid "Started"
+msgstr "Iniciado"
+
+#: templates/results.html:81
+msgid "Completed"
+msgstr "Completado"
+
+#: templates/results.html:85
+msgid "Back to Exams"
+msgstr "Volver a Exámenes"
+
+#: templates/results.html:93
+msgid "Answer Review"
+msgstr "Revisión de Respuestas"
+
+#: templates/results.html:103 templates/take_exam.html:66
+msgid "Question"
+msgstr "Pregunta"
+
+#: templates/results.html:110 templates/take_exam.html:72
+msgid "Question image"
+msgstr "Imagen de pregunta"
+
+#: templates/results.html:127
+msgid "Your Answer"
+msgstr "Tu Respuesta"
+
+#: templates/results.html:131
+msgid "Not answered"
+msgstr "Sin responder"
+
+#: templates/results.html:137
+msgid "Correct Answer"
+msgstr "Respuesta Correcta"
+
+#: templates/results.html:144
+msgid "Explanation"
+msgstr "Explicación"
+
+#: templates/take_exam.html:81
+msgid "Your browser does not support the audio element."
+msgstr "Tu navegador no soporta el elemento de audio."
+
+#: templates/take_exam.html:112
+msgid ""
+"Are you sure you want to submit? You cannot change your answers after "
+"submission."
+msgstr "¿Estás seguro de que quieres enviar? No podrás cambiar tus respuestas después del envío."
+
+#: templates/take_exam.html:113
+msgid "Submit Exam"
+msgstr "Enviar Examen"
+
+#: templates/take_exam.html:151 templates/take_exam.html:156
+msgid "Error saving answer. Please try again."
+msgstr "Error al guardar la respuesta. Por favor, inténtalo de nuevo."
+
+#: templates/exam_history.html:3
+msgid "My Exam History"
+msgstr "Mi Historial de Exámenes"
+
+#: templates/exam_history.html:18
+msgid "You have completed"
+msgstr "Has completado"
+
+#: templates/exam_history.html:18
+msgid "exam(s)"
+msgstr "examen(es)"
+
+#: templates/exam_history.html:24
+msgid "Exam Name"
+msgstr "Nombre del Examen"
+
+#: templates/exam_history.html:25
+msgid "Started"
+msgstr "Iniciado"
+
+#: templates/exam_history.html:26
+msgid "Completed"
+msgstr "Completado"
+
+#: templates/exam_history.html:27
+msgid "Duration"
+msgstr "Duración"
+
+#: templates/exam_history.html:28
+msgid "Questions"
+msgstr "Preguntas"
+
+#: templates/exam_history.html:29
+msgid "Score"
+msgstr "Puntuación"
+
+#: templates/exam_history.html:30
+msgid "Grade"
+msgstr "Calificación"
+
+#: templates/exam_history.html:31
+msgid "Actions"
+msgstr "Acciones"
+
+#: templates/exam_history.html:83
+msgid "Excellent"
+msgstr "Excelente"
+
+#: templates/exam_history.html:87
+msgid "Good"
+msgstr "Bien"
+
+#: templates/exam_history.html:91
+msgid "Pass"
+msgstr "Aprobado"
+
+#: templates/exam_history.html:95
+msgid "Needs Work"
+msgstr "Necesita Mejorar"
+
+#: templates/exam_history.html:101
+msgid "View Details"
+msgstr "Ver Detalles"
+
+#: templates/exam_history.html:112
+msgid "Summary Statistics"
+msgstr "Estadísticas Resumidas"
+
+#: templates/exam_history.html:117
+msgid "Total Exams"
+msgstr "Exámenes Totales"
+
+#: templates/exam_history.html:124
+msgid "Average Score"
+msgstr "Puntuación Promedio"
+
+#: templates/exam_history.html:131
+msgid "Best Score"
+msgstr "Mejor Puntuación"
+
+#: templates/exam_history.html:138
+msgid "Total Questions"
+msgstr "Preguntas Totales"
+
+#: templates/exam_history.html:149
+msgid "You haven't completed any exams yet."
+msgstr "Aún no has completado ningún examen."
+
+#: templates/exam_history.html:150
+msgid "Start your first exam now!"
+msgstr "¡Comienza tu primer examen ahora!"
+
+#: templates/exam_history.html:156
+msgid "Back to Exams"
+msgstr "Volver a Exámenes"
+
