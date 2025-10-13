@@ -2,10 +2,7 @@
 Tests for exam import functionality
 """
 import pytest
-import json
-from io import BytesIO
 from import_exam import import_exam_from_json, validate_exam_json
-from models import db
 from models.exam import Exam
 from models.section import Section
 from models.question import Question

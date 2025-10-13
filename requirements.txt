@@ -6,6 +6,11 @@ Flask-WTF==1.2.1
 WTForms==3.1.1
 Werkzeug==3.0.1
 python-dotenv==1.0.0
+Flask-Babel==4.0.0
+alembic==1.13.1
+
+# Database drivers
+psycopg2-binary==2.9.9  # PostgreSQL adapter (required for production)
 
 # Testing (optional - install with: pip install -r requirements-dev.txt)
 # pytest==7.4.3

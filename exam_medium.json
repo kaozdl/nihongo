@@ -1,71 +1,68 @@
 {
-  "name": "JLPT N4 Practice Test - Medium",
+  "name": "JLPT N5 Practice Test - Medium",
   "sections": [
     {
       "name": "Grammar",
       "questions": [
         {
-          "question_text": "日本語が___なりました。",
-          "answer_1": "じょうず",
-          "answer_2": "じょうずに",
-          "answer_3": "じょうずな",
-          "answer_4": "じょうずで",
-          "correct_answer": 2,
-          "explanation": "The pattern ～になる (to become) requires adverbial form. じょうずに is the adverbial form of じょうず."
+          "question_text": "あした___時に うちへ きますか。",
+          "answer_1": "なん",
+          "answer_2": "なに",
+          "answer_3": "どの",
+          "answer_4": "いくつ",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "なん is used to ask 'what' with time. なん時 means 'what time'.",
+            "ES": "なん se usa para preguntar 'qué' con el tiempo. なん時 significa 'qué hora'."
+          }
         },
         {
-          "question_text": "雨が___きました。",
-          "answer_1": "ふり",
-          "answer_2": "ふって",
-          "answer_3": "ふった",
-          "answer_4": "ふる",
-          "correct_answer": 2,
-          "explanation": "～てくる indicates a change of state or action coming towards you. ふってくる means 'it started raining'."
-        },
-        {
-          "question_text": "先生___相談したいことがあります。",
-          "answer_1": "に",
-          "answer_2": "を",
+          "question_text": "たなかさんは びょうき___、がっこうを やすみました。",
+          "answer_1": "で",
+          "answer_2": "だから",
           "answer_3": "が",
-          "answer_4": "へ",
-          "correct_answer": 1,
-          "explanation": "相談する (to consult) takes the particle に for the person being consulted."
-        },
-        {
-          "question_text": "毎日 練習___、上手に なりました。",
-          "answer_1": "して",
-          "answer_2": "したら",
-          "answer_3": "すると",
-          "answer_4": "しながら",
-          "correct_answer": 1,
-          "explanation": "～て form expresses reason or cause. 練習して means 'by practicing' or 'because of practicing'."
-        },
-        {
-          "question_text": "漢字が 難しくて、___。",
-          "answer_1": "覚えられません",
-          "answer_2": "覚えています",
-          "answer_3": "覚えました",
-          "answer_4": "覚えます",
-          "correct_answer": 1,
-          "explanation": "～られる is the potential form (can do). The negative 覚えられません means 'cannot memorize'."
-        },
-        {
-          "question_text": "食事の___、手を 洗います。",
-          "answer_1": "とき",
-          "answer_2": "前に",
-          "answer_3": "あとで",
-          "answer_4": "間に",
+          "answer_4": "の",
           "correct_answer": 2,
-          "explanation": "前に means 'before'. 食事の前に means 'before meals'."
+          "explanation": {
+            "EN": "だから means 'therefore/so'. Used to show reason or cause between two sentences.",
+            "ES": "だから significa 'por lo tanto'. Se usa para mostrar razón o causa entre dos oraciones."
+          }
         },
         {
-          "question_text": "友達に 本を___もらいました。",
-          "answer_1": "貸して",
-          "answer_2": "貸す",
-          "answer_3": "貸した",
-          "answer_4": "貸しに",
-          "correct_answer": 1,
-          "explanation": "～てもらう means 'to receive a favor'. 貸してもらう means 'had someone lend to me'."
+          "question_text": "この かばんは___です。",
+          "answer_1": "わたし",
+          "answer_2": "わたしの",
+          "answer_3": "わたしが",
+          "answer_4": "わたしを",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "わたしの means 'my/mine'. The particle の indicates possession.",
+            "ES": "わたしの significa 'mi/mío'. La partícula の indica posesión."
+          }
+        },
+        {
+          "question_text": "A:「コーヒーを のみませんか。」 B:「___。」",
+          "answer_1": "はい、のみません",
+          "answer_2": "いいえ、のみます",
+          "answer_3": "はい、のみましょう",
+          "answer_4": "いいえ、のみましょう",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "When accepting an invitation (のみませんか), use はい、のみましょう (Yes, let's drink).",
+            "ES": "Al aceptar una invitación (のみませんか), usa はい、のみましょう (Sí, bebamos)."
+          }
+        },
+        {
+          "question_text": "ここで しゃしんを___も いいですか。",
+          "answer_1": "とり",
+          "answer_2": "とる",
+          "answer_3": "とって",
+          "answer_4": "とった",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "～てもいいですか means 'Is it okay to...?'. Use te-form: とって.",
+            "ES": "～てもいいですか significa '¿Está bien...?'. Usa la forma te: とって."
+          }
         }
       ]
     },
@@ -73,58 +70,192 @@
       "name": "Vocabulary",
       "questions": [
         {
-          "question_text": "彼は___な性格です。",
-          "answer_1": "まじめ",
-          "answer_2": "まじめだ",
-          "answer_3": "まじめの",
-          "answer_4": "まじめで",
+          "question_text": "きょうは あめが___います。かさを もって いきましょう。",
+          "answer_1": "ふって",
+          "answer_2": "ふいて",
+          "answer_3": "ふえて",
+          "answer_4": "ふんで",
           "correct_answer": 1,
-          "explanation": "まじめ is a な-adjective meaning 'serious/diligent'. Before nouns, use まじめな."
+          "explanation": {
+            "EN": "ふっている means 'it's raining'. From the verb ふる (to fall/rain).",
+            "ES": "ふっている significa 'está lloviendo'. Del verbo ふる (caer/llover)."
+          }
         },
         {
-          "question_text": "毎日___勉強しています。",
-          "answer_1": "いっしょうけんめい",
-          "answer_2": "いっしょうけんめいに",
-          "answer_3": "いっしょうけんめいで",
-          "answer_4": "いっしょうけんめいな",
+          "question_text": "___は あついですから、まどを あけましょう。",
+          "answer_1": "へや",
+          "answer_2": "そと",
+          "answer_3": "つくえ",
+          "answer_4": "いす",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "へや (room) makes sense: 'The room is hot, so let's open the window'.",
+            "ES": "へや (habitación) tiene sentido: 'La habitación está caliente, así que abramos la ventana'."
+          }
+        },
+        {
+          "question_text": "A:「おなかが すきましたね。」 B:「___を たべましょう。」",
+          "answer_1": "なにか",
+          "answer_2": "だれか",
+          "answer_3": "どこか",
+          "answer_4": "いつか",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "なにか means 'something'. 'Let's eat something' when hungry.",
+            "ES": "なにか significa 'algo'. 'Comamos algo' cuando tienes hambre."
+          }
+        },
+        {
+          "question_text": "わたしの___は サッカーです。まいしゅう やります。",
+          "answer_1": "しごと",
+          "answer_2": "しゅみ",
+          "answer_3": "べんきょう",
+          "answer_4": "せんせい",
           "correct_answer": 2,
-          "explanation": "いっしょうけんめい means 'with all one's might'. The adverbial form に is used before verbs."
+          "explanation": {
+            "EN": "しゅみ means 'hobby'. Playing soccer every week indicates it's a hobby.",
+            "ES": "しゅみ significa 'pasatiempo'. Jugar fútbol cada semana indica que es un pasatiempo."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reading Comprehension",
+      "questions": [
+        {
+          "question_text": "やまださんは 東京に すんでいます。まいあさ 七時に いえを でます。でんしゃで かいしゃに いきます。八時に かいしゃに つきます。\n\nQuestion: やまださんは なんで かいしゃに いきますか。",
+          "answer_1": "あるいて",
+          "answer_2": "でんしゃで",
+          "answer_3": "じてんしゃで",
+          "answer_4": "バスで",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "The text says 'でんしゃでかいしゃにいきます' (goes to work by train).",
+            "ES": "El texto dice 'でんしゃでかいしゃにいきます' (va al trabajo en tren)."
+          }
         },
         {
-          "question_text": "この問題は___です。もう一度 説明して ください。",
-          "answer_1": "ふくざつ",
-          "answer_2": "かんたん",
-          "answer_3": "べんり",
-          "answer_4": "じゆう",
-          "correct_answer": 1,
-          "explanation": "ふくざつ (complex) makes sense when asking for another explanation."
+          "question_text": "すずきさんは えいごの せんせいです。げつようびから きんようびまで がっこうで はたらきます。どようびと にちようびは やすみです。\n\nQuestion: すずきさんは なんようびに はたらきますか。",
+          "answer_1": "まいにち",
+          "answer_2": "月曜日から 金曜日まで",
+          "answer_3": "土曜日と 日曜日",
+          "answer_4": "日曜日だけ",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "The text says 'げつようびからきんようびまではたらきます' (works Monday to Friday).",
+            "ES": "El texto dice 'げつようびからきんようびまではたらきます' (trabaja de lunes a viernes)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sentence Ordering",
+      "questions": [
+        {
+          "question_text": "わたしは ___ ___ _X_ ___。",
+          "answer_1": "が",
+          "answer_2": "すき",
+          "answer_3": "です",
+          "answer_4": "りんご",
+          "correct_answer": 4,
+          "explanation": {
+            "EN": "The sentence is 'わたしはりんごがすきです' (I like apples). Order: りんご → が → すき → です. X position is りんご.",
+            "ES": "La oración es 'わたしはりんごがすきです' (Me gustan las manzanas). Orden: りんご → が → すき → です. La posición X es りんご."
+          }
         },
         {
-          "question_text": "彼女は 日本語が___です。",
-          "answer_1": "とくい",
-          "answer_2": "にがて",
-          "answer_3": "へた",
-          "answer_4": "きらい",
+          "question_text": "きのう ___ ___ _X_ ___。",
+          "answer_1": "てんき",
+          "answer_2": "よかった",
+          "answer_3": "は",
+          "answer_4": "です",
           "correct_answer": 1,
-          "explanation": "とくい means 'skillful/good at'. 日本語がとくい means 'good at Japanese'."
+          "explanation": {
+            "EN": "The sentence is 'きのうてんきはよかったです' (The weather was good yesterday). Order: てんき → は → よかった → です. X position is てんき.",
+            "ES": "La oración es 'きのうてんきはよかったです' (El clima estuvo bueno ayer). Orden: てんき → は → よかった → です. La posición X es てんき."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kanji Reading",
+      "questions": [
+        {
+          "question_text": "わたしは まいにち【九】時に ねます。\n\nQuestion: 【九】の読み方は？",
+          "answer_1": "きゅう",
+          "answer_2": "く",
+          "answer_3": "ここの",
+          "answer_4": "きょう",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "In 九時 (9 o'clock), 九 is read as 'く' (ku). This is used before 時.",
+            "ES": "En 九時 (9 en punto), 九 se lee como 'く' (ku). Esto se usa antes de 時."
+          }
         },
         {
-          "question_text": "会議に___します。",
-          "answer_1": "しゅっせき",
-          "answer_2": "けっせき",
-          "answer_3": "ちこく",
-          "answer_4": "そうたい",
-          "correct_answer": 1,
-          "explanation": "しゅっせき means 'attend/participate'. 会議にしゅっせきする means 'attend a meeting'."
+          "question_text": "きょうは【金】曜日です。\n\nQuestion: 【金】の読み方は？",
+          "answer_1": "かね",
+          "answer_2": "きん",
+          "answer_3": "かな",
+          "answer_4": "こん",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "In 金曜日 (Friday), 金 is read as 'きん' (kin). This is the on-yomi reading.",
+            "ES": "En 金曜日 (viernes), 金 se lee como 'きん' (kin). Esta es la lectura on-yomi."
+          }
         },
         {
-          "question_text": "この仕事は___がかかります。",
-          "answer_1": "じかん",
-          "answer_2": "ばしょ",
-          "answer_3": "ひと",
-          "answer_4": "もの",
+          "question_text": "あの【人】は だれですか。\n\nQuestion: 【人】の読み方は？",
+          "answer_1": "ひと",
+          "answer_2": "じん",
+          "answer_3": "にん",
+          "answer_4": "びと",
           "correct_answer": 1,
-          "explanation": "じかんがかかる means 'takes time'. Common expression for describing duration."
+          "explanation": {
+            "EN": "When 人 stands alone meaning 'person', it's read as 'ひと' (hito). This is the kun-yomi reading.",
+            "ES": "Cuando 人 está solo significando 'persona', se lee como 'ひと' (hito). Esta es la lectura kun-yomi."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kanji Writing",
+      "questions": [
+        {
+          "question_text": "【みず】を のみます。\n\nQuestion: 【みず】の漢字は？",
+          "answer_1": "氷",
+          "answer_2": "水",
+          "answer_3": "永",
+          "answer_4": "泳",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "みず (water) is written as 水. This is one of the most basic N5 kanji.",
+            "ES": "みず (agua) se escribe como 水. Este es uno de los kanji N5 más básicos."
+          }
+        },
+        {
+          "question_text": "【かわ】で さかなを つりました。\n\nQuestion: 【かわ】の漢字は？",
+          "answer_1": "山",
+          "answer_2": "海",
+          "answer_3": "川",
+          "answer_4": "池",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "かわ (river) is written as 川. The kanji resembles flowing water.",
+            "ES": "かわ (río) se escribe como 川. El kanji se parece a agua fluyendo."
+          }
+        },
+        {
+          "question_text": "まいにち【でんしゃ】で がっこうへ いきます。\n\nQuestion: 【でんしゃ】の漢字は？",
+          "answer_1": "電車",
+          "answer_2": "電者",
+          "answer_3": "伝車",
+          "answer_4": "伝者",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "でんしゃ (train) is written as 電車. 電 means 'electricity' and 車 means 'vehicle'.",
+            "ES": "でんしゃ (tren) se escribe como 電車. 電 significa 'electricidad' y 車 significa 'vehículo'."
+          }
         }
       ]
     }

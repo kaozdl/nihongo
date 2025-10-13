@@ -4,24 +4,37 @@ A Flask-based web application for managing and taking Japanese Language Proficie
 
 ## Features
 
-- **User Authentication**: Secure login and registration system
+- **User Authentication**: Secure login and registration system with admin roles (auto-login on registration)
 - **Exam Management**: Create and organize JLPT practice exams with multiple sections
 - **Random Exam Generator**: Create custom practice exams by randomly selecting questions from sections
 - **Question Bank**: Store questions with text, images, and audio support
 - **Test Taking**: Interactive interface for taking exams with auto-save functionality
 - **Results & Analytics**: View detailed results with explanations
-- **Admin Interface**: Full-featured admin panel powered by Flask-Admin for managing:
-  - Users
-  - Questions
+- **Exam History**: Track all completed exams with:
+  - Start and completion dates/times
+  - Test duration
+  - All answers and scores
+  - Performance statistics
+  - Grade badges
+  - Quick access to detailed results
+- **User Content Management**: Regular users can create and manage their own:
+  - Questions (with multi-language explanations)
   - Sections
   - Exams
+  - Users only see and edit their own content
+- **Admin Interface**: Full-featured admin panel powered by Flask-Admin for admins to manage:
+  - All users and permissions
+  - All questions across all users
+  - All sections and exams
   - Tests and results
+  - Bulk import exams from JSON
 
 ## Domain Model
 
 ### User
 - Email (unique)
 - Password (hashed)
+- Is Admin (boolean) - determines access to admin panel
 
 ### Question
 - Question text
@@ -87,10 +100,10 @@ cp .env.example .env
 flask init-db
 ```
 
-6. **Create an admin user**
-```bash
-flask create-admin
-```
+This command will:
+- ✅ Create all database tables
+- ✅ Create default user: `default@nihongo.edu.uy` / `nihongo123`
+- ✅ Load sample exams: Easy, Medium, and Hard N5 practice tests
 
 #### For Windows:
 
@@ -119,12 +132,14 @@ REM Edit .env with your configuration
 5. **Initialize the database**
 ```cmd
 flask init-db
+REM Or use migrations (recommended)
+flask db-upgrade
 ```
 
-6. **Create an admin user**
-```cmd
-flask create-admin
-```
+This command will:
+- ✅ Create all database tables
+- ✅ Create default user: `default@nihongo.edu.uy` / `nihongo123`
+- ✅ Load sample exams: Easy, Medium, and Hard N5 practice tests
 
 ## Running the Application
 
@@ -164,7 +179,7 @@ waitress-serve --port=8000 app:app
 
 ## Usage
 
-### For Users
+### For All Users (Regular Users)
 
 1. **Register/Login**: Create an account or log in at `/register` or `/login`
 2. **Browse Exams**: View available exams at `/exams`
@@ -177,15 +192,32 @@ waitress-serve --port=8000 app:app
 6. **Submit**: Click "Submit Exam" when finished
 7. **View Results**: See your score and review answers with explanations
 
+### Content Creation (All Users)
+
+Regular users can create and manage their own content:
+
+1. **Access My Content**: Navigate to `/mycontent` after logging in (or click "My Content" in navbar)
+2. **Create Questions**: 
+   - Add your own questions with bilingual explanations (English/Spanish)
+   - Include optional images and audio
+   - Only you can see and edit your questions
+3. **Manage Sections**: Create sections to organize questions
+4. **Build Exams**: Create custom exams using your sections
+5. **Privacy**: Your content is private - other users cannot see or edit it
+
 ### For Administrators
 
+Administrators have additional privileges:
+
 1. **Access Admin Panel**: Navigate to `/admin` after logging in
-2. **Import Exams**: Bulk import exams from JSON files (see `IMPORT_GUIDE.md`)
-3. **Create Questions**: Add questions with optional images and audio
-4. **Create Sections**: Organize questions into sections
-5. **Create Exams**: Build exams by combining sections
-6. **Manage Users**: View and manage user accounts
-7. **Monitor Tests**: View test submissions and results
+2. **Import Exams**: Bulk import exams from JSON files (see `docs/IMPORT_GUIDE.md`)
+3. **Manage All Content**: View and edit ALL questions, sections, and exams across all users
+4. **User Management**: 
+   - View all user accounts
+   - Promote users to admin
+   - See user statistics
+5. **Monitor Tests**: View all test submissions and results across all users
+6. **Create Admin Users**: Use `flask create-admin` command to create/promote admin users
 
 #### Bulk Import Feature
 
@@ -201,16 +233,37 @@ You can import complete exams with sections and questions from JSON files:
 nihongo/
 ├── app.py                 # Main Flask application
 ├── import_exam.py         # Exam JSON import module
-├── sample_data.py         # Sample data generator
+├── sample_data.py         # Sample data generator (optional)
 ├── requirements.txt       # Python dependencies
 ├── init.sh                # Setup script (macOS/Linux)
 ├── init.bat               # Setup script (Windows)
 ├── run_tests.sh           # Test runner (macOS/Linux)
 ├── run_tests.bat          # Test runner (Windows)
+├── exam_easy.json         # N5 Easy exam (auto-loaded)
+├── exam_medium.json       # N5 Medium exam (auto-loaded)
+├── exam_hard.json         # N5 Hard exam (auto-loaded)
 ├── exam_example.json      # Example JSON for import
-├── IMPORT_GUIDE.md        # Import feature documentation
-├── WINDOWS_SETUP.md       # Windows-specific setup guide
+├── alembic.ini            # Alembic configuration
+├── babel.cfg              # Babel configuration
+├── docs/                  # Documentation
+│   ├── QUICKSTART.md
+│   ├── IMPORT_GUIDE.md
+│   ├── TESTING_GUIDE.md
+│   ├── WINDOWS_SETUP.md
+│   ├── RANDOM_EXAM_FEATURE.md
+│   ├── I18N_GUIDE.md
+│   ├── MIGRATIONS_GUIDE.md
+│   └── ALEMBIC_QUICKSTART.md
+├── alembic/               # Database migrations
+│   ├── versions/          # Migration scripts
+│   └── env.py             # Migration environment
+├── translations/          # i18n translations
+│   └── es/                # Spanish translations
+│       └── LC_MESSAGES/
+│           ├── messages.po
+│           └── messages.mo
 ├── models/               # Database models
+│   ├── utils.py          # Utility functions (i18n)
 │   ├── __init__.py
 │   ├── user.py
 │   ├── question.py
@@ -235,24 +288,90 @@ nihongo/
 
 ## Configuration
 
-Configure the application using environment variables or by editing `app.py`:
+The application uses environment-based configuration with three modes:
 
-- `SECRET_KEY`: Flask secret key (required for sessions)
-- `DATABASE_URL`: Database connection string (default: `sqlite:///jlpt.db`)
+| Environment | Database | Use Case |
+|------------|----------|----------|
+| **Development** | SQLite | Local development (default) |
+| **Production** | PostgreSQL | Production deployment |
+| **Testing** | SQLite (memory) | Automated tests |
+
+### Quick Setup
+
+**For Local Development:**
+
+```bash
+# Copy the local environment template
+cp env.local.example .env
+
+# Edit if needed (defaults work out of the box)
+nano .env
+```
+
+**For Production:**
+
+```bash
+# Copy the production environment template
+cp env.production.example .env
+
+# Edit with your production settings
+nano .env
+```
+
+### Environment Variables
+
+**Required:**
+- `FLASK_ENV`: `development` or `production`
+- `SECRET_KEY`: Flask secret key (generate with `python -c "import secrets; print(secrets.token_hex(32))"`)
+
+**Optional:**
+- `DATABASE_URL`: Override default database (PostgreSQL for production)
+- `SQL_ECHO`: Set to `True` to log SQL queries
+- `FLASK_RUN_HOST`: Server host (default: `127.0.0.1`)
+- `FLASK_RUN_PORT`: Server port (default: `5000`)
+
+See **[Deployment Guide](docs/DEPLOYMENT_GUIDE.md)** for detailed production setup.
 
 ## Database
 
+### Local Development (SQLite)
+
 The application uses SQLite by default. The database file (`jlpt.db`) will be created automatically when you run `flask init-db`.
 
-To use a different database (PostgreSQL, MySQL, etc.), set the `DATABASE_URL` environment variable:
+No additional setup required!
+
+### Production (PostgreSQL)
+
+For production, PostgreSQL is required:
+
+```bash
+# Install PostgreSQL adapter
+pip install psycopg2-binary
+
+# Set DATABASE_URL in .env
+DATABASE_URL=postgresql://user:password@localhost:5432/jlpt_db
 ```
-DATABASE_URL=postgresql://user:password@localhost/jlpt
-```
+
+See **[Deployment Guide](docs/DEPLOYMENT_GUIDE.md)** for complete production setup instructions.
 
 ## CLI Commands
 
-- `flask init-db`: Initialize the database (create all tables)
-- `flask create-admin`: Create a new admin user interactively
+### Database Management
+- `flask init-db`: Initialize the database (creates tables, default user, and loads sample exams)
+- `flask db-upgrade`: Apply all pending migrations (recommended for production)
+- `flask db-migrate`: Generate a new migration after model changes
+- `flask db-downgrade`: Rollback the last migration
+- `flask db-history`: Show migration history
+
+### User Management
+- `flask create-admin`: Create a new admin user interactively (optional)
+
+### Alembic (Advanced)
+- `alembic upgrade head`: Apply all migrations
+- `alembic revision --autogenerate -m "message"`: Create a new migration
+- `alembic downgrade -1`: Rollback one migration
+- `alembic current`: Show current database version
+- `alembic history`: Show migration history
 
 ## Features in Detail
 
@@ -281,8 +400,10 @@ Example: Select 5 Grammar questions + 3 Vocabulary questions = Custom 8-question
 
 - **Backend**: Flask 3.0
 - **Database**: SQLAlchemy (SQLite default)
+- **Migrations**: Alembic 1.17
 - **Authentication**: Flask-Login
 - **Admin Panel**: Flask-Admin
+- **i18n**: Flask-Babel (English/Spanish)
 - **Frontend**: Bootstrap 5, Jinja2 templates
 - **Icons**: Bootstrap Icons
 - **Random Generation**: Python random module for question selection
@@ -293,6 +414,29 @@ Example: Select 5 Grammar questions + 3 Vocabulary questions = Custom 8-question
 - CSRF protection with Flask-WTF
 - Session-based authentication
 - Secure admin access control
+
+## Documentation
+
+Comprehensive guides are available in the `docs/` directory:
+
+### Getting Started
+- **[Initialization Guide](docs/INITIALIZATION_GUIDE.md)** - Database setup and sample data loading
+- **[Quick Start Guide](docs/QUICKSTART.md)** - Quick setup with automated scripts
+- **[Windows Setup](docs/WINDOWS_SETUP.md)** - Complete Windows setup guide
+
+### Deployment & Configuration
+- **[Deployment Guide](docs/DEPLOYMENT_GUIDE.md)** - 🚀 Production deployment with PostgreSQL
+- **[Migrations Guide](docs/MIGRATIONS_GUIDE.md)** - Database migrations with Alembic
+- **[Alembic Quick Start](docs/ALEMBIC_QUICKSTART.md)** - Quick Alembic reference
+
+### Features
+- **[User Content Management](docs/USER_CONTENT_MANAGEMENT.md)** - Create and manage your own questions and exams
+- **[Import Guide](docs/IMPORT_GUIDE.md)** - JSON exam import instructions (admin only)
+- **[Random Exam Feature](docs/RANDOM_EXAM_FEATURE.md)** - Random exam generator
+- **[i18n Guide](docs/I18N_GUIDE.md)** - Internationalization (EN/ES)
+
+### Development
+- **[Testing Guide](docs/TESTING_GUIDE.md)** - Running and writing tests
 
 ## Contributing
 

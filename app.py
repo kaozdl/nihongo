@@ -1,5 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request, flash, send_file
+from flask import Flask, render_template, redirect, url_for, request, flash, send_file, session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from flask_babel import Babel, gettext, get_locale
 from models import db
 from models.user import User
 from models.exam import Exam
@@ -8,8 +9,9 @@ from models.test_answer import TestAnswer
 from models.exam_section import ExamSection
 from models.section_question import SectionQuestion
 from models.section import Section
-from models.question import Question
+from models.utils import get_explanation
 from admin import init_admin
+from config import get_config
 from datetime import datetime
 import os
 import json
@@ -17,16 +19,45 @@ import random
 from io import BytesIO
 
 
+# Create Flask app with configuration
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///jlpt.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+config_name = os.environ.get('FLASK_ENV', 'development')
+config_class = get_config(config_name)
+app.config.from_object(config_class)
+
+# Initialize app with configuration (validates production config)
+config_class.init_app(app)
+
+# Log current environment
+print(f"🚀 Starting application in {config_name.upper()} mode")
+print(f"📊 Database: {app.config['SQLALCHEMY_DATABASE_URI'][:50]}...")
 
 # Initialize extensions
 db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
+
+# Initialize Babel
+babel = Babel(app)
+
+def get_locale_func():
+    # Check if user manually selected language
+    if 'language' in session:
+        return session['language']
+    # Try to get from browser
+    return request.accept_languages.best_match(['en', 'es']) or 'en'
+
+babel.init_app(app, locale_selector=get_locale_func)
+
+# Make Babel functions available in templates
+@app.context_processor
+def inject_babel():
+    """Inject Babel functions into template context."""
+    return dict(
+        get_locale=lambda: str(get_locale()),
+        _=gettext
+    )
 
 # Initialize admin
 init_admin(app, db)
@@ -42,6 +73,15 @@ def index():
     if current_user.is_authenticated:
         return redirect(url_for('exams'))
     return redirect(url_for('login'))
+
+
+@app.route('/language/<lang>')
+def set_language(lang):
+    """Set the user's language preference"""
+    if lang in ['en', 'es']:
+        session['language'] = lang
+        flash(gettext('Language changed successfully'), 'success')
+    return redirect(request.referrer or url_for('index'))
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -71,8 +111,10 @@ def register():
         db.session.add(user)
         db.session.commit()
         
-        flash('Registration successful! Please log in.', 'success')
-        return redirect(url_for('login'))
+        # Automatically log in the user after registration
+        login_user(user)
+        flash('Registration successful! Welcome!', 'success')
+        return redirect(url_for('exams'))
     
     return render_template('register.html')
 
@@ -110,27 +152,52 @@ def logout():
 @login_required
 def exams():
     all_exams = Exam.query.all()
-    user_tests = Test.query.filter_by(user_id=current_user.id).all()
     
-    # Create a dict of exam_id -> test for quick lookup
-    test_dict = {test.exam_id: test for test in user_tests}
+    # For each exam, get the most recent incomplete test OR the most recent completed test
+    test_dict = {}
+    for exam in all_exams:
+        # First, check for incomplete tests (highest priority)
+        incomplete_test = Test.query.filter_by(
+            user_id=current_user.id,
+            exam_id=exam.id,
+            completed_at=None
+        ).order_by(Test.started_at.desc()).first()
+        
+        if incomplete_test:
+            test_dict[exam.id] = incomplete_test
+        else:
+            # Get most recent completed test
+            completed_test = Test.query.filter_by(
+                user_id=current_user.id,
+                exam_id=exam.id
+            ).filter(
+                Test.completed_at.isnot(None)
+            ).order_by(Test.completed_at.desc()).first()
+            
+            if completed_test:
+                test_dict[exam.id] = completed_test
     
     # Get available sections for random exam generation
+    # Aggregate sections by name to avoid duplicates
     all_sections = Section.query.all()
-    section_question_counts = {}
+    section_aggregated = {}
+    
     for section in all_sections:
         count = SectionQuestion.query.filter_by(section_id=section.id).count()
         if count > 0:
-            section_question_counts[section.id] = {
-                'name': section.name,
-                'count': count
-            }
+            if section.name not in section_aggregated:
+                section_aggregated[section.name] = {
+                    'name': section.name,
+                    'count': 0,
+                    'section_ids': []
+                }
+            section_aggregated[section.name]['count'] += count
+            section_aggregated[section.name]['section_ids'].append(section.id)
     
     return render_template('exams.html', 
                          exams=all_exams, 
                          test_dict=test_dict,
-                         sections=all_sections,
-                         section_counts=section_question_counts)
+                         section_aggregated=section_aggregated)
 
 
 @app.route('/exam/random/create', methods=['POST'])
@@ -138,17 +205,17 @@ def exams():
 def create_random_exam():
     """Create a random exam from selected sections"""
     try:
-        # Get form data
+        # Get form data - now organized by section name instead of section ID
         section_configs = {}
         for key in request.form:
             if key.startswith('section_'):
-                section_id = int(key.split('_')[1])
+                section_name = key.replace('section_', '').replace('_', ' ')
                 num_questions = int(request.form.get(key, 0))
                 if num_questions > 0:
-                    section_configs[section_id] = num_questions
+                    section_configs[section_name] = num_questions
         
         if not section_configs:
-            flash('Please select at least one section with questions', 'warning')
+            flash(gettext('Please select at least one section with questions'), 'warning')
             return redirect(url_for('exams'))
         
         # Create the exam
@@ -157,18 +224,27 @@ def create_random_exam():
         db.session.add(exam)
         db.session.flush()
         
-        # For each selected section, create a new section with random questions
-        for order, (section_id, num_questions) in enumerate(section_configs.items(), start=1):
-            original_section = Section.query.get(section_id)
-            if not original_section:
+        # For each selected section type, aggregate questions from all sections with that name
+        for order, (section_name, num_questions) in enumerate(section_configs.items(), start=1):
+            # Get all sections with this name
+            sections_with_name = Section.query.filter_by(name=section_name).all()
+            
+            if not sections_with_name:
                 continue
             
-            # Get all available questions for this section
-            section_questions = SectionQuestion.query.filter_by(
-                section_id=section_id
-            ).all()
+            # Collect all available questions from all sections with this name
+            available_question_ids = []
+            for section in sections_with_name:
+                section_questions = SectionQuestion.query.filter_by(
+                    section_id=section.id
+                ).all()
+                available_question_ids.extend([sq.question_id for sq in section_questions])
             
-            available_question_ids = [sq.question_id for sq in section_questions]
+            # Remove duplicates (in case same question is in multiple sections)
+            available_question_ids = list(set(available_question_ids))
+            
+            if not available_question_ids:
+                continue
             
             # Randomly select questions
             num_to_select = min(num_questions, len(available_question_ids))
@@ -176,7 +252,7 @@ def create_random_exam():
             
             # Create a new section for this random exam
             new_section = Section(
-                name=f"{original_section.name} (Random)",
+                name=section_name,
                 number_of_questions=num_to_select
             )
             db.session.add(new_section)
@@ -206,12 +282,12 @@ def create_random_exam():
         db.session.add(test)
         db.session.commit()
         
-        flash(f'Random exam created successfully with {sum(section_configs.values())} questions!', 'success')
+        flash(gettext('Random exam created successfully with %(count)d questions!', count=sum(section_configs.values())), 'success')
         return redirect(url_for('take_exam', test_id=test.id))
         
     except Exception as e:
         db.session.rollback()
-        flash(f'Error creating random exam: {str(e)}', 'danger')
+        flash(gettext('Error creating random exam: %(error)s', error=str(e)), 'danger')
         return redirect(url_for('exams'))
 
 
@@ -338,6 +414,60 @@ def submit_exam(test_id):
     return redirect(url_for('test_results', test_id=test_id))
 
 
+@app.route('/my-exams')
+@login_required
+def my_exam_history():
+    """Display user's exam history with all completed tests"""
+    # Get all user's tests, ordered by completion date (most recent first)
+    completed_tests = Test.query.filter_by(
+        user_id=current_user.id
+    ).filter(
+        Test.completed_at.isnot(None)
+    ).order_by(Test.completed_at.desc()).all()
+    
+    # Calculate scores for each test
+    test_history = []
+    for test in completed_tests:
+        # Get all questions for this exam
+        exam_sections = ExamSection.query.filter_by(exam_id=test.exam_id).order_by(ExamSection.order).all()
+        
+        questions = []
+        for exam_section in exam_sections:
+            section_questions = SectionQuestion.query.filter_by(
+                section_id=exam_section.section_id
+            ).order_by(SectionQuestion.order).all()
+            
+            for sq in section_questions:
+                questions.append(sq.question)
+        
+        total_questions = len(questions)
+        
+        # Get user's answers
+        user_answers = TestAnswer.query.filter_by(test_id=test.id).all()
+        answer_dict = {ans.question_id: ans.selected_answer for ans in user_answers}
+        
+        # Calculate correct answers by comparing with question's correct_answer
+        correct = 0
+        for question in questions:
+            user_answer = answer_dict.get(question.id)
+            if user_answer == question.correct_answer:
+                correct += 1
+        
+        percentage = (correct / total_questions * 100) if total_questions > 0 else 0
+        
+        test_history.append({
+            'test': test,
+            'exam_name': test.exam.name,
+            'total_questions': total_questions,
+            'correct': correct,
+            'percentage': percentage,
+            'started_at': test.started_at,
+            'completed_at': test.completed_at
+        })
+    
+    return render_template('exam_history.html', test_history=test_history)
+
+
 @app.route('/test/<int:test_id>/results')
 @login_required
 def test_results(test_id):
@@ -382,7 +512,8 @@ def test_results(test_id):
         results.append({
             'question': question,
             'user_answer': user_answer,
-            'is_correct': is_correct
+            'is_correct': is_correct,
+            'explanation': get_explanation(question.explanation)
         })
     
     percentage = (correct / total * 100) if total > 0 else 0
@@ -397,9 +528,154 @@ def test_results(test_id):
 
 @app.cli.command()
 def init_db():
-    """Initialize the database."""
+    """Initialize the database and load sample exams."""
+    import json
+    import os
+    from import_exam import import_exam_from_json
+    
+    # Create all tables
     db.create_all()
-    print('Database initialized!')
+    print('✅ Database tables created!')
+    
+    # Create default user if it doesn't exist
+    default_email = 'default@nihongo.edu.uy'
+    default_user = User.query.filter_by(email=default_email).first()
+    
+    if not default_user:
+        default_user = User(email=default_email, is_admin=False)
+        default_user.set_password('nihongo123')
+        db.session.add(default_user)
+        db.session.commit()
+        print(f'✅ Default user created: {default_email} / nihongo123 (not admin)')
+    else:
+        print(f'ℹ️  Default user already exists: {default_email}')
+    
+    # Load exam JSON files
+    exam_files = [
+        'exam_easy.json',
+        'exam_medium.json',
+        'exam_hard.json'
+    ]
+    
+    for exam_file in exam_files:
+        file_path = os.path.join(os.path.dirname(__file__), exam_file)
+        
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    json_data = json.load(f)
+                
+                # Check if exam already exists
+                exam_name = json_data.get('name', '')
+                existing_exam = Exam.query.filter_by(name=exam_name).first()
+                
+                if not existing_exam:
+                    success, message, exam = import_exam_from_json(json_data, default_user.id)
+                    if success:
+                        print(f'✅ Loaded: {exam_file} - {exam_name}')
+                    else:
+                        print(f'❌ Error loading {exam_file}: {message}')
+                else:
+                    print(f'ℹ️  Exam already exists: {exam_name}')
+            except Exception as e:
+                print(f'❌ Error reading {exam_file}: {str(e)}')
+        else:
+            print(f'⚠️  File not found: {exam_file}')
+    
+    print('\n🎉 Database initialization complete!')
+
+
+@app.cli.command('create-admin')
+def create_admin():
+    """Create a new admin user interactively."""
+    import getpass
+    
+    print('Create Admin User')
+    print('=' * 50)
+    
+    # Get email
+    email = input('Enter admin email: ').strip()
+    if not email:
+        print('❌ Email is required')
+        return
+    
+    # Check if user already exists
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        print(f'❌ User with email {email} already exists')
+        
+        # Ask if they want to promote to admin
+        promote = input('Would you like to promote this user to admin? (y/n): ').strip().lower()
+        if promote == 'y':
+            existing_user.is_admin = True
+            db.session.commit()
+            print(f'✅ User {email} promoted to admin')
+        return
+    
+    # Get password
+    while True:
+        password = getpass.getpass('Enter password: ')
+        password_confirm = getpass.getpass('Confirm password: ')
+        
+        if password != password_confirm:
+            print('❌ Passwords do not match. Try again.')
+            continue
+        
+        if len(password) < 6:
+            print('❌ Password must be at least 6 characters. Try again.')
+            continue
+        
+        break
+    
+    # Create admin user
+    admin_user = User(email=email, is_admin=True)
+    admin_user.set_password(password)
+    db.session.add(admin_user)
+    db.session.commit()
+    
+    print('\n✅ Admin user created successfully!')
+    print(f'   Email: {email}')
+    print('   Admin: Yes')
+
+
+@app.cli.command()
+def db_migrate():
+    """Generate a new migration."""
+    import subprocess
+    result = subprocess.run(['alembic', 'revision', '--autogenerate'], capture_output=True, text=True)
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr)
+
+
+@app.cli.command()
+def db_upgrade():
+    """Apply all pending migrations."""
+    import subprocess
+    result = subprocess.run(['alembic', 'upgrade', 'head'], capture_output=True, text=True)
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr)
+
+
+@app.cli.command()
+def db_downgrade():
+    """Rollback the last migration."""
+    import subprocess
+    result = subprocess.run(['alembic', 'downgrade', '-1'], capture_output=True, text=True)
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr)
+
+
+@app.cli.command()
+def db_history():
+    """Show migration history."""
+    import subprocess
+    result = subprocess.run(['alembic', 'history'], capture_output=True, text=True)
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr)
 
 
 @app.route('/download-example-json')
@@ -486,23 +762,6 @@ def download_example_json():
         download_name='exam_example.json',
         mimetype='application/json'
     )
-
-
-@app.cli.command()
-def create_admin():
-    """Create an admin user."""
-    email = input('Enter admin email: ')
-    password = input('Enter admin password: ')
-    
-    if User.query.filter_by(email=email).first():
-        print('User already exists!')
-        return
-    
-    user = User(email=email)
-    user.set_password(password)
-    db.session.add(user)
-    db.session.commit()
-    print(f'Admin user {email} created!')
 
 
 if __name__ == '__main__':

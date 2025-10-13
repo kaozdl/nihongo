@@ -1,5 +1,5 @@
 {
-  "name": "JLPT N5 Practice Test - Easy",
+  "name": "JLPT N5 Practice Test - Easy (Basic)",
   "sections": [
     {
       "name": "Grammar",
@@ -11,7 +11,10 @@
           "answer_3": "を",
           "answer_4": "が",
           "correct_answer": 1,
-          "explanation": "Time particle に is used with specific times. 七時に means 'at 7 o'clock'."
+          "explanation": {
+            "EN": "Time particle に is used with specific times. 七時に means 'at 7 o'clock'.",
+            "ES": "La partícula de tiempo に se usa con tiempos específicos. 七時に significa 'a las 7 en punto'."
+          }
         },
         {
           "question_text": "きのう えいが___みました。",
@@ -20,7 +23,10 @@
           "answer_3": "を",
           "answer_4": "が",
           "correct_answer": 3,
-          "explanation": "The particle を marks the direct object. えいがを means 'a movie (object)'."
+          "explanation": {
+            "EN": "The particle を marks the direct object. えいがを means 'a movie (object)'.",
+            "ES": "La partícula を marca el objeto directo. えいがを significa 'una película (objeto)'."
+          }
         },
         {
           "question_text": "ここ___たばこを すわないで ください。",
@@ -29,7 +35,10 @@
           "answer_3": "を",
           "answer_4": "が",
           "correct_answer": 2,
-          "explanation": "The particle で indicates location of action. ここで means 'here (at this place)'."
+          "explanation": {
+            "EN": "The particle で indicates location of action. ここで means 'here (at this place)'.",
+            "ES": "La partícula で indica el lugar de la acción. ここで significa 'aquí (en este lugar)'."
+          }
         },
         {
           "question_text": "これは 日本語___本です。",
@@ -38,7 +47,10 @@
           "answer_3": "に",
           "answer_4": "が",
           "correct_answer": 1,
-          "explanation": "The particle の connects nouns. 日本語の本 means 'Japanese language book'."
+          "explanation": {
+            "EN": "The particle の connects nouns. 日本語の本 means 'Japanese language book'.",
+            "ES": "La partícula の conecta sustantivos. 日本語の本 significa 'libro de japonés'."
+          }
         },
         {
           "question_text": "わたしは バス___がっこうへ いきます。",
@@ -47,7 +59,10 @@
           "answer_3": "を",
           "answer_4": "が",
           "correct_answer": 2,
-          "explanation": "The particle で indicates means of transportation. バスで means 'by bus'."
+          "explanation": {
+            "EN": "The particle で indicates means of transportation. バスで means 'by bus'.",
+            "ES": "La partícula で indica el medio de transporte. バスで significa 'en autobús'."
+          }
         }
       ]
     },
@@ -61,7 +76,10 @@
           "answer_3": "しごと",
           "answer_4": "かいもの",
           "correct_answer": 1,
-          "explanation": "べんきょう (benkyou) means 'study'. You study before a test."
+          "explanation": {
+            "EN": "べんきょう (benkyou) means 'study'. You study before a test.",
+            "ES": "べんきょう (benkyou) significa 'estudiar'. Estudias antes de un examen."
+          }
         },
         {
           "question_text": "まいあさ パンと___を たべます。",
@@ -70,7 +88,10 @@
           "answer_3": "ほん",
           "answer_4": "いす",
           "correct_answer": 1,
-          "explanation": "たまご (tamago) means 'egg'. Bread and eggs are common breakfast foods."
+          "explanation": {
+            "EN": "たまご (tamago) means 'egg'. Bread and eggs are common breakfast foods.",
+            "ES": "たまご (tamago) significa 'huevo'. Pan y huevos son alimentos comunes para el desayuno."
+          }
         },
         {
           "question_text": "へやが___です。まどを あけて ください。",
@@ -79,7 +100,10 @@
           "answer_3": "あたらしい",
           "answer_4": "たかい",
           "correct_answer": 2,
-          "explanation": "あつい (atsui) means 'hot'. Opening windows when it's hot makes sense."
+          "explanation": {
+            "EN": "あつい (atsui) means 'hot'. Opening windows when it's hot makes sense.",
+            "ES": "あつい (atsui) significa 'caliente'. Abrir las ventanas cuando hace calor tiene sentido."
+          }
         },
         {
           "question_text": "きょうは___です。うちに います。",
@@ -88,7 +112,10 @@
           "answer_3": "あめ",
           "answer_4": "さむい",
           "correct_answer": 2,
-          "explanation": "やすみ (yasumi) means 'day off/holiday'. You stay home on days off."
+          "explanation": {
+            "EN": "やすみ (yasumi) means 'day off/holiday'. You stay home on days off.",
+            "ES": "やすみ (yasumi) significa 'día libre/vacaciones'. Te quedas en casa los días libres."
+          }
         },
         {
           "question_text": "この かばんは___です。かいません。",
@@ -97,7 +124,138 @@
           "answer_3": "おおきい",
           "answer_4": "あかるい",
           "correct_answer": 2,
-          "explanation": "たかい (takai) means 'expensive'. You don't buy things that are too expensive."
+          "explanation": {
+            "EN": "たかい (takai) means 'expensive'. You don't buy things that are too expensive.",
+            "ES": "たかい (takai) significa 'caro'. No compras cosas que son demasiado caras."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reading Comprehension",
+      "questions": [
+        {
+          "question_text": "たなかさんは まいにち 六時に おきます。朝ごはんを たべます。それから、七時に がっこうへ いきます。\n\nQuestion: たなかさんは なん時に がっこうへ いきますか。",
+          "answer_1": "六時",
+          "answer_2": "七時",
+          "answer_3": "八時",
+          "answer_4": "九時",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "The text says '七時にがっこうへいきます' which means 'goes to school at 7 o'clock'.",
+            "ES": "El texto dice '七時にがっこうへいきます' que significa 'va a la escuela a las 7 en punto'."
+          }
+        },
+        {
+          "question_text": "きのう デパートへ いきました。くつと かばんを かいました。とても たのしかったです。\n\nQuestion: なにを かいましたか。",
+          "answer_1": "くつと ふく",
+          "answer_2": "かばんと ふく",
+          "answer_3": "くつと かばん",
+          "answer_4": "くつだけ",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "The text says 'くつとかばんをかいました' which means 'bought shoes and a bag'.",
+            "ES": "El texto dice 'くつとかばんをかいました' que significa 'compré zapatos y un bolso'."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sentence Ordering",
+      "questions": [
+        {
+          "question_text": "これ ___ ___ _X_ ___。",
+          "answer_1": "パン",
+          "answer_2": "メロン",
+          "answer_3": "は",
+          "answer_4": "ですか",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "The sentence is 'これはパンですか' (Is this bread?). Order: は → パン → ですか. X position is パン.",
+            "ES": "La oración es 'これはパンですか' (¿Es esto pan?). Orden: は → パン → ですか. La posición X es パン."
+          }
+        },
+        {
+          "question_text": "わたしは ___ ___ _X_ ___。",
+          "answer_1": "を",
+          "answer_2": "みます",
+          "answer_3": "テレビ",
+          "answer_4": "まいにち",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "The sentence is 'わたしはまいにちテレビをみます' (I watch TV every day). Order: まいにち → テレビ → を → みます. X position is テレビ.",
+            "ES": "La oración es 'わたしはまいにちテレビをみます' (Veo televisión todos los días). Orden: まいにち → テレビ → を → みます. La posición X es テレビ."
+          }
+        },
+        {
+          "question_text": "きのう ___ ___ _X_ ___。",
+          "answer_1": "えいが",
+          "answer_2": "を",
+          "answer_3": "ともだち",
+          "answer_4": "みました",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "The sentence is 'きのうともだちとえいがをみました' (Yesterday I watched a movie with a friend). Order: ともだち → と → えいが → を → みました. X position is えいが.",
+            "ES": "La oración es 'きのうともだちとえいがをみました' (Ayer vi una película con un amigo). Orden: ともだち → と → えいが → を → みました. La posición X es えいが."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kanji Reading",
+      "questions": [
+        {
+          "question_text": "わたしは【日】本人です。\n\nQuestion: 【日】の読み方は？",
+          "answer_1": "に",
+          "answer_2": "にち",
+          "answer_3": "ひ",
+          "answer_4": "か",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "In 日本 (Japan), 日 is read as 'にち' (nichi). This is the on-yomi reading.",
+            "ES": "En 日本 (Japón), 日 se lee como 'にち' (nichi). Esta es la lectura on-yomi."
+          }
+        },
+        {
+          "question_text": "きのう【本】を よみました。\n\nQuestion: 【本】の読み方は？",
+          "answer_1": "ほん",
+          "answer_2": "もと",
+          "answer_3": "ぽん",
+          "answer_4": "ぼん",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "本 meaning 'book' is read as 'ほん' (hon). This is the on-yomi reading.",
+            "ES": "本 que significa 'libro' se lee como 'ほん' (hon). Esta es la lectura on-yomi."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kanji Writing",
+      "questions": [
+        {
+          "question_text": "わたしは まいにち【がっこう】へ いきます。\n\nQuestion: 【がっこう】の漢字は？",
+          "answer_1": "学校",
+          "answer_2": "学交",
+          "answer_3": "字校",
+          "answer_4": "字交",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "がっこう (school) is written as 学校. 学 means 'study' and 校 means 'school'.",
+            "ES": "がっこう (escuela) se escribe como 学校. 学 significa 'estudio' y 校 significa 'escuela'."
+          }
+        },
+        {
+          "question_text": "【やま】へ のぼりました。\n\nQuestion: 【やま】の漢字は？",
+          "answer_1": "川",
+          "answer_2": "山",
+          "answer_3": "林",
+          "answer_4": "木",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "やま (mountain) is written as 山. The kanji itself resembles a mountain with three peaks.",
+            "ES": "やま (montaña) se escribe como 山. El kanji mismo se parece a una montaña con tres picos."
+          }
         }
       ]
     }

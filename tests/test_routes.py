@@ -138,7 +138,7 @@ def test_start_exam(auth_client, app, test_user, test_exam):
 def test_start_exam_already_started(auth_client, app, test_user, test_exam):
     """Test starting an exam that's already in progress"""
     # Start exam first time
-    response1 = auth_client.post(f'/exam/{test_exam}/start', follow_redirects=True)
+    auth_client.post(f'/exam/{test_exam}/start', follow_redirects=True)
     
     # Try to start again
     response2 = auth_client.post(f'/exam/{test_exam}/start', follow_redirects=False)

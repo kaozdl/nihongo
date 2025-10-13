@@ -16,6 +16,7 @@ from models.section import Section
 from models.section_question import SectionQuestion
 from models.exam import Exam
 from models.exam_section import ExamSection
+from models.utils import set_explanation
 
 
 def create_sample_data():
@@ -38,7 +39,7 @@ def create_sample_data():
         print("\nCreating sample questions...")
         questions = []
         
-        # Vocabulary questions
+        # Vocabulary questions (with multi-language explanations)
         vocab_questions = [
             {
                 'question_text': '彼は___な性格です。',
@@ -47,7 +48,10 @@ def create_sample_data():
                 'answer_3': 'まじめの',
                 'answer_4': 'まじめで',
                 'correct_answer': 1,
-                'explanation': '「まじめな性格」is the correct form. な-adjectives use な before nouns.'
+                'explanation': set_explanation(
+                    '「まじめな性格」is the correct form. な-adjectives use な before nouns.',
+                    '「まじめな性格」es la forma correcta. Los adjetivos な usan な antes de sustantivos.'
+                )
             },
             {
                 'question_text': '毎日___勉強します。',
@@ -56,7 +60,10 @@ def create_sample_data():
                 'answer_3': 'いっしょうけんめいで',
                 'answer_4': 'いっしょうけんめいな',
                 'correct_answer': 2,
-                'explanation': 'いっしょうけんめいに is an adverb modifying the verb 勉強します.'
+                'explanation': set_explanation(
+                    'いっしょうけんめいに is an adverb modifying the verb 勉強します.',
+                    'いっしょうけんめいに es un adverbio que modifica el verbo 勉強します.'
+                )
             },
         ]
         

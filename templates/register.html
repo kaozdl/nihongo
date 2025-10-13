@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Register - JLPT Test Manager{% endblock %}
+{% block title %}{{ _('Register') }} - JLPT Test Manager{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
@@ -8,31 +8,31 @@
         <div class="card mt-5">
             <div class="card-body p-5">
                 <h2 class="text-center mb-4">
-                    <i class="bi bi-person-plus"></i> Register
+                    <i class="bi bi-person-plus"></i> {{ _('Register') }}
                 </h2>
                 <form method="POST" action="{{ url_for('register') }}">
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">{{ _('Email') }}</label>
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label">{{ _('Password') }}</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password_confirm" class="form-label">Confirm Password</label>
+                        <label for="password_confirm" class="form-label">{{ _('Confirm Password') }}</label>
                         <input type="password" class="form-control" id="password_confirm" name="password_confirm" required>
                     </div>
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary btn-lg">
-                            <i class="bi bi-person-plus"></i> Register
+                            <i class="bi bi-person-plus"></i> {{ _('Register') }}
                         </button>
                     </div>
                 </form>
                 <hr class="my-4">
                 <p class="text-center text-muted">
-                    Already have an account? 
-                    <a href="{{ url_for('login') }}">Login here</a>
+                    {{ _('Already have an account?') }}
+                    <a href="{{ url_for('login') }}">{{ _('Login here') }}</a>
                 </p>
             </div>
         </div>

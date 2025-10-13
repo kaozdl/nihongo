@@ -67,7 +67,7 @@
             </div>
             <h2>{{ test.exam.name }}</h2>
             <p class="lead mb-0">
-                You got {{ correct }} out of {{ total }} questions correct
+                {{ _('You got %(correct)s out of %(total)s questions correct', correct=correct, total=total) }}
             </p>
         </div>
 
@@ -75,14 +75,14 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h5>Test Details</h5>
+                        <h5>{{ _('Test Details') }}</h5>
                         <p class="text-muted mb-0">
-                            <i class="bi bi-calendar"></i> Started: {{ test.started_at.strftime('%Y-%m-%d %H:%M') }}<br>
-                            <i class="bi bi-calendar-check"></i> Completed: {{ test.completed_at.strftime('%Y-%m-%d %H:%M') }}
+                            <i class="bi bi-calendar"></i> {{ _('Started') }}: {{ test.started_at.strftime('%Y-%m-%d %H:%M') }}<br>
+                            <i class="bi bi-calendar-check"></i> {{ _('Completed') }}: {{ test.completed_at.strftime('%Y-%m-%d %H:%M') }}
                         </p>
                     </div>
                     <a href="{{ url_for('exams') }}" class="btn btn-primary">
-                        <i class="bi bi-arrow-left"></i> Back to Exams
+                        <i class="bi bi-arrow-left"></i> {{ _('Back to Exams') }}
                     </a>
                 </div>
             </div>
@@ -90,7 +90,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h4 class="mb-4">Answer Review</h4>
+                <h4 class="mb-4">{{ _('Answer Review') }}</h4>
                 
                 {% for result in results %}
                 <div class="result-item {% if result.is_correct %}correct{% else %}incorrect{% endif %}">
@@ -100,14 +100,14 @@
                         {% else %}
                             <i class="bi bi-x-circle-fill text-danger"></i>
                         {% endif %}
-                        Question {{ loop.index }}
+                        {{ _('Question') }} {{ loop.index }}
                     </h5>
                     
                     {% if result.question.question_image %}
                     <div class="mb-3">
                         <img src="{{ result.question.question_image }}" 
                              class="img-fluid" 
-                             alt="Question image"
+                             alt="{{ _('Question image') }}"
                              style="max-height: 200px;">
                     </div>
                     {% endif %}
@@ -124,25 +124,25 @@
                     
                     <div class="mt-2">
                         <p class="mb-1">
-                            <span class="answer-label user">Your Answer</span>
+                            <span class="answer-label user">{{ _('Your Answer') }}</span>
                             {% if result.user_answer %}
                                 {{ result.question['answer_' + result.user_answer|string] }}
                             {% else %}
-                                <em>Not answered</em>
+                                <em>{{ _('Not answered') }}</em>
                             {% endif %}
                         </p>
                         
                         {% if not result.is_correct %}
                         <p class="mb-1">
-                            <span class="answer-label correct">Correct Answer</span>
+                            <span class="answer-label correct">{{ _('Correct Answer') }}</span>
                             {{ result.question['answer_' + result.question.correct_answer|string] }}
                         </p>
                         {% endif %}
                         
-                        {% if result.question.explanation %}
+                        {% if result.explanation %}
                         <div class="alert alert-info mt-3">
-                            <strong><i class="bi bi-lightbulb"></i> Explanation:</strong><br>
-                            {{ result.question.explanation }}
+                            <strong><i class="bi bi-lightbulb"></i> {{ _('Explanation') }}:</strong><br>
+                            {{ result.explanation }}
                         </div>
                         {% endif %}
                     </div>

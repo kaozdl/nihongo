@@ -46,7 +46,7 @@
             <div class="card-body">
                 <h2>{{ test.exam.name }}</h2>
                 <p class="text-muted">
-                    <i class="bi bi-calendar"></i> Started: {{ test.started_at.strftime('%Y-%m-%d %H:%M') }}
+                    <i class="bi bi-calendar"></i> {{ _('Started') }}: {{ test.started_at.strftime('%Y-%m-%d %H:%M') }}
                 </p>
             </div>
         </div>
@@ -63,13 +63,13 @@
 
                 <div class="card question-card">
                     <div class="card-body">
-                        <h5 class="card-title">Question {{ loop.index }}</h5>
+                        <h5 class="card-title">{{ _('Question') }} {{ loop.index }}</h5>
                         
                         {% if item.question.question_image %}
                         <div class="mb-3">
                             <img src="{{ item.question.question_image }}" 
                                  class="img-fluid" 
-                                 alt="Question image"
+                                 alt="{{ _('Question image') }}"
                                  style="max-height: 300px;">
                         </div>
                         {% endif %}
@@ -78,7 +78,7 @@
                         <div class="audio-player mb-3">
                             <audio controls class="w-100">
                                 <source src="{{ item.question.question_audio }}" type="audio/mpeg">
-                                Your browser does not support the audio element.
+                                {{ _('Your browser does not support the audio element.') }}
                             </audio>
                         </div>
                         {% endif %}
@@ -109,8 +109,8 @@
                     <button type="button" 
                             class="btn btn-success btn-lg" 
                             id="submitBtn"
-                            onclick="if(confirm('Are you sure you want to submit? You cannot change your answers after submission.')) { document.getElementById('submitForm').submit(); }">
-                        <i class="bi bi-check-circle"></i> Submit Exam
+                            onclick="if(confirm('{{ _("Are you sure you want to submit? You cannot change your answers after submission.") }}')) { document.getElementById('submitForm').submit(); }">
+                        <i class="bi bi-check-circle"></i> {{ _('Submit Exam') }}
                     </button>
                 </div>
             </div>
@@ -148,12 +148,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (!data.success) {
-                    alert('Error saving answer. Please try again.');
+                    alert('{{ _("Error saving answer. Please try again.") }}');
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Error saving answer. Please try again.');
+                alert('{{ _("Error saving answer. Please try again.") }}');
             });
         });
     });

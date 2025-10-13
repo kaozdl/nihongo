@@ -1,80 +1,80 @@
 {
-  "name": "JLPT N2 Practice Test - Hard",
+  "name": "JLPT N5 Practice Test - Hard (Challenge)",
   "sections": [
     {
       "name": "Grammar",
       "questions": [
         {
-          "question_text": "彼の話は 面白いには 面白いが、___。",
-          "answer_1": "信じられない",
-          "answer_2": "信じやすい",
-          "answer_3": "信じている",
-          "answer_4": "信じた",
-          "correct_answer": 1,
-          "explanation": "～には～が pattern expresses 'it is X, but...'. The contrast suggests 信じられない (hard to believe)."
+          "question_text": "A:「いっしょに えいがを みませんか。」 B:「すみません。きょうは ちょっと___。」",
+          "answer_1": "いいです",
+          "answer_2": "だめです",
+          "answer_3": "つごうが わるいです",
+          "answer_4": "けっこうです",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "つごうがわるい means 'inconvenient/have other plans'. Used politely to decline invitations.",
+            "ES": "つごうがわるい significa 'inconveniente/tener otros planes'. Se usa cortésmente para declinar invitaciones."
+          }
         },
         {
-          "question_text": "最近、彼とは___。",
-          "answer_1": "会いにくくなった",
-          "answer_2": "会いっぱなしだ",
-          "answer_3": "会いがちだ",
-          "answer_4": "会わなくなった",
+          "question_text": "この りんごは___あの りんご、どちらが おいしいですか。",
+          "answer_1": "と",
+          "answer_2": "や",
+          "answer_3": "か",
+          "answer_4": "が",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "と is used to connect two items being compared. 'This apple and that apple, which is tastier?'",
+            "ES": "と se usa para conectar dos elementos que se comparan. 'Esta manzana y esa manzana, ¿cuál es más sabrosa?'"
+          }
+        },
+        {
+          "question_text": "まいあさ ジョギング___あと、シャワーを あびます。",
+          "answer_1": "の",
+          "answer_2": "に",
+          "answer_3": "を",
+          "answer_4": "で",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "～のあと means 'after ~'. The particle の connects the verb stem to あと.",
+            "ES": "～のあと significa 'después de ~'. La partícula の conecta la raíz del verbo con あと."
+          }
+        },
+        {
+          "question_text": "この かばんは___です。もっと やすいのが ほしいです。",
+          "answer_1": "たかすぎ",
+          "answer_2": "たかくて",
+          "answer_3": "たかいから",
+          "answer_4": "たかければ",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "～すぎ means 'too ~'. たかすぎ means 'too expensive'.",
+            "ES": "～すぎ significa 'demasiado ~'. たかすぎ significa 'demasiado caro'."
+          }
+        },
+        {
+          "question_text": "あしたは しけんですから、こんばんは___ください。",
+          "answer_1": "ねないで",
+          "answer_2": "ねなくて",
+          "answer_3": "ねません",
+          "answer_4": "ねなければ",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "～ないでください means 'please don't ~'. ねないでください means 'please don't sleep' (stay up to study).",
+            "ES": "～ないでください significa 'por favor no ~'. ねないでください significa 'por favor no duermas' (quédate despierto para estudiar)."
+          }
+        },
+        {
+          "question_text": "A:「あしたの パーティーに きますか。」 B:「はい、___。」",
+          "answer_1": "いきたいです",
+          "answer_2": "きたいです",
+          "answer_3": "いきます",
+          "answer_4": "きます",
           "correct_answer": 4,
-          "explanation": "～なくなる means 'to stop doing' or 'to no longer do'. 会わなくなった means 'stopped meeting'."
-        },
-        {
-          "question_text": "忙しい___、この仕事は 引き受けます。",
-          "answer_1": "にしても",
-          "answer_2": "としても",
-          "answer_3": "からには",
-          "answer_4": "ばかりに",
-          "correct_answer": 2,
-          "explanation": "～としても means 'even if'. 忙しいとしても means 'even if busy'."
-        },
-        {
-          "question_text": "一生懸命 勉強した___、試験に 落ちてしまった。",
-          "answer_1": "ものの",
-          "answer_2": "うえに",
-          "answer_3": "おかげで",
-          "answer_4": "せいで",
-          "correct_answer": 1,
-          "explanation": "～ものの means 'although/even though'. Shows contrast between effort and result."
-        },
-        {
-          "question_text": "彼に___、この計画は 実現しなかっただろう。",
-          "answer_1": "よって",
-          "answer_2": "とって",
-          "answer_3": "よれば",
-          "answer_4": "よると",
-          "correct_answer": 1,
-          "explanation": "～によって means 'due to/thanks to'. 彼によって means 'thanks to him'."
-        },
-        {
-          "question_text": "子供___、この問題は 解けないだろう。",
-          "answer_1": "にとって",
-          "answer_2": "に対して",
-          "answer_3": "にしては",
-          "answer_4": "に限って",
-          "correct_answer": 3,
-          "explanation": "～にしては means 'for/considering'. 子供にしては means 'for a child/considering it's a child'."
-        },
-        {
-          "question_text": "彼は 努力した___、成功を 収めた。",
-          "answer_1": "すえに",
-          "answer_2": "ばかりに",
-          "answer_3": "わりに",
-          "answer_4": "ものの",
-          "correct_answer": 1,
-          "explanation": "～すえに means 'as a result of' or 'after'. 努力したすえに means 'as a result of effort'."
-        },
-        {
-          "question_text": "急な 用事___、パーティーを 欠席せざるを えなかった。",
-          "answer_1": "によって",
-          "answer_2": "にもかかわらず",
-          "answer_3": "のため",
-          "answer_4": "にしたがって",
-          "correct_answer": 3,
-          "explanation": "～のため means 'because of'. ～ざるをえない means 'have no choice but to'."
+          "explanation": {
+            "EN": "Use きます (come) not いきます (go) when accepting invitation to speaker's location. 'Yes, I'll come.'",
+            "ES": "Usa きます (venir) no いきます (ir) al aceptar invitación al lugar del hablante. 'Sí, vendré.'"
+          }
         }
       ]
     },
@@ -82,67 +82,252 @@
       "name": "Vocabulary",
       "questions": [
         {
-          "question_text": "この問題を___するには、もっと データが 必要だ。",
-          "answer_1": "解決",
-          "answer_2": "解散",
-          "answer_3": "解放",
-          "answer_4": "解答",
-          "correct_answer": 1,
-          "explanation": "解決 (kaiketsu) means 'solve/resolve'. 問題を解決する means 'solve a problem'."
+          "question_text": "___で まちます。ここは さむいです。",
+          "answer_1": "そと",
+          "answer_2": "なか",
+          "answer_3": "した",
+          "answer_4": "よこ",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "なか (inside) makes sense: 'Wait inside. It's cold here (outside).'",
+            "ES": "なか (dentro) tiene sentido: 'Espera adentro. Hace frío aquí (afuera).'"
+          }
         },
         {
-          "question_text": "彼の 意見は___がある。",
-          "answer_1": "もくてき",
-          "answer_2": "りゆう",
-          "answer_3": "いぎ",
-          "answer_4": "けっか",
+          "question_text": "かぜを ひきました。___、がっこうを やすみます。",
+          "answer_1": "それで",
+          "answer_2": "それに",
+          "answer_3": "それから",
+          "answer_4": "それとも",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "それで means 'therefore/so'. 'I caught a cold, so I'll rest from school.'",
+            "ES": "それで significa 'por lo tanto/así que'. 'Me resfrié, así que descansaré de la escuela.'"
+          }
+        },
+        {
+          "question_text": "この しごとは___です。もう やめたいです。",
+          "answer_1": "らく",
+          "answer_2": "たいへん",
+          "answer_3": "じょうず",
+          "answer_4": "げんき",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "たいへん means 'difficult/hard'. 'This job is hard. I want to quit.'",
+            "ES": "たいへん significa 'difícil/duro'. 'Este trabajo es duro. Quiero dejarlo.'"
+          }
+        },
+        {
+          "question_text": "おとうとは まだ___です。ようちえんに かよっています。",
+          "answer_1": "わかい",
+          "answer_2": "ちいさい",
+          "answer_3": "おおきい",
+          "answer_4": "ひくい",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "ちいさい (young/small) is appropriate for a little brother going to kindergarten.",
+            "ES": "ちいさい (joven/pequeño) es apropiado para un hermano menor que va al jardín de infantes."
+          }
+        },
+        {
+          "question_text": "この___は とても おもしろいです。まいにち よみます。",
+          "answer_1": "ざっし",
+          "answer_2": "しんぶん",
+          "answer_3": "てがみ",
+          "answer_4": "ノート",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "ざっし (magazine) makes sense: 'This magazine is very interesting. I read it every day.'",
+            "ES": "ざっし (revista) tiene sentido: 'Esta revista es muy interesante. La leo todos los días.'"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reading Comprehension",
+      "questions": [
+        {
+          "question_text": "きむらさんは スーパーで アルバイトを しています。ごご 五時から 十時まで はたらきます。いそがしいですが、たのしいです。げつようびと もくようびは やすみです。\n\nQuestion: きむらさんは いつ やすみますか。",
+          "answer_1": "月曜日だけ",
+          "answer_2": "木曜日だけ",
+          "answer_3": "月曜日と 木曜日",
+          "answer_4": "土曜日と 日曜日",
           "correct_answer": 3,
-          "explanation": "意義 (igi) means 'significance/meaning'. 意義がある means 'has significance'."
+          "explanation": {
+            "EN": "The text says 'げつようびともくようびはやすみです' (days off are Monday and Thursday).",
+            "ES": "El texto dice 'げつようびともくようびはやすみです' (los días libres son lunes y jueves)."
+          }
         },
         {
-          "question_text": "新しい 技術の___により、生産性が 向上した。",
-          "answer_1": "どうにゅう",
-          "answer_2": "はいし",
-          "answer_3": "ていし",
-          "answer_4": "ほぞん",
-          "correct_answer": 1,
-          "explanation": "導入 (dounyuu) means 'introduction/implementation'. 技術の導入 means 'technology introduction'."
-        },
-        {
-          "question_text": "彼女は いつも___な 態度を 取る。",
-          "answer_1": "しんちょう",
-          "answer_2": "てきとう",
-          "answer_3": "いいかげん",
-          "answer_4": "むせき",
-          "correct_answer": 1,
-          "explanation": "慎重 (shinchou) means 'careful/cautious'. 慎重な態度 means 'cautious attitude'."
-        },
-        {
-          "question_text": "この 薬は___が 強い。",
-          "answer_1": "ふくさよう",
-          "answer_2": "こうか",
-          "answer_3": "えいきょう",
-          "answer_4": "けいこう",
-          "correct_answer": 1,
-          "explanation": "副作用 (fukusayou) means 'side effect'. 副作用が強い means 'strong side effects'."
-        },
-        {
-          "question_text": "経済の___が 懸念されている。",
-          "answer_1": "はってん",
-          "answer_2": "こうじょう",
-          "answer_3": "ていたい",
-          "answer_4": "かくだい",
+          "question_text": "わたしの へやは せまいですが、きれいです。まどが ふたつ あります。つくえと ベッドが あります。ほんだなに ほんが たくさん あります。\n\nQuestion: この 人の へやに なにが ありますか。",
+          "answer_1": "つくえだけ",
+          "answer_2": "ベッドだけ",
+          "answer_3": "つくえと ベッドと ほんだな",
+          "answer_4": "テレビと パソコン",
           "correct_answer": 3,
-          "explanation": "停滞 (teitai) means 'stagnation'. 経済の停滞 means 'economic stagnation'."
+          "explanation": {
+            "EN": "The text mentions つくえ (desk), ベッド (bed), and ほんだな (bookshelf).",
+            "ES": "El texto menciona つくえ (escritorio), ベッド (cama), y ほんだな (estantería)."
+          }
         },
         {
-          "question_text": "彼の 発言は___を 呼んだ。",
-          "answer_1": "はんきょう",
-          "answer_2": "はんせい",
-          "answer_3": "はんたい",
-          "answer_4": "はんぱつ",
+          "question_text": "あしたは ともだちの たんじょうびです。プレゼントを かいました。ケーキも よやくしました。パーティーは ごご 六時からです。たのしみです。\n\nQuestion: なにを しましたか。",
+          "answer_1": "プレゼントを かいました",
+          "answer_2": "ケーキを つくりました",
+          "answer_3": "パーティーを しました",
+          "answer_4": "ともだちに あいました",
           "correct_answer": 1,
-          "explanation": "反響 (hankyou) means 'response/reaction'. 反響を呼ぶ means 'to cause a response'."
+          "explanation": {
+            "EN": "The text says 'プレゼントをかいました' (bought a present) and 'ケーキもよやくしました' (reserved a cake).",
+            "ES": "El texto dice 'プレゼントをかいました' (compré un regalo) y 'ケーキもよやくしました' (reservé un pastel)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sentence Ordering",
+      "questions": [
+        {
+          "question_text": "わたしは ___ ___ _X_ ___。",
+          "answer_1": "ほしい",
+          "answer_2": "が",
+          "answer_3": "あたらしい",
+          "answer_4": "パソコン",
+          "correct_answer": 4,
+          "explanation": {
+            "EN": "The sentence is 'わたしはあたらしいパソコンがほしい' (I want a new computer). Order: あたらしい → パソコン → が → ほしい. X position is パソコン.",
+            "ES": "La oración es 'わたしはあたらしいパソコンがほしい' (Quiero una computadora nueva). Orden: あたらしい → パソコン → が → ほしい. La posición X es パソコン."
+          }
+        },
+        {
+          "question_text": "きのう ___ ___ _X_ ___。",
+          "answer_1": "かった",
+          "answer_2": "を",
+          "answer_3": "本屋",
+          "answer_4": "で",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "The sentence is 'きのう本屋で本をかった' (Yesterday I bought a book at the bookstore). Order: 本屋 → で → 本 → を → かった. X position is 本屋.",
+            "ES": "La oración es 'きのう本屋で本をかった' (Ayer compré un libro en la librería). Orden: 本屋 → で → 本 → を → かった. La posición X es 本屋."
+          }
+        },
+        {
+          "question_text": "あした ___ ___ _X_ ___。",
+          "answer_1": "ともだち",
+          "answer_2": "と",
+          "answer_3": "映画",
+          "answer_4": "みます",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "The sentence is 'あしたともだちと映画をみます' (Tomorrow I'll watch a movie with a friend). Order: ともだち → と → 映画 → を → みます. X position is ともだち.",
+            "ES": "La oración es 'あしたともだちと映画をみます' (Mañana veré una película con un amigo). Orden: ともだち → と → 映画 → を → みます. La posición X es ともだち."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kanji Reading",
+      "questions": [
+        {
+          "question_text": "【火】曜日に テストが あります。\n\nQuestion: 【火】の読み方は？",
+          "answer_1": "ひ",
+          "answer_2": "か",
+          "answer_3": "ほ",
+          "answer_4": "こ",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "In 火曜日 (Tuesday), 火 is read as 'か' (ka). This is the on-yomi reading.",
+            "ES": "En 火曜日 (martes), 火 se lee como 'か' (ka). Esta es la lectura on-yomi."
+          }
+        },
+        {
+          "question_text": "きょうは【天】気が いいですね。\n\nQuestion: 【天】の読み方は？",
+          "answer_1": "てん",
+          "answer_2": "あめ",
+          "answer_3": "そら",
+          "answer_4": "くも",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "In 天気 (weather), 天 is read as 'てん' (ten). This is the on-yomi reading.",
+            "ES": "En 天気 (clima), 天 se lee como 'てん' (ten). Esta es la lectura on-yomi."
+          }
+        },
+        {
+          "question_text": "【右】に まがって ください。\n\nQuestion: 【右】の読み方は？",
+          "answer_1": "ひだり",
+          "answer_2": "みぎ",
+          "answer_3": "まえ",
+          "answer_4": "うしろ",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "右 meaning 'right (direction)' is read as 'みぎ' (migi). This is the kun-yomi reading.",
+            "ES": "右 que significa 'derecha (dirección)' se lee como 'みぎ' (migi). Esta es la lectura kun-yomi."
+          }
+        },
+        {
+          "question_text": "この【花】は きれいです。\n\nQuestion: 【花】の読み方は？",
+          "answer_1": "はな",
+          "answer_2": "か",
+          "answer_3": "ばな",
+          "answer_4": "け",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "When 花 stands alone meaning 'flower', it's read as 'はな' (hana). This is the kun-yomi reading.",
+            "ES": "Cuando 花 está solo significando 'flor', se lee como 'はな' (hana). Esta es la lectura kun-yomi."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kanji Writing",
+      "questions": [
+        {
+          "question_text": "【めを】とじて ください。\n\nQuestion: 【め】の漢字は？",
+          "answer_1": "目",
+          "answer_2": "耳",
+          "answer_3": "口",
+          "answer_4": "手",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "め (eye) is written as 目. The kanji resembles an eye turned sideways.",
+            "ES": "め (ojo) se escribe como 目. El kanji se parece a un ojo de lado."
+          }
+        },
+        {
+          "question_text": "【あめ】が ふって います。\n\nQuestion: 【あめ】の漢字は？",
+          "answer_1": "雪",
+          "answer_2": "雲",
+          "answer_3": "雨",
+          "answer_4": "電",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "あめ (rain) is written as 雨. The kanji shows raindrops falling.",
+            "ES": "あめ (lluvia) se escribe como 雨. El kanji muestra gotas de lluvia cayendo."
+          }
+        },
+        {
+          "question_text": "あの【おおきい】たてものは なんですか。\n\nQuestion: 【おおきい】の漢字は？",
+          "answer_1": "小さい",
+          "answer_2": "大きい",
+          "answer_3": "高い",
+          "answer_4": "低い",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "おおきい (big) is written as 大きい. 大 represents a person with arms spread wide, showing 'big'.",
+            "ES": "おおきい (grande) se escribe como 大きい. 大 representa a una persona con los brazos extendidos, mostrando 'grande'."
+          }
+        },
+        {
+          "question_text": "【なまえ】を かいて ください。\n\nQuestion: 【なまえ】の漢字は？",
+          "answer_1": "名前",
+          "answer_2": "名字",
+          "answer_3": "苗字",
+          "answer_4": "氏名",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "なまえ (name) is written as 名前. This is a basic N5 vocabulary word.",
+            "ES": "なまえ (nombre) se escribe como 名前. Esta es una palabra de vocabulario N5 básica."
+          }
         }
       ]
     }

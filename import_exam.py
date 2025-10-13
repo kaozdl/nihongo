@@ -114,6 +114,12 @@ def import_exam_from_json(json_data, user_id):
                     db.session.rollback()
                     return False, f"Question {question_order} in section '{section.name}' has invalid 'correct_answer' (must be 1, 2, 3, or 4)", None
                 
+                # Process explanation (convert dict to JSON string if needed)
+                explanation = question_data.get('explanation')
+                if isinstance(explanation, dict):
+                    # If explanation is a dict, convert to JSON string
+                    explanation = json.dumps(explanation, ensure_ascii=False)
+                
                 # Create question
                 question = Question(
                     question_text=question_data['question_text'],
@@ -124,7 +130,7 @@ def import_exam_from_json(json_data, user_id):
                     answer_3=question_data['answer_3'],
                     answer_4=question_data['answer_4'],
                     correct_answer=correct_answer,
-                    explanation=question_data.get('explanation'),
+                    explanation=explanation,
                     created_by=user_id
                 )
                 db.session.add(question)
