@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('My Content') }} - JLPT Test Manager{% endblock %}
+
+{% block content %}
+<div class="container content-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-header mb-4">
+                <h1 class="display-5">
+                    <i class="bi bi-pencil-square"></i> {{ _('My Content') }}
+                </h1>
+                <p class="lead text-muted">
+                    {{ _('Create and manage your own questions, sections, and exams') }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- My Questions Card -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 hover-lift">
+                <div class="card-body text-center">
+                    <div class="icon-circle bg-primary-gradient mb-3">
+                        <i class="bi bi-question-circle fs-1 text-white"></i>
+                    </div>
+                    <h4 class="card-title">{{ _('My Questions') }}</h4>
+                    <p class="card-text text-muted">
+                        {{ _('Create and edit your own questions with bilingual explanations') }}
+                    </p>
+                    <a href="{{ url_for('mycontent.questions') }}" class="btn btn-primary">
+                        <i class="bi bi-arrow-right-circle"></i> {{ _('Manage Questions') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sections Card -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 hover-lift">
+                <div class="card-body text-center">
+                    <div class="icon-circle bg-info-gradient mb-3">
+                        <i class="bi bi-collection fs-1 text-white"></i>
+                    </div>
+                    <h4 class="card-title">{{ _('Sections') }}</h4>
+                    <p class="card-text text-muted">
+                        {{ _('Organize your questions into sections by topic') }}
+                    </p>
+                    <a href="{{ url_for('mycontent.sections') }}" class="btn btn-info">
+                        <i class="bi bi-arrow-right-circle"></i> {{ _('Manage Sections') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Exams Card -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 hover-lift">
+                <div class="card-body text-center">
+                    <div class="icon-circle bg-success-gradient mb-3">
+                        <i class="bi bi-file-earmark-text fs-1 text-white"></i>
+                    </div>
+                    <h4 class="card-title">{{ _('My Exams') }}</h4>
+                    <p class="card-text text-muted">
+                        {{ _('Create and manage complete exams from your sections') }}
+                    </p>
+                    <a href="{{ url_for('mycontent.exams') }}" class="btn btn-success">
+                        <i class="bi bi-arrow-right-circle"></i> {{ _('Manage Exams') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import Exam Card -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 hover-lift border-primary">
+                <div class="card-body text-center">
+                    <div class="icon-circle bg-primary-gradient mb-3">
+                        <i class="bi bi-upload fs-1 text-white"></i>
+                    </div>
+                    <h4 class="card-title">{{ _('Import Exam') }}</h4>
+                    <p class="card-text text-muted">
+                        {{ _('Quickly import complete exams from JSON files') }}
+                    </p>
+                    <a href="{{ url_for('mycontent.import_exam') }}" class="btn btn-outline-primary">
+                        <i class="bi bi-cloud-upload"></i> {{ _('Import from JSON') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">
+                        <i class="bi bi-bar-chart"></i> {{ _('Quick Tips') }}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="bi bi-lightbulb text-warning"></i> {{ _('Getting Started') }}</h6>
+                            <ol class="text-muted small">
+                                <li>{{ _('Create an exam and give it a name') }}</li>
+                                <li>{{ _('Add sections inline (or create new ones on the fly)') }}</li>
+                                <li>{{ _('Edit each section and add questions inline') }}</li>
+                                <li>{{ _('Create questions directly or link existing ones') }}</li>
+                                <li>{{ _('Your exam will appear in the Exams page!') }}</li>
+                            </ol>
+                            <p class="text-muted small mt-2">
+                                <i class="bi bi-star-fill text-warning"></i> <strong>{{ _('Pro Tip') }}:</strong> {{ _('Everything can be done inline - no need to navigate between pages!') }}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="bi bi-speedometer2 text-info"></i> {{ _('Quick Import') }}</h6>
+                            <p class="text-muted small">
+                                {{ _('Want to create content faster? Use the Import Exam feature to upload a JSON file with complete exams, sections, and questions all at once!') }}
+                            </p>
+                            <a href="{{ url_for('mycontent.import_exam') }}" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-upload"></i> {{ _('Go to Import') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <a href="{{ url_for('exams') }}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> {{ _('Back to Exams') }}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .content-wrapper {
+        padding: 2rem 0;
+    }
+
+    .page-header {
+        padding: 2rem 0;
+        border-bottom: 3px solid;
+        border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+    }
+
+    .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .bg-primary-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .bg-info-gradient {
+        background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    }
+
+    .bg-success-gradient {
+        background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    }
+
+    .bg-warning-gradient {
+        background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+    }
+
+    .bg-secondary-gradient {
+        background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
+    }
+
+    .btn {
+        padding: 0.5rem 1.5rem;
+        border-radius: 10px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .card-title {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .border-primary {
+        border: 2px solid #667eea !important;
+    }
+</style>
+{% endblock %}
+

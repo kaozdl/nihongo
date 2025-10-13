@@ -1,9 +1,11 @@
 from flask_admin import Admin, BaseView, expose
 from flask_admin.contrib.sqla import ModelView
+from flask_admin.contrib.sqla.form import InlineModelConverter
 from flask_login import current_user
 from flask import redirect, url_for, request, flash
 from wtforms import TextAreaField
 from wtforms.widgets import TextArea
+from markupsafe import Markup
 import json
 from models.utils import parse_explanation, set_explanation
 
@@ -73,20 +75,115 @@ class QuestionAdmin(SecureModelView):
 
 
 class SectionAdmin(SecureModelView):
-    column_list = ['id', 'name', 'number_of_questions']
+    column_list = ['id', 'name', 'number_of_questions', 'question_count']
     column_searchable_list = ['name']
-    form_excluded_columns = ['exam_sections']
+    form_excluded_columns = ['exam_sections', 'section_questions']
+    
+    def _question_count_formatter(view, context, model, name):
+        """Show actual count of questions in this section"""
+        count = len(model.section_questions)
+        if count > 0:
+            return Markup(f'<span class="badge badge-success">{count}</span>')
+        return Markup(f'<span class="badge badge-secondary">{count}</span>')
+    
+    column_formatters = {
+        'question_count': _question_count_formatter
+    }
+    
+    # Custom labels
+    column_labels = {
+        'question_count': 'Questions Added'
+    }
 
 
 class ExamAdmin(SecureModelView):
-    column_list = ['id', 'name', 'creator', 'created_at']
+    column_list = ['id', 'name', 'creator', 'section_count', 'created_at']
     column_searchable_list = ['name']
     column_filters = ['created_by', 'created_at']
-    form_excluded_columns = ['tests', 'created_at', 'creator']
+    form_excluded_columns = ['tests', 'created_at', 'creator', 'exam_sections']
+    
+    def _section_count_formatter(view, context, model, name):
+        """Show actual count of sections in this exam"""
+        count = len(model.exam_sections)
+        if count > 0:
+            return Markup(f'<span class="badge badge-primary">{count}</span>')
+        return Markup(f'<span class="badge badge-secondary">{count}</span>')
+    
+    column_formatters = {
+        'section_count': _section_count_formatter
+    }
+    
+    # Custom labels
+    column_labels = {
+        'section_count': 'Sections Added'
+    }
     
     def on_model_change(self, form, model, is_created):
         if is_created:
             model.created_by = current_user.id
+
+
+class SectionQuestionAdmin(SecureModelView):
+    """Admin view for Section-Question relationships"""
+    column_list = ['id', 'section', 'question', 'order']
+    column_filters = ['section_id', 'question_id', 'order']
+    column_default_sort = ('order', False)
+    
+    # Custom labels
+    column_labels = {
+        'section': 'Section Name',
+        'question': 'Question Text'
+    }
+    
+    def _section_formatter(view, context, model, name):
+        """Show section name instead of object"""
+        if model.section:
+            return Markup(f'<strong>{model.section.name}</strong>')
+        return 'N/A'
+    
+    def _question_formatter(view, context, model, name):
+        """Show question text preview instead of object"""
+        if model.question:
+            text = model.question.question_text[:100]
+            if len(model.question.question_text) > 100:
+                text += '...'
+            return Markup(f'<span title="{model.question.question_text}">{text}</span>')
+        return 'N/A'
+    
+    column_formatters = {
+        'section': _section_formatter,
+        'question': _question_formatter
+    }
+
+
+class ExamSectionAdmin(SecureModelView):
+    """Admin view for Exam-Section relationships"""
+    column_list = ['id', 'exam', 'section', 'order']
+    column_filters = ['exam_id', 'section_id', 'order']
+    column_default_sort = ('order', False)
+    
+    # Custom labels
+    column_labels = {
+        'exam': 'Exam Name',
+        'section': 'Section Name'
+    }
+    
+    def _exam_formatter(view, context, model, name):
+        """Show exam name instead of object"""
+        if model.exam:
+            return Markup(f'<strong>{model.exam.name}</strong>')
+        return 'N/A'
+    
+    def _section_formatter(view, context, model, name):
+        """Show section name instead of object"""
+        if model.section:
+            return Markup(f'<strong>{model.section.name}</strong>')
+        return 'N/A'
+    
+    column_formatters = {
+        'exam': _exam_formatter,
+        'section': _section_formatter
+    }
 
 
 class TestAdmin(SecureModelView):
@@ -151,6 +248,57 @@ class ImportExamView(BaseView):
         return self.render('admin/import_exam.html')
 
 
+class UserImportExamView(BaseView):
+    """Import exams view for regular users"""
+    
+    def is_accessible(self):
+        return current_user.is_authenticated
+    
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('login', next=request.url))
+    
+    @expose('/', methods=['GET', 'POST'])
+    def index(self):
+        if request.method == 'POST':
+            # Check if file was uploaded
+            if 'file' not in request.files:
+                flash('No file uploaded', 'danger')
+                return redirect(request.url)
+            
+            file = request.files['file']
+            
+            if file.filename == '':
+                flash('No file selected', 'danger')
+                return redirect(request.url)
+            
+            if not file.filename.endswith('.json'):
+                flash('Only JSON files are allowed', 'danger')
+                return redirect(request.url)
+            
+            try:
+                # Read and parse JSON
+                json_content = file.read().decode('utf-8')
+                json_data = json.loads(json_content)
+                
+                # Import the exam (will be owned by current user)
+                from import_exam import import_exam_from_json
+                success, message, exam = import_exam_from_json(json_data, current_user.id)
+                
+                if success:
+                    flash(f'✅ {message}', 'success')
+                    return redirect(url_for('my_exams.index_view'))
+                else:
+                    flash(f'❌ {message}', 'danger')
+                    
+            except json.JSONDecodeError as e:
+                flash(f'Invalid JSON format: {str(e)}', 'danger')
+            except Exception as e:
+                flash(f'Error importing exam: {str(e)}', 'danger')
+        
+        # Render upload form
+        return self.render('mycontent/import_exam.html')
+
+
 class UserContentView(ModelView):
     """Base class for user-specific content views"""
     
@@ -183,6 +331,69 @@ class AuthenticatedModelView(ModelView):
     
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('login', next=request.url))
+
+
+class MySectionQuestionView(AuthenticatedModelView):
+    """View for users to manage section-question relationships"""
+    column_list = ['id', 'section', 'question', 'order']
+    column_filters = ['section_id', 'question_id', 'order']
+    column_default_sort = ('order', False)
+    
+    # Custom labels
+    column_labels = {
+        'section': 'Section Name',
+        'question': 'Question Text'
+    }
+    
+    def _section_formatter(view, context, model, name):
+        """Show section name instead of object"""
+        if model.section:
+            return Markup(f'<strong>{model.section.name}</strong>')
+        return 'N/A'
+    
+    def _question_formatter(view, context, model, name):
+        """Show question text preview instead of object"""
+        if model.question:
+            text = model.question.question_text[:100]
+            if len(model.question.question_text) > 100:
+                text += '...'
+            return Markup(f'<span title="{model.question.question_text}">{text}</span>')
+        return 'N/A'
+    
+    column_formatters = {
+        'section': _section_formatter,
+        'question': _question_formatter
+    }
+
+
+class MyExamSectionView(AuthenticatedModelView):
+    """View for users to manage exam-section relationships"""
+    column_list = ['id', 'exam', 'section', 'order']
+    column_filters = ['exam_id', 'section_id', 'order']
+    column_default_sort = ('order', False)
+    
+    # Custom labels
+    column_labels = {
+        'exam': 'Exam Name',
+        'section': 'Section Name'
+    }
+    
+    def _exam_formatter(view, context, model, name):
+        """Show exam name instead of object"""
+        if model.exam:
+            return Markup(f'<strong>{model.exam.name}</strong>')
+        return 'N/A'
+    
+    def _section_formatter(view, context, model, name):
+        """Show section name instead of object"""
+        if model.section:
+            return Markup(f'<strong>{model.section.name}</strong>')
+        return 'N/A'
+    
+    column_formatters = {
+        'exam': _exam_formatter,
+        'section': _section_formatter
+    }
 
 
 class MyQuestionView(UserContentView):
@@ -231,12 +442,28 @@ class MyQuestionView(UserContentView):
 
 class MySectionView(UserContentView):
     """View for users to manage their own sections"""
-    column_list = ['id', 'name', 'number_of_questions']
+    column_list = ['id', 'name', 'number_of_questions', 'question_count']
     column_searchable_list = ['name']
     form_excluded_columns = ['section_questions', 'exam_sections']
     can_create = True
     can_edit = True
     can_delete = True
+    
+    def _question_count_formatter(view, context, model, name):
+        """Show actual count of questions in this section"""
+        count = len(model.section_questions)
+        if count > 0:
+            return Markup(f'<span class="badge badge-success">{count}</span>')
+        return Markup(f'<span class="badge badge-secondary">{count}</span>')
+    
+    column_formatters = {
+        'question_count': _question_count_formatter
+    }
+    
+    # Custom labels
+    column_labels = {
+        'question_count': 'Questions Added'
+    }
     
     def on_model_change(self, form, model, is_created):
         # Sections don't have created_by, so we'll allow all users to create them
@@ -246,10 +473,26 @@ class MySectionView(UserContentView):
 
 class MyExamView(UserContentView):
     """View for users to manage their own exams"""
-    column_list = ['id', 'name', 'created_at']
+    column_list = ['id', 'name', 'section_count', 'created_at']
     column_searchable_list = ['name']
     column_filters = ['created_at']
     form_excluded_columns = ['exam_sections', 'tests', 'created_at', 'updated_at', 'creator', 'created_by']
+    
+    def _section_count_formatter(view, context, model, name):
+        """Show actual count of sections in this exam"""
+        count = len(model.exam_sections)
+        if count > 0:
+            return Markup(f'<span class="badge badge-primary">{count}</span>')
+        return Markup(f'<span class="badge badge-secondary">{count}</span>')
+    
+    column_formatters = {
+        'section_count': _section_count_formatter
+    }
+    
+    # Custom labels
+    column_labels = {
+        'section_count': 'Sections Added'
+    }
     
     def on_model_change(self, form, model, is_created):
         if is_created:
@@ -278,24 +521,14 @@ def init_admin(app, db):
     admin.add_view(UserAdmin(User, db.session, name='Users', endpoint='admin_users'))
     admin.add_view(QuestionAdmin(Question, db.session, name='Questions', endpoint='admin_questions'))
     admin.add_view(SectionAdmin(Section, db.session, name='Sections', endpoint='admin_sections'))
-    admin.add_view(SecureModelView(SectionQuestion, db.session, name='Section Questions', endpoint='admin_section_questions'))
+    admin.add_view(SectionQuestionAdmin(SectionQuestion, db.session, name='Section Questions', endpoint='admin_section_questions'))
     admin.add_view(ExamAdmin(Exam, db.session, name='Exams', endpoint='admin_exams'))
-    admin.add_view(SecureModelView(ExamSection, db.session, name='Exam Sections', endpoint='admin_exam_sections'))
+    admin.add_view(ExamSectionAdmin(ExamSection, db.session, name='Exam Sections', endpoint='admin_exam_sections'))
     admin.add_view(TestAdmin(Test, db.session, name='Tests', endpoint='admin_tests'))
     admin.add_view(SecureModelView(TestAnswer, db.session, name='Test Answers', endpoint='admin_test_answers'))
     
     # Add custom import view (admin only)
     admin.add_view(ImportExamView(name='Import Exam', endpoint='import_exam'))
-    
-    # User content management interface (all authenticated users)
-    user_admin = Admin(app, name='My Content', template_mode='bootstrap4', endpoint='mycontent', url='/mycontent')
-    
-    # Add user-specific views
-    user_admin.add_view(MyQuestionView(Question, db.session, name='My Questions', endpoint='my_questions'))
-    user_admin.add_view(MySectionView(Section, db.session, name='Sections', endpoint='my_sections'))
-    user_admin.add_view(MyExamView(Exam, db.session, name='My Exams', endpoint='my_exams'))
-    user_admin.add_view(AuthenticatedModelView(SectionQuestion, db.session, name='Section Questions', endpoint='my_section_questions'))
-    user_admin.add_view(AuthenticatedModelView(ExamSection, db.session, name='Exam Sections', endpoint='my_exam_sections'))
     
     return admin
 

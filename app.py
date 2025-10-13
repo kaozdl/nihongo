@@ -46,7 +46,7 @@ def get_locale_func():
     if 'language' in session:
         return session['language']
     # Try to get from browser
-    return request.accept_languages.best_match(['en', 'es']) or 'en'
+    return request.accept_languages.best_match(['es', 'en']) or 'es'
 
 babel.init_app(app, locale_selector=get_locale_func)
 
@@ -61,6 +61,10 @@ def inject_babel():
 
 # Initialize admin
 init_admin(app, db)
+
+# Register My Content blueprint (custom routes with app styling, not Flask-Admin)
+from mycontent_routes import mycontent_bp
+app.register_blueprint(mycontent_bp)
 
 
 @login_manager.user_loader

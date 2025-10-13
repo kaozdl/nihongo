@@ -21,6 +21,7 @@ A Flask-based web application for managing and taking Japanese Language Proficie
   - Questions (with multi-language explanations)
   - Sections
   - Exams
+  - Import exams from JSON files
   - Users only see and edit their own content
 - **Admin Interface**: Full-featured admin panel powered by Flask-Admin for admins to manage:
   - All users and permissions
@@ -203,7 +204,11 @@ Regular users can create and manage their own content:
    - Only you can see and edit your questions
 3. **Manage Sections**: Create sections to organize questions
 4. **Build Exams**: Create custom exams using your sections
-5. **Privacy**: Your content is private - other users cannot see or edit it
+5. **Import Exams**: 
+   - Upload JSON files to quickly import complete exams
+   - Same format as admin import (see `docs/IMPORT_GUIDE.md`)
+   - Imported content becomes yours automatically
+6. **Privacy**: Your content is private - other users cannot see or edit it
 
 ### For Administrators
 

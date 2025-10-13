@@ -307,3 +307,619 @@ msgstr "¡Comienza tu primer examen ahora!"
 msgid "Back to Exams"
 msgstr "Volver a Exámenes"
 
+#: templates/mycontent/import_exam.html:3
+msgid "Import Exam"
+msgstr "Importar Examen"
+
+#: templates/mycontent/import_exam.html:10
+msgid "Import Exam from JSON"
+msgstr "Importar Examen desde JSON"
+
+#: templates/mycontent/import_exam.html:15
+msgid "Upload a JSON file to import a complete exam with sections and questions. The exam will be added to your personal content."
+msgstr "Sube un archivo JSON para importar un examen completo con secciones y preguntas. El examen se agregará a tu contenido personal."
+
+#: templates/mycontent/import_exam.html:21
+msgid "Select JSON File"
+msgstr "Seleccionar Archivo JSON"
+
+#: templates/mycontent/import_exam.html:30
+msgid "Only .json files are accepted"
+msgstr "Solo se aceptan archivos .json"
+
+#: templates/mycontent/import_exam.html:35
+msgid "Upload and Import"
+msgstr "Subir e Importar"
+
+#: templates/mycontent/import_exam.html:44
+msgid "What happens when you import?"
+msgstr "¿Qué sucede cuando importas?"
+
+#: templates/mycontent/import_exam.html:46
+msgid "Exam is created with your name as creator"
+msgstr "El examen se crea con tu nombre como creador"
+
+#: templates/mycontent/import_exam.html:47
+msgid "All sections are created or linked"
+msgstr "Todas las secciones se crean o vinculan"
+
+#: templates/mycontent/import_exam.html:48
+msgid "All questions are imported"
+msgstr "Todas las preguntas se importan"
+
+#: templates/mycontent/import_exam.html:49
+msgid "You become the owner of all content"
+msgstr "Te conviertes en propietario de todo el contenido"
+
+#: templates/mycontent/import_exam.html:50
+msgid "Exam appears in your \"My Exams\" list"
+msgstr "El examen aparece en tu lista \"Mis Exámenes\""
+
+#: templates/mycontent/import_exam.html:54
+msgid "JSON Format Requirements"
+msgstr "Requisitos del Formato JSON"
+
+#: templates/mycontent/import_exam.html:56
+msgid "Valid JSON syntax"
+msgstr "Sintaxis JSON válida"
+
+#: templates/mycontent/import_exam.html:57
+msgid "Must include exam name"
+msgstr "Debe incluir nombre del examen"
+
+#: templates/mycontent/import_exam.html:58
+msgid "At least one section"
+msgstr "Al menos una sección"
+
+#: templates/mycontent/import_exam.html:59
+msgid "At least one question per section"
+msgstr "Al menos una pregunta por sección"
+
+#: templates/mycontent/import_exam.html:60
+msgid "All questions must have 4 answers"
+msgstr "Todas las preguntas deben tener 4 respuestas"
+
+#: templates/mycontent/import_exam.html:66
+msgid "Note:"
+msgstr "Nota:"
+
+#: templates/mycontent/import_exam.html:66
+msgid "Make sure your JSON file follows the correct format. Check the documentation or download an example below."
+msgstr "Asegúrate de que tu archivo JSON siga el formato correcto. Consulta la documentación o descarga un ejemplo a continuación."
+
+#: templates/mycontent/import_exam.html:71
+msgid "Download Example JSON"
+msgstr "Descargar JSON de Ejemplo"
+
+#: templates/mycontent/import_exam.html:74
+msgid "Back to My Content"
+msgstr "Volver a Mi Contenido"
+
+#: templates/mycontent/import_exam.html:83
+msgid "JSON Structure Example"
+msgstr "Ejemplo de Estructura JSON"
+
+#: templates/mycontent/import_exam.html:89
+msgid "My N5 Practice Exam"
+msgstr "Mi Examen de Práctica N5"
+
+#: templates/mycontent/import_exam.html:93
+msgid "Grammar"
+msgstr "Gramática"
+
+#: templates/mycontent/import_exam.html:96
+msgid "私は＿＿＿学生です。"
+msgstr "私は＿＿＿学生です。"
+
+#: templates/mycontent/import_exam.html:97
+msgid "が"
+msgstr "が"
+
+#: templates/mycontent/import_exam.html:98
+msgid "の"
+msgstr "の"
+
+#: templates/mycontent/import_exam.html:99
+msgid "を"
+msgstr "を"
+
+#: templates/mycontent/import_exam.html:100
+msgid "に"
+msgstr "に"
+
+#: templates/mycontent/import_exam.html:104
+msgid "The particle \"no\" indicates possession"
+msgstr "La partícula \"no\" indica posesión"
+
+#: templates/mycontent/import_exam.html:105
+msgid "La partícula \"no\" indica posesión"
+msgstr "La partícula \"no\" indica posesión"
+
+#: templates/mycontent/import_exam.html:113
+msgid "This is a simplified example. Download the full example for more details."
+msgstr "Este es un ejemplo simplificado. Descarga el ejemplo completo para más detalles."
+
+#: templates/mycontent/index.html:3
+msgid "My Content"
+msgstr "Mi Contenido"
+
+#: templates/mycontent/index.html:13
+msgid "Create and manage your own questions, sections, and exams"
+msgstr "Crea y administra tus propias preguntas, secciones y exámenes"
+
+#: templates/mycontent/index.html:26
+msgid "My Questions"
+msgstr "Mis Preguntas"
+
+#: templates/mycontent/index.html:28
+msgid "Create and edit your own questions with bilingual explanations"
+msgstr "Crea y edita tus propias preguntas con explicaciones bilingües"
+
+#: templates/mycontent/index.html:31
+msgid "Manage Questions"
+msgstr "Administrar Preguntas"
+
+#: templates/mycontent/index.html:42
+msgid "Sections"
+msgstr "Secciones"
+
+#: templates/mycontent/index.html:44
+msgid "Organize your questions into sections by topic"
+msgstr "Organiza tus preguntas en secciones por tema"
+
+#: templates/mycontent/index.html:47
+msgid "Manage Sections"
+msgstr "Administrar Secciones"
+
+#: templates/mycontent/index.html:58
+msgid "My Exams"
+msgstr "Mis Exámenes"
+
+#: templates/mycontent/index.html:60
+msgid "Create and manage complete exams from your sections"
+msgstr "Crea y administra exámenes completos desde tus secciones"
+
+#: templates/mycontent/index.html:63
+msgid "Manage Exams"
+msgstr "Administrar Exámenes"
+
+#: templates/mycontent/index.html:74
+msgid "Section Questions"
+msgstr "Preguntas de Sección"
+
+#: templates/mycontent/index.html:76
+msgid "Link questions to sections to build your content"
+msgstr "Vincula preguntas a secciones para construir tu contenido"
+
+#: templates/mycontent/index.html:79
+msgid "Manage Links"
+msgstr "Administrar Vínculos"
+
+#: templates/mycontent/index.html:90
+msgid "Exam Sections"
+msgstr "Secciones de Examen"
+
+#: templates/mycontent/index.html:92
+msgid "Link sections to exams to complete your exam structure"
+msgstr "Vincula secciones a exámenes para completar la estructura del examen"
+
+#: templates/mycontent/index.html:106
+msgid "Import Exam"
+msgstr "Importar Examen"
+
+#: templates/mycontent/index.html:108
+msgid "Quickly import complete exams from JSON files"
+msgstr "Importa rápidamente exámenes completos desde archivos JSON"
+
+#: templates/mycontent/index.html:111
+msgid "Import from JSON"
+msgstr "Importar desde JSON"
+
+#: templates/mycontent/index.html:122
+msgid "Quick Tips"
+msgstr "Consejos Rápidos"
+
+#: templates/mycontent/index.html:128
+msgid "Getting Started"
+msgstr "Comenzando"
+
+#: templates/mycontent/index.html:130
+msgid "Create questions with bilingual explanations"
+msgstr "Crea preguntas con explicaciones bilingües"
+
+#: templates/mycontent/index.html:131
+msgid "Organize questions into sections (e.g., Grammar, Vocabulary)"
+msgstr "Organiza preguntas en secciones (ej., Gramática, Vocabulario)"
+
+#: templates/mycontent/index.html:132
+msgid "Link questions to sections"
+msgstr "Vincula preguntas a secciones"
+
+#: templates/mycontent/index.html:133
+msgid "Create an exam and link sections to it"
+msgstr "Crea un examen y vincula secciones a él"
+
+#: templates/mycontent/index.html:134
+msgid "Your exam will appear in the Exams page!"
+msgstr "¡Tu examen aparecerá en la página de Exámenes!"
+
+#: templates/mycontent/index.html:138
+msgid "Quick Import"
+msgstr "Importación Rápida"
+
+#: templates/mycontent/index.html:140
+msgid "Want to create content faster? Use the Import Exam feature to upload a JSON file with complete exams, sections, and questions all at once!"
+msgstr "¿Quieres crear contenido más rápido? ¡Usa la función Importar Examen para subir un archivo JSON con exámenes completos, secciones y preguntas de una vez!"
+
+#: templates/mycontent/index.html:143
+msgid "Go to Import"
+msgstr "Ir a Importar"
+
+#: templates/mycontent/index.html:51 templates/mycontent/index.html:69 templates/mycontent/index.html:87 templates/mycontent/index.html:105
+msgid "Coming Soon"
+msgstr "Próximamente"
+
+#: templates/mycontent/question_form.html:15
+msgid "Edit Question"
+msgstr "Editar Pregunta"
+
+#: templates/mycontent/question_form.html:15
+msgid "Create Question"
+msgstr "Crear Pregunta"
+
+#: templates/mycontent/question_form.html:15
+msgid "Create New Question"
+msgstr "Crear Nueva Pregunta"
+
+#: templates/mycontent/question_form.html:36
+msgid "Question Text"
+msgstr "Texto de la Pregunta"
+
+#: templates/mycontent/question_form.html:46
+msgid "Image URL"
+msgstr "URL de Imagen"
+
+#: templates/mycontent/question_form.html:46
+msgid "optional"
+msgstr "opcional"
+
+#: templates/mycontent/question_form.html:52
+msgid "Audio URL"
+msgstr "URL de Audio"
+
+#: templates/mycontent/question_form.html:62
+msgid "Answer Options"
+msgstr "Opciones de Respuesta"
+
+#: templates/mycontent/question_form.html:99
+msgid "Correct Answer"
+msgstr "Respuesta Correcta"
+
+#: templates/mycontent/question_form.html:103
+msgid "Select correct answer..."
+msgstr "Seleccione la respuesta correcta..."
+
+#: templates/mycontent/question_form.html:111
+msgid "Bilingual Explanations"
+msgstr "Explicaciones Bilingües"
+
+#: templates/mycontent/question_form.html:116
+msgid "Explanation (English)"
+msgstr "Explicación (Inglés)"
+
+#: templates/mycontent/question_form.html:122
+msgid "Provide an explanation of why this answer is correct (in English)"
+msgstr "Proporcione una explicación de por qué esta respuesta es correcta (en inglés)"
+
+#: templates/mycontent/question_form.html:127
+msgid "Explanation (Español)"
+msgstr "Explicación (Español)"
+
+#: templates/mycontent/question_form.html:133
+msgid "Provide an explanation of why this answer is correct (in Spanish)"
+msgstr "Proporcione una explicación de por qué esta respuesta es correcta (en español)"
+
+#: templates/mycontent/question_form.html:140
+msgid "Update Question"
+msgstr "Actualizar Pregunta"
+
+#: templates/mycontent/question_form.html:140
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/mycontent/questions.html:7
+msgid "My Questions"
+msgstr "Mis Preguntas"
+
+#: templates/mycontent/questions.html:8
+msgid "Create and manage your own questions with bilingual explanations"
+msgstr "Crea y administra tus propias preguntas con explicaciones bilingües"
+
+#: templates/mycontent/questions.html:13
+msgid "Back to My Content"
+msgstr "Volver a Mi Contenido"
+
+#: templates/mycontent/questions.html:88
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/mycontent/questions.html:95
+msgid "Delete"
+msgstr "Eliminar"
+
+#: templates/mycontent/questions.html:96
+msgid "Are you sure you want to delete this question?"
+msgstr "¿Estás seguro de que quieres eliminar esta pregunta?"
+
+#: templates/mycontent/questions.html:109
+msgid "No questions yet"
+msgstr "Aún no hay preguntas"
+
+#: templates/mycontent/questions.html:110
+msgid "Create your first question to get started!"
+msgstr "¡Crea tu primera pregunta para comenzar!"
+
+#: templates/mycontent/sections.html:7
+msgid "Sections"
+msgstr "Secciones"
+
+#: templates/mycontent/sections.html:13
+msgid "Create New Section"
+msgstr "Crear Nueva Sección"
+
+#: templates/mycontent/sections.html:69
+msgid "Max Questions"
+msgstr "Preguntas Máximas"
+
+#: templates/mycontent/sections.html:72
+msgid "Added"
+msgstr "Agregadas"
+
+#: templates/mycontent/sections.html:87
+msgid "Are you sure you want to delete this section?"
+msgstr "¿Estás seguro de que quieres eliminar esta sección?"
+
+#: templates/mycontent/sections.html:100
+msgid "No sections yet"
+msgstr "Aún no hay secciones"
+
+#: templates/mycontent/sections.html:101
+msgid "Create your first section to organize questions!"
+msgstr "¡Crea tu primera sección para organizar preguntas!"
+
+#: templates/mycontent/section_form.html:7
+msgid "Edit Section"
+msgstr "Editar Sección"
+
+#: templates/mycontent/section_form.html:7
+msgid "Create Section"
+msgstr "Crear Sección"
+
+#: templates/mycontent/section_form.html:43
+msgid "Section Name"
+msgstr "Nombre de la Sección"
+
+#: templates/mycontent/section_form.html:51
+msgid "Choose a descriptive name for this section"
+msgstr "Elige un nombre descriptivo para esta sección"
+
+#: templates/mycontent/section_form.html:57
+msgid "Maximum Number of Questions"
+msgstr "Número Máximo de Preguntas"
+
+#: templates/mycontent/section_form.html:69
+msgid "How many questions should this section contain?"
+msgstr "¿Cuántas preguntas debe contener esta sección?"
+
+#: templates/mycontent/section_form.html:76
+msgid "Update Section"
+msgstr "Actualizar Sección"
+
+#: templates/mycontent/exams.html:13
+msgid "Create New Exam"
+msgstr "Crear Nuevo Examen"
+
+#: templates/mycontent/exams.html:75
+msgid "Are you sure you want to delete this exam?"
+msgstr "¿Estás seguro de que quieres eliminar este examen?"
+
+#: templates/mycontent/exams.html:88
+msgid "No exams yet"
+msgstr "Aún no hay exámenes"
+
+#: templates/mycontent/exam_form.html:7
+msgid "Edit Exam"
+msgstr "Editar Examen"
+
+#: templates/mycontent/exam_form.html:7
+msgid "Create Exam"
+msgstr "Crear Examen"
+
+#: templates/mycontent/exam_form.html:50
+msgid "Tip"
+msgstr "Consejo"
+
+#: templates/mycontent/exam_form.html:53
+msgid "After creating your exam, you can link sections to it using the admin interface or by importing a JSON file."
+msgstr "Después de crear tu examen, puedes vincular secciones usando la interfaz de administración o importando un archivo JSON."
+
+#: templates/mycontent/exam_form.html:60
+msgid "Exam Name"
+msgstr "Nombre del Examen"
+
+#: templates/mycontent/exam_form.html:68
+msgid "Choose a descriptive name for your exam"
+msgstr "Elige un nombre descriptivo para tu examen"
+
+#: templates/mycontent/exam_form.html:75
+msgid "Update Exam"
+msgstr "Actualizar Examen"
+
+#: templates/mycontent/exam_form.html:105
+msgid "Exam Sections"
+msgstr "Secciones del Examen"
+
+#: templates/mycontent/exam_form.html:112
+msgid "Current Sections"
+msgstr "Secciones Actuales"
+
+#: templates/mycontent/exam_form.html:124
+msgid "questions"
+msgstr "preguntas"
+
+#: templates/mycontent/exam_form.html:145
+msgid "Remove this section from the exam?"
+msgstr "¿Quitar esta sección del examen?"
+
+#: templates/mycontent/exam_form.html:162
+msgid "No sections added yet. Add existing sections or create new ones below."
+msgstr "Aún no hay secciones agregadas. Agrega secciones existentes o crea nuevas abajo."
+
+#: templates/mycontent/exam_form.html:170
+msgid "Add Existing Section"
+msgstr "Agregar Sección Existente"
+
+#: templates/mycontent/exam_form.html:177
+msgid "Select Section"
+msgstr "Seleccionar Sección"
+
+#: templates/mycontent/exam_form.html:179
+msgid "Choose a section..."
+msgstr "Elige una sección..."
+
+#: templates/mycontent/exam_form.html:189
+msgid "Add"
+msgstr "Agregar"
+
+#: templates/mycontent/exam_form.html:201
+msgid "Create New Section"
+msgstr "Crear Nueva Sección"
+
+#: templates/mycontent/exam_form.html:230
+msgid "Create & Add"
+msgstr "Crear y Agregar"
+
+#: templates/mycontent/exam_form.html:235
+msgid "The section will be created and automatically added to this exam."
+msgstr "La sección se creará y se agregará automáticamente a este examen."
+
+#: templates/mycontent/section_form.html:104
+msgid "Section Questions"
+msgstr "Preguntas de la Sección"
+
+#: templates/mycontent/section_form.html:111
+msgid "Current Questions"
+msgstr "Preguntas Actuales"
+
+#: templates/mycontent/section_form.html:125
+msgid "Answers"
+msgstr "Respuestas"
+
+#: templates/mycontent/section_form.html:156
+msgid "Reorder"
+msgstr "Reordenar"
+
+#: templates/mycontent/section_form.html:162
+msgid "Remove this question from the section?"
+msgstr "¿Quitar esta pregunta de la sección?"
+
+#: templates/mycontent/section_form.html:168
+msgid "Remove"
+msgstr "Quitar"
+
+#: templates/mycontent/section_form.html:185
+msgid "No questions added yet. Add existing questions or create new ones below."
+msgstr "Aún no hay preguntas agregadas. Agrega preguntas existentes o crea nuevas abajo."
+
+#: templates/mycontent/section_form.html:193
+msgid "Add Existing Question"
+msgstr "Agregar Pregunta Existente"
+
+#: templates/mycontent/section_form.html:200
+msgid "Select Question"
+msgstr "Seleccionar Pregunta"
+
+#: templates/mycontent/section_form.html:202
+msgid "Choose a question..."
+msgstr "Elige una pregunta..."
+
+#: templates/mycontent/section_form.html:240
+msgid "Answer 1"
+msgstr "Respuesta 1"
+
+#: templates/mycontent/section_form.html:244
+msgid "Answer 2"
+msgstr "Respuesta 2"
+
+#: templates/mycontent/section_form.html:248
+msgid "Answer 3"
+msgstr "Respuesta 3"
+
+#: templates/mycontent/section_form.html:252
+msgid "Answer 4"
+msgstr "Respuesta 4"
+
+#: templates/mycontent/section_form.html:281
+msgid "Create & Add Question"
+msgstr "Crear y Agregar Pregunta"
+
+#: templates/mycontent/section_form.html:286
+msgid "The question will be created and automatically added to this section."
+msgstr "La pregunta se creará y se agregará automáticamente a esta sección."
+
+#: templates/mycontent/exam_form.html:128
+msgid "Section Details"
+msgstr "Detalles de la Sección"
+
+#: templates/mycontent/exam_form.html:134
+msgid "Questions in this section"
+msgstr "Preguntas en esta sección"
+
+#: templates/mycontent/exam_form.html:151
+msgid "No questions in this section yet. Add questions by editing the section."
+msgstr "Aún no hay preguntas en esta sección. Agrega preguntas editando la sección."
+
+#: templates/mycontent/exam_form.html:157
+msgid "Order"
+msgstr "Orden"
+
+#: templates/mycontent/exam_form.html:176
+msgid "Edit Section"
+msgstr "Editar Sección"
+
+#: templates/mycontent/exam_form.html:188
+msgid "Remove Section"
+msgstr "Quitar Sección"
+
+#: templates/mycontent/index.html:108
+msgid "Create an exam and give it a name"
+msgstr "Crea un examen y dale un nombre"
+
+#: templates/mycontent/index.html:109
+msgid "Add sections inline (or create new ones on the fly)"
+msgstr "Agrega secciones en línea (o crea nuevas sobre la marcha)"
+
+#: templates/mycontent/index.html:110
+msgid "Edit each section and add questions inline"
+msgstr "Edita cada sección y agrega preguntas en línea"
+
+#: templates/mycontent/index.html:111
+msgid "Create questions directly or link existing ones"
+msgstr "Crea preguntas directamente o vincula las existentes"
+
+#: templates/mycontent/index.html:115
+msgid "Pro Tip"
+msgstr "Consejo Pro"
+
+#: templates/mycontent/index.html:115
+msgid "Everything can be done inline - no need to navigate between pages!"
+msgstr "¡Todo se puede hacer en línea - no necesitas navegar entre páginas!"
+
+#: templates/mycontent/sections.html:78
+msgid "Used in"
+msgstr "Usado en"
+
+#: templates/mycontent/sections.html:91
+msgid "Not used in any exam yet"
+msgstr "No usado en ningún examen aún"
+

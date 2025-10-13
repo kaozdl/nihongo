@@ -22,8 +22,8 @@ class Config:
     SQLALCHEMY_ECHO = False
     
     # Flask-Babel settings
-    BABEL_DEFAULT_LOCALE = 'en'
-    BABEL_SUPPORTED_LOCALES = ['en', 'es']
+    BABEL_DEFAULT_LOCALE = 'es'
+    BABEL_SUPPORTED_LOCALES = ['es', 'en']
     BABEL_TRANSLATION_DIRECTORIES = 'translations'
     
     # Flask-Login settings
