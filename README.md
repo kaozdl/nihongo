@@ -2,6 +2,10 @@
 
 A Flask-based web application for managing and taking Japanese Language Proficiency Test (JLPT) practice exams.
 
+## Test it here
+
+https://kaozdl.pythonanywhere.com/login
+
 ## Features
 
 - **User Authentication**: Secure login and registration system with admin roles (auto-login on registration)
