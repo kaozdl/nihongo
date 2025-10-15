@@ -38,7 +38,7 @@ def reload_all_standard_exams(create=False):
         admin = User.query.filter_by(is_admin=True).first()
         if not admin:
             # Try to find default user
-            admin = User.query.filter_by(email='default@nihongo.com').first()
+            admin = User.query.filter_by(email='default@nihongo.edu.uy').first()
             if admin:
                 # Make them admin
                 admin.is_admin = True
@@ -50,7 +50,7 @@ def reload_all_standard_exams(create=False):
                 admin.set_password('admin')
                 db.session.add(admin)
                 db.session.commit()
-                print("✅ Created admin user (email: default@nihongo.com, password: admin)")
+                print("✅ Created admin user (email: default@nihongo.edu.uy, password: admin)")
         
         # Define exam files to reload
         exam_files = [
