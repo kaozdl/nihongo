@@ -229,7 +229,7 @@
       "name": "Kanji Reading",
       "questions": [
         {
-          "question_text": "【<ruby>火<rt>か</rt></ruby>】<ruby>曜日<rt>ようび</rt></ruby>に テストが あります。\n\nQuestion: 【<ruby>火<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "【<ruby>火<rt>?</rt></ruby>】<ruby>曜日<rt>ようび</rt></ruby>に テストが あります。\n\nQuestion: 【<ruby>火<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "ひ",
           "answer_2": "か",
           "answer_3": "ほ",
@@ -241,7 +241,7 @@
           }
         },
         {
-          "question_text": "<ruby>今日<rt>きょう</rt></ruby>は【<ruby>天<rt>てん</rt></ruby>】<ruby>気<rt>き</rt></ruby>が いいですね。\n\nQuestion: 【<ruby>天<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "<ruby>今日<rt>きょう</rt></ruby>は【<ruby>天<rt>?</rt></ruby>】<ruby>気<rt>き</rt></ruby>が いいですね。\n\nQuestion: 【<ruby>天<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "てん",
           "answer_2": "あめ",
           "answer_3": "そら",
@@ -253,7 +253,7 @@
           }
         },
         {
-          "question_text": "【<ruby>右<rt>みぎ</rt></ruby>】に まがって ください。\n\nQuestion: 【<ruby>右<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "【<ruby>右<rt>?</rt></ruby>】に まがって ください。\n\nQuestion: 【<ruby>右<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "ひだり",
           "answer_2": "みぎ",
           "answer_3": "まえ",
@@ -265,7 +265,7 @@
           }
         },
         {
-          "question_text": "この【<ruby>花<rt>はな</rt></ruby>】は きれいです。\n\nQuestion: 【<ruby>花<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "この【<ruby>花<rt>?</rt></ruby>】は きれいです。\n\nQuestion: 【<ruby>花<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "はな",
           "answer_2": "か",
           "answer_3": "ばな",

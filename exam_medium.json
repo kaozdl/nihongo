@@ -5,15 +5,15 @@
       "name": "Grammar",
       "questions": [
         {
-          "question_text": "あした___時に うちへ きますか。",
+          "question_text": "あした___<ruby>時<rt>じ</rt></ruby>に うちへ きますか。",
           "answer_1": "なん",
           "answer_2": "なに",
           "answer_3": "どの",
           "answer_4": "いくつ",
           "correct_answer": 1,
           "explanation": {
-            "EN": "なん is used to ask 'what' with time. なん時 means 'what time'.",
-            "ES": "なん se usa para preguntar 'qué' con el tiempo. なん時 significa 'qué hora'."
+            "EN": "なん is used to ask 'what' with time. なん<ruby>時<rt>じ</rt></ruby> means 'what time'.",
+            "ES": "なん se usa para preguntar 'qué' con el tiempo. なん<ruby>時<rt>じ</rt></ruby> significa 'qué hora'."
           }
         },
         {
@@ -123,7 +123,7 @@
       "name": "Reading Comprehension",
       "questions": [
         {
-          "question_text": "やまださんは 東京に すんでいます。まいあさ 七時に いえを でます。でんしゃで かいしゃに いきます。八時に かいしゃに つきます。\n\nQuestion: やまださんは なんで かいしゃに いきますか。",
+          "question_text": "やまださんは <ruby>東京<rt>とうきょう</rt></ruby>に すんでいます。まいあさ <ruby>七時<rt>しちじ</rt></ruby>に いえを でます。でんしゃで かいしゃに いきます。<ruby>八時<rt>はちじ</rt></ruby>に かいしゃに つきます。\n\nQuestion: やまださんは なんで かいしゃに いきますか。",
           "answer_1": "あるいて",
           "answer_2": "でんしゃで",
           "answer_3": "じてんしゃで",
@@ -137,9 +137,9 @@
         {
           "question_text": "すずきさんは えいごの せんせいです。げつようびから きんようびまで がっこうで はたらきます。どようびと にちようびは やすみです。\n\nQuestion: すずきさんは なんようびに はたらきますか。",
           "answer_1": "まいにち",
-          "answer_2": "月曜日から 金曜日まで",
-          "answer_3": "土曜日と 日曜日",
-          "answer_4": "日曜日だけ",
+          "answer_2": "<ruby>月曜日<rt>げつようび</rt></ruby>から <ruby>金曜日<rt>きんようび</rt></ruby>まで",
+          "answer_3": "<ruby>土曜日<rt>どようび</rt></ruby>と <ruby>日曜日<rt>にちようび</rt></ruby>",
+          "answer_4": "<ruby>日曜日<rt>にちようび</rt></ruby>だけ",
           "correct_answer": 2,
           "explanation": {
             "EN": "The text says 'げつようびからきんようびまではたらきます' (works Monday to Friday).",
@@ -181,39 +181,39 @@
       "name": "Kanji Reading",
       "questions": [
         {
-          "question_text": "わたしは まいにち【九】時に ねます。\n\nQuestion: 【九】の読み方は？",
+          "question_text": "わたしは まいにち【<ruby>九<rt>?</rt></ruby>】<ruby>時<rt>じ</rt></ruby>に ねます。\n\nQuestion: 【<ruby>九<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "きゅう",
           "answer_2": "く",
           "answer_3": "ここの",
           "answer_4": "きょう",
           "correct_answer": 2,
           "explanation": {
-            "EN": "In 九時 (9 o'clock), 九 is read as 'く' (ku). This is used before 時.",
-            "ES": "En 九時 (9 en punto), 九 se lee como 'く' (ku). Esto se usa antes de 時."
+            "EN": "In <ruby>九時<rt>くじ</rt></ruby> (9 o'clock), <ruby>九<rt>く</rt></ruby> is read as 'く' (ku). This is used before <ruby>時<rt>じ</rt></ruby>.",
+            "ES": "En <ruby>九時<rt>くじ</rt></ruby> (9 en punto), <ruby>九<rt>く</rt></ruby> se lee como 'く' (ku). Esto se usa antes de <ruby>時<rt>じ</rt></ruby>."
           }
         },
         {
-          "question_text": "きょうは【金】曜日です。\n\nQuestion: 【金】の読み方は？",
+          "question_text": "きょうは【<ruby>金<rt>?</rt></ruby>】<ruby>曜日<rt>ようび</rt></ruby>です。\n\nQuestion: 【<ruby>金<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "かね",
           "answer_2": "きん",
           "answer_3": "かな",
           "answer_4": "こん",
           "correct_answer": 2,
           "explanation": {
-            "EN": "In 金曜日 (Friday), 金 is read as 'きん' (kin). This is the on-yomi reading.",
-            "ES": "En 金曜日 (viernes), 金 se lee como 'きん' (kin). Esta es la lectura on-yomi."
+            "EN": "In <ruby>金曜日<rt>きんようび</rt></ruby> (Friday), <ruby>金<rt>きん</rt></ruby> is read as 'きん' (kin). This is the on-yomi reading.",
+            "ES": "En <ruby>金曜日<rt>きんようび</rt></ruby> (viernes), <ruby>金<rt>きん</rt></ruby> se lee como 'きん' (kin). Esta es la lectura on-yomi."
           }
         },
         {
-          "question_text": "あの【人】は だれですか。\n\nQuestion: 【人】の読み方は？",
+          "question_text": "あの【<ruby>人<rt>?</rt></ruby>】は だれですか。\n\nQuestion: 【<ruby>人<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "ひと",
           "answer_2": "じん",
           "answer_3": "にん",
           "answer_4": "びと",
           "correct_answer": 1,
           "explanation": {
-            "EN": "When 人 stands alone meaning 'person', it's read as 'ひと' (hito). This is the kun-yomi reading.",
-            "ES": "Cuando 人 está solo significando 'persona', se lee como 'ひと' (hito). Esta es la lectura kun-yomi."
+            "EN": "When <ruby>人<rt>ひと</rt></ruby> stands alone meaning 'person', it's read as 'ひと' (hito). This is the kun-yomi reading.",
+            "ES": "Cuando <ruby>人<rt>ひと</rt></ruby> está solo significando 'persona', se lee como 'ひと' (hito). Esta es la lectura kun-yomi."
           }
         }
       ]
@@ -222,39 +222,39 @@
       "name": "Kanji Writing",
       "questions": [
         {
-          "question_text": "【みず】を のみます。\n\nQuestion: 【みず】の漢字は？",
-          "answer_1": "氷",
-          "answer_2": "水",
-          "answer_3": "永",
-          "answer_4": "泳",
+          "question_text": "【みず】を のみます。\n\nQuestion: 【みず】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
+          "answer_1": "<ruby>氷<rt>こおり</rt></ruby>",
+          "answer_2": "<ruby>水<rt>みず</rt></ruby>",
+          "answer_3": "<ruby>永<rt>えい</rt></ruby>",
+          "answer_4": "<ruby>泳<rt>およ</rt></ruby>ぐ",
           "correct_answer": 2,
           "explanation": {
-            "EN": "みず (water) is written as 水. This is one of the most basic N5 kanji.",
-            "ES": "みず (agua) se escribe como 水. Este es uno de los kanji N5 más básicos."
+            "EN": "みず (water) is written as <ruby>水<rt>みず</rt></ruby>. This is one of the most basic N5 kanji.",
+            "ES": "みず (agua) se escribe como <ruby>水<rt>みず</rt></ruby>. Este es uno de los kanji N5 más básicos."
           }
         },
         {
-          "question_text": "【かわ】で さかなを つりました。\n\nQuestion: 【かわ】の漢字は？",
-          "answer_1": "山",
-          "answer_2": "海",
-          "answer_3": "川",
-          "answer_4": "池",
+          "question_text": "【かわ】で さかなを つりました。\n\nQuestion: 【かわ】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
+          "answer_1": "<ruby>山<rt>やま</rt></ruby>",
+          "answer_2": "<ruby>海<rt>うみ</rt></ruby>",
+          "answer_3": "<ruby>川<rt>かわ</rt></ruby>",
+          "answer_4": "<ruby>池<rt>いけ</rt></ruby>",
           "correct_answer": 3,
           "explanation": {
-            "EN": "かわ (river) is written as 川. The kanji resembles flowing water.",
-            "ES": "かわ (río) se escribe como 川. El kanji se parece a agua fluyendo."
+            "EN": "かわ (river) is written as <ruby>川<rt>かわ</rt></ruby>. The kanji resembles flowing water.",
+            "ES": "かわ (río) se escribe como <ruby>川<rt>かわ</rt></ruby>. El kanji se parece a agua fluyendo."
           }
         },
         {
-          "question_text": "まいにち【でんしゃ】で がっこうへ いきます。\n\nQuestion: 【でんしゃ】の漢字は？",
-          "answer_1": "電車",
-          "answer_2": "電者",
-          "answer_3": "伝車",
-          "answer_4": "伝者",
+          "question_text": "まいにち【でんしゃ】で がっこうへ いきます。\n\nQuestion: 【でんしゃ】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
+          "answer_1": "<ruby>電車<rt>でんしゃ</rt></ruby>",
+          "answer_2": "<ruby>電者<rt>でんしゃ</rt></ruby>",
+          "answer_3": "<ruby>伝車<rt>でんしゃ</rt></ruby>",
+          "answer_4": "<ruby>伝者<rt>でんしゃ</rt></ruby>",
           "correct_answer": 1,
           "explanation": {
-            "EN": "でんしゃ (train) is written as 電車. 電 means 'electricity' and 車 means 'vehicle'.",
-            "ES": "でんしゃ (tren) se escribe como 電車. 電 significa 'electricidad' y 車 significa 'vehículo'."
+            "EN": "でんしゃ (train) is written as <ruby>電車<rt>でんしゃ</rt></ruby>. <ruby>電<rt>でん</rt></ruby> means 'electricity' and <ruby>車<rt>しゃ</rt></ruby> means 'vehicle'.",
+            "ES": "でんしゃ (tren) se escribe como <ruby>電車<rt>でんしゃ</rt></ruby>. <ruby>電<rt>でん</rt></ruby> significa 'electricidad' y <ruby>車<rt>しゃ</rt></ruby> significa 'vehículo'."
           }
         }
       ]

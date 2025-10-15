@@ -205,7 +205,7 @@
       "name": "Kanji Reading",
       "questions": [
         {
-          "question_text": "わたしは【<ruby>日<rt>に</rt></ruby>】<ruby>本人<rt>ほんじん</rt></ruby>です。\n\nQuestion: 【<ruby>日<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "わたしは【<ruby>日<rt>?</rt></ruby>】<ruby>本人<rt>ほんじん</rt></ruby>です。\n\nQuestion: 【<ruby>日<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "に",
           "answer_2": "にち",
           "answer_3": "ひ",
@@ -217,7 +217,7 @@
           }
         },
         {
-          "question_text": "<ruby>昨日<rt>きのう</rt></ruby>【<ruby>本<rt>ほん</rt></ruby>】を <ruby>読<rt>よ</rt></ruby>みました。\n\nQuestion: 【<ruby>本<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "<ruby>昨日<rt>きのう</rt></ruby>【<ruby>本<rt>?</rt></ruby>】を <ruby>読<rt>よ</rt></ruby>みました。\n\nQuestion: 【<ruby>本<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "ほん",
           "answer_2": "もと",
           "answer_3": "ぽん",
