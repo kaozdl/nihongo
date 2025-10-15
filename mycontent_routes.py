@@ -315,7 +315,7 @@ def edit_section(id):
                     db.session.add(section_question)
                     db.session.commit()
                     
-                    flash(f'✅ Question created and added to section!', 'success')
+                    flash('✅ Question created and added to section!', 'success')
                     return redirect(url_for('mycontent.edit_section', id=section.id))
             
             # Check if we're adding an existing question
@@ -342,7 +342,7 @@ def edit_section(id):
                         db.session.add(section_question)
                         db.session.commit()
                         
-                        flash(f'✅ Question added to section!', 'success')
+                        flash('✅ Question added to section!', 'success')
                     
                     return redirect(url_for('mycontent.edit_section', id=section.id))
             

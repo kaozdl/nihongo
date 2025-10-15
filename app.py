@@ -11,6 +11,7 @@ from models.section_question import SectionQuestion
 from models.section import Section
 from models.utils import get_explanation
 from admin import init_admin
+from mycontent_routes import mycontent_bp
 from config import get_config
 from datetime import datetime
 import os
@@ -63,7 +64,6 @@ def inject_babel():
 init_admin(app, db)
 
 # Register My Content blueprint (custom routes with app styling, not Flask-Admin)
-from mycontent_routes import mycontent_bp
 app.register_blueprint(mycontent_bp)
 
 

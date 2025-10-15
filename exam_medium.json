@@ -258,6 +258,59 @@
           }
         }
       ]
+    },
+    {
+      "name": "Katakana Reading",
+      "questions": [
+        {
+          "question_text": "【ホテル】に <ruby>泊<rt>と</rt></ruby>まります。\n\nQuestion: 【ホテル】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "answer_1": "hotel",
+          "answer_2": "house",
+          "answer_3": "apartment",
+          "answer_4": "inn",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "ホテル (hoteru) is the katakana for 'hotel', from English 'hotel'.",
+            "ES": "ホテル (hoteru) es el katakana para 'hotel', del inglés 'hotel'."
+          }
+        },
+        {
+          "question_text": "【カメラ】で <ruby>写真<rt>しゃしん</rt></ruby>を とります。\n\nQuestion: 【カメラ】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "answer_1": "computer",
+          "answer_2": "telephone",
+          "answer_3": "camera",
+          "answer_4": "video",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "カメラ (kamera) is the katakana for 'camera', from Dutch 'camera'.",
+            "ES": "カメラ (kamera) es el katakana para 'cámara', del holandés 'camera'."
+          }
+        },
+        {
+          "question_text": "<ruby>朝<rt>あさ</rt></ruby>【ジュース】を のみます。\n\nQuestion: 【ジュース】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "answer_1": "juice",
+          "answer_2": "coffee",
+          "answer_3": "tea",
+          "answer_4": "milk",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "ジュース (juusu) is the katakana for 'juice', from English 'juice'.",
+            "ES": "ジュース (juusu) es el katakana para 'jugo', del inglés 'juice'."
+          }
+        },
+        {
+          "question_text": "【バス】で <ruby>駅<rt>えき</rt></ruby>へ <ruby>行<rt>い</rt></ruby>きます。\n\nQuestion: 【バス】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "answer_1": "taxi",
+          "answer_2": "train",
+          "answer_3": "bus",
+          "answer_4": "bicycle",
+          "correct_answer": 3,
+          "explanation": {
+            "EN": "バス (basu) is the katakana for 'bus', from English 'bus'.",
+            "ES": "バス (basu) es el katakana para 'autobús', del inglés 'bus'."
+          }
+        }
+      ]
     }
   ]
 }

@@ -5,27 +5,27 @@
       "name": "Grammar",
       "questions": [
         {
-          "question_text": "わたしは まいにち 七時___おきます。",
+          "question_text": "わたしは <ruby>毎日<rt>まいにち</rt></ruby> <ruby>七時<rt>しちじ</rt></ruby>___おきます。",
           "answer_1": "に",
           "answer_2": "で",
           "answer_3": "を",
           "answer_4": "が",
           "correct_answer": 1,
           "explanation": {
-            "EN": "Time particle に is used with specific times. 七時に means 'at 7 o'clock'.",
-            "ES": "La partícula de tiempo に se usa con tiempos específicos. 七時に significa 'a las 7 en punto'."
+            "EN": "Time particle に is used with specific times. <ruby>七時<rt>しちじ</rt></ruby>に means 'at 7 o'clock'.",
+            "ES": "La partícula de tiempo に se usa con tiempos específicos. <ruby>七時<rt>しちじ</rt></ruby>に significa 'a las 7 en punto'."
           }
         },
         {
-          "question_text": "きのう えいが___みました。",
+          "question_text": "<ruby>昨日<rt>きのう</rt></ruby> <ruby>映画<rt>えいが</rt></ruby>___みました。",
           "answer_1": "に",
           "answer_2": "で",
           "answer_3": "を",
           "answer_4": "が",
           "correct_answer": 3,
           "explanation": {
-            "EN": "The particle を marks the direct object. えいがを means 'a movie (object)'.",
-            "ES": "La partícula を marca el objeto directo. えいがを significa 'una película (objeto)'."
+            "EN": "The particle を marks the direct object. <ruby>映画<rt>えいが</rt></ruby>を means 'a movie (object)'.",
+            "ES": "La partícula を marca el objeto directo. <ruby>映画<rt>えいが</rt></ruby>を significa 'una película (objeto)'."
           }
         },
         {
@@ -41,19 +41,19 @@
           }
         },
         {
-          "question_text": "これは 日本語___本です。",
+          "question_text": "これは <ruby>日本語<rt>にほんご</rt></ruby>___<ruby>本<rt>ほん</rt></ruby>です。",
           "answer_1": "の",
           "answer_2": "で",
           "answer_3": "に",
           "answer_4": "が",
           "correct_answer": 1,
           "explanation": {
-            "EN": "The particle の connects nouns. 日本語の本 means 'Japanese language book'.",
-            "ES": "La partícula の conecta sustantivos. 日本語の本 significa 'libro de japonés'."
+            "EN": "The particle の connects nouns. <ruby>日本語<rt>にほんご</rt></ruby>の<ruby>本<rt>ほん</rt></ruby> means 'Japanese language book'.",
+            "ES": "La partícula の conecta sustantivos. <ruby>日本語<rt>にほんご</rt></ruby>の<ruby>本<rt>ほん</rt></ruby> significa 'libro de japonés'."
           }
         },
         {
-          "question_text": "わたしは バス___がっこうへ いきます。",
+          "question_text": "わたしは バス___<ruby>学校<rt>がっこう</rt></ruby>へ いきます。",
           "answer_1": "に",
           "answer_2": "で",
           "answer_3": "を",
@@ -70,63 +70,63 @@
       "name": "Vocabulary",
       "questions": [
         {
-          "question_text": "あした テストが あります。だから、こんばん___します。",
-          "answer_1": "べんきょう",
-          "answer_2": "りょこう",
-          "answer_3": "しごと",
-          "answer_4": "かいもの",
+          "question_text": "<ruby>明日<rt>あした</rt></ruby> テストが あります。だから、<ruby>今晩<rt>こんばん</rt></ruby>___します。",
+          "answer_1": "<ruby>勉強<rt>べんきょう</rt></ruby>",
+          "answer_2": "<ruby>旅行<rt>りょこう</rt></ruby>",
+          "answer_3": "<ruby>仕事<rt>しごと</rt></ruby>",
+          "answer_4": "<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>",
           "correct_answer": 1,
           "explanation": {
-            "EN": "べんきょう (benkyou) means 'study'. You study before a test.",
-            "ES": "べんきょう (benkyou) significa 'estudiar'. Estudias antes de un examen."
+            "EN": "<ruby>勉強<rt>べんきょう</rt></ruby> (benkyou) means 'study'. You study before a test.",
+            "ES": "<ruby>勉強<rt>べんきょう</rt></ruby> (benkyou) significa 'estudiar'. Estudias antes de un examen."
           }
         },
         {
-          "question_text": "まいあさ パンと___を たべます。",
-          "answer_1": "たまご",
-          "answer_2": "くつ",
-          "answer_3": "ほん",
-          "answer_4": "いす",
+          "question_text": "<ruby>毎朝<rt>まいあさ</rt></ruby> パンと___を たべます。",
+          "answer_1": "<ruby>卵<rt>たまご</rt></ruby>",
+          "answer_2": "<ruby>靴<rt>くつ</rt></ruby>",
+          "answer_3": "<ruby>本<rt>ほん</rt></ruby>",
+          "answer_4": "<ruby>椅子<rt>いす</rt></ruby>",
           "correct_answer": 1,
           "explanation": {
-            "EN": "たまご (tamago) means 'egg'. Bread and eggs are common breakfast foods.",
-            "ES": "たまご (tamago) significa 'huevo'. Pan y huevos son alimentos comunes para el desayuno."
+            "EN": "<ruby>卵<rt>たまご</rt></ruby> (tamago) means 'egg'. Bread and eggs are common breakfast foods.",
+            "ES": "<ruby>卵<rt>たまご</rt></ruby> (tamago) significa 'huevo'. Pan y huevos son alimentos comunes para el desayuno."
           }
         },
         {
-          "question_text": "へやが___です。まどを あけて ください。",
-          "answer_1": "おおきい",
-          "answer_2": "あつい",
-          "answer_3": "あたらしい",
-          "answer_4": "たかい",
+          "question_text": "<ruby>部屋<rt>へや</rt></ruby>が___です。<ruby>窓<rt>まど</rt></ruby>を あけて ください。",
+          "answer_1": "<ruby>大<rt>おお</rt></ruby>きい",
+          "answer_2": "<ruby>暑<rt>あつ</rt></ruby>い",
+          "answer_3": "<ruby>新<rt>あたら</rt></ruby>しい",
+          "answer_4": "<ruby>高<rt>たか</rt></ruby>い",
           "correct_answer": 2,
           "explanation": {
-            "EN": "あつい (atsui) means 'hot'. Opening windows when it's hot makes sense.",
-            "ES": "あつい (atsui) significa 'caliente'. Abrir las ventanas cuando hace calor tiene sentido."
+            "EN": "<ruby>暑<rt>あつ</rt></ruby>い (atsui) means 'hot'. Opening windows when it's hot makes sense.",
+            "ES": "<ruby>暑<rt>あつ</rt></ruby>い (atsui) significa 'caliente'. Abrir las ventanas cuando hace calor tiene sentido."
           }
         },
         {
-          "question_text": "きょうは___です。うちに います。",
-          "answer_1": "げつようび",
-          "answer_2": "やすみ",
-          "answer_3": "あめ",
-          "answer_4": "さむい",
+          "question_text": "<ruby>今日<rt>きょう</rt></ruby>は___です。<ruby>家<rt>うち</rt></ruby>に います。",
+          "answer_1": "<ruby>月曜日<rt>げつようび</rt></ruby>",
+          "answer_2": "<ruby>休<rt>やす</rt></ruby>み",
+          "answer_3": "<ruby>雨<rt>あめ</rt></ruby>",
+          "answer_4": "<ruby>寒<rt>さむ</rt></ruby>い",
           "correct_answer": 2,
           "explanation": {
-            "EN": "やすみ (yasumi) means 'day off/holiday'. You stay home on days off.",
-            "ES": "やすみ (yasumi) significa 'día libre/vacaciones'. Te quedas en casa los días libres."
+            "EN": "<ruby>休<rt>やす</rt></ruby>み (yasumi) means 'day off/holiday'. You stay home on days off.",
+            "ES": "<ruby>休<rt>やす</rt></ruby>み (yasumi) significa 'día libre/vacaciones'. Te quedas en casa los días libres."
           }
         },
         {
-          "question_text": "この かばんは___です。かいません。",
-          "answer_1": "やすい",
+          "question_text": "この かばんは___です。<ruby>買<rt>か</rt></ruby>いません。",
+          "answer_1": "<ruby>安<rt>やす</rt></ruby>い",
           "answer_2": "たかい",
           "answer_3": "おおきい",
           "answer_4": "あかるい",
           "correct_answer": 2,
           "explanation": {
-            "EN": "たかい (takai) means 'expensive'. You don't buy things that are too expensive.",
-            "ES": "たかい (takai) significa 'caro'. No compras cosas que son demasiado caras."
+            "EN": "<ruby>高<rt>たか</rt></ruby>い (takai) means 'expensive'. You don't buy things that are too expensive.",
+            "ES": "<ruby>高<rt>たか</rt></ruby>い (takai) significa 'caro'. No compras cosas que son demasiado caras."
           }
         }
       ]
@@ -135,27 +135,27 @@
       "name": "Reading Comprehension",
       "questions": [
         {
-          "question_text": "たなかさんは まいにち 六時に おきます。朝ごはんを たべます。それから、七時に がっこうへ いきます。\n\nQuestion: たなかさんは なん時に がっこうへ いきますか。",
-          "answer_1": "六時",
-          "answer_2": "七時",
-          "answer_3": "八時",
-          "answer_4": "九時",
+          "question_text": "<ruby>田中<rt>たなか</rt></ruby>さんは <ruby>毎日<rt>まいにち</rt></ruby> <ruby>六時<rt>ろくじ</rt></ruby>に おきます。<ruby>朝<rt>あさ</rt></ruby>ごはんを たべます。それから、<ruby>七時<rt>しちじ</rt></ruby>に <ruby>学校<rt>がっこう</rt></ruby>へ いきます。\n\nQuestion: <ruby>田中<rt>たなか</rt></ruby>さんは なん<ruby>時<rt>じ</rt></ruby>に <ruby>学校<rt>がっこう</rt></ruby>へ いきますか。",
+          "answer_1": "<ruby>六時<rt>ろくじ</rt></ruby>",
+          "answer_2": "<ruby>七時<rt>しちじ</rt></ruby>",
+          "answer_3": "<ruby>八時<rt>はちじ</rt></ruby>",
+          "answer_4": "<ruby>九時<rt>くじ</rt></ruby>",
           "correct_answer": 2,
           "explanation": {
-            "EN": "The text says '七時にがっこうへいきます' which means 'goes to school at 7 o'clock'.",
-            "ES": "El texto dice '七時にがっこうへいきます' que significa 'va a la escuela a las 7 en punto'."
+            "EN": "The text says '<ruby>七時<rt>しちじ</rt></ruby>に<ruby>学校<rt>がっこう</rt></ruby>へいきます' which means 'goes to school at 7 o'clock'.",
+            "ES": "El texto dice '<ruby>七時<rt>しちじ</rt></ruby>に<ruby>学校<rt>がっこう</rt></ruby>へいきます' que significa 'va a la escuela a las 7 en punto'."
           }
         },
         {
-          "question_text": "きのう デパートへ いきました。くつと かばんを かいました。とても たのしかったです。\n\nQuestion: なにを かいましたか。",
-          "answer_1": "くつと ふく",
-          "answer_2": "かばんと ふく",
-          "answer_3": "くつと かばん",
-          "answer_4": "くつだけ",
+          "question_text": "<ruby>昨日<rt>きのう</rt></ruby> デパートへ いきました。<ruby>靴<rt>くつ</rt></ruby>と かばんを <ruby>買<rt>か</rt></ruby>いました。とても たのしかったです。\n\nQuestion: なにを <ruby>買<rt>か</rt></ruby>いましたか。",
+          "answer_1": "<ruby>靴<rt>くつ</rt></ruby>と <ruby>服<rt>ふく</rt></ruby>",
+          "answer_2": "かばんと <ruby>服<rt>ふく</rt></ruby>",
+          "answer_3": "<ruby>靴<rt>くつ</rt></ruby>と かばん",
+          "answer_4": "<ruby>靴<rt>くつ</rt></ruby>だけ",
           "correct_answer": 3,
           "explanation": {
-            "EN": "The text says 'くつとかばんをかいました' which means 'bought shoes and a bag'.",
-            "ES": "El texto dice 'くつとかばんをかいました' que significa 'compré zapatos y un bolso'."
+            "EN": "The text says '<ruby>靴<rt>くつ</rt></ruby>とかばんを<ruby>買<rt>か</rt></ruby>いました' which means 'bought shoes and a bag'.",
+            "ES": "El texto dice '<ruby>靴<rt>くつ</rt></ruby>とかばんを<ruby>買<rt>か</rt></ruby>いました' que significa 'compré zapatos y un bolso'."
           }
         }
       ]
@@ -178,25 +178,25 @@
         {
           "question_text": "わたしは ___ ___ _X_ ___。",
           "answer_1": "を",
-          "answer_2": "みます",
-          "answer_3": "テレビ",
-          "answer_4": "まいにち",
+          "answer_2": "<ruby>見<rt>み</rt></ruby>ます",
+          "answer_3": "<ruby>見<rt>み</rt></ruby>ます",
+          "answer_4": "<ruby>毎日<rt>まいにち</rt></ruby>",
           "correct_answer": 3,
           "explanation": {
-            "EN": "The sentence is 'わたしはまいにちテレビをみます' (I watch TV every day). Order: まいにち → テレビ → を → みます. X position is テレビ.",
-            "ES": "La oración es 'わたしはまいにちテレビをみます' (Veo televisión todos los días). Orden: まいにち → テレビ → を → みます. La posición X es テレビ."
+            "EN": "The sentence is 'わたしは<ruby>毎日<rt>まいにち</rt></ruby>テレビを<ruby>見<rt>み</rt></ruby>ます' (I watch TV every day). Order: <ruby>毎日<rt>まいにち</rt></ruby> → テレビ → を → <ruby>見<rt>み</rt></ruby>ます. X position is テレビ.",
+            "ES": "La oración es 'わたしは<ruby>毎日<rt>まいにち</rt></ruby>テレビを<ruby>見<rt>み</rt></ruby>ます' (Veo televisión todos los días). Orden: <ruby>毎日<rt>まいにち</rt></ruby> → テレビ → を → <ruby>見<rt>み</rt></ruby>ます. La posición X es テレビ."
           }
         },
         {
-          "question_text": "きのう ___ ___ _X_ ___。",
-          "answer_1": "えいが",
+          "question_text": "<ruby>昨日<rt>きのう</rt></ruby> ___ ___ _X_ ___。",
+          "answer_1": "<ruby>映画<rt>えいが</rt></ruby>",
           "answer_2": "を",
-          "answer_3": "ともだち",
-          "answer_4": "みました",
+          "answer_3": "<ruby>友達<rt>ともだち</rt></ruby>",
+          "answer_4": "<ruby>見<rt>み</rt></ruby>ました",
           "correct_answer": 1,
           "explanation": {
-            "EN": "The sentence is 'きのうともだちとえいがをみました' (Yesterday I watched a movie with a friend). Order: ともだち → と → えいが → を → みました. X position is えいが.",
-            "ES": "La oración es 'きのうともだちとえいがをみました' (Ayer vi una película con un amigo). Orden: ともだち → と → えいが → を → みました. La posición X es えいが."
+            "EN": "The sentence is '<ruby>昨日<rt>きのう</rt></ruby><ruby>友達<rt>ともだち</rt></ruby>と<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました' (Yesterday I watched a movie with a friend). Order: <ruby>友達<rt>ともだち</rt></ruby> → と → <ruby>映画<rt>えいが</rt></ruby> → を → <ruby>見<rt>み</rt></ruby>ました. X position is <ruby>映画<rt>えいが</rt></ruby>.",
+            "ES": "La oración es '<ruby>昨日<rt>きのう</rt></ruby><ruby>友達<rt>ともだち</rt></ruby>と<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました' (Ayer vi una película con un amigo). Orden: <ruby>友達<rt>ともだち</rt></ruby> → と → <ruby>映画<rt>えいが</rt></ruby> → を → <ruby>見<rt>み</rt></ruby>ました. La posición X es <ruby>映画<rt>えいが</rt></ruby>."
           }
         }
       ]
@@ -205,27 +205,27 @@
       "name": "Kanji Reading",
       "questions": [
         {
-          "question_text": "わたしは【日】本人です。\n\nQuestion: 【日】の読み方は？",
+          "question_text": "わたしは【<ruby>日<rt>に</rt></ruby>】<ruby>本人<rt>ほんじん</rt></ruby>です。\n\nQuestion: 【<ruby>日<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "に",
           "answer_2": "にち",
           "answer_3": "ひ",
           "answer_4": "か",
           "correct_answer": 2,
           "explanation": {
-            "EN": "In 日本 (Japan), 日 is read as 'にち' (nichi). This is the on-yomi reading.",
-            "ES": "En 日本 (Japón), 日 se lee como 'にち' (nichi). Esta es la lectura on-yomi."
+            "EN": "In <ruby>日本<rt>にほん</rt></ruby> (Japan), <ruby>日<rt>に</rt></ruby> is read as 'にち' (nichi). This is the on-yomi reading.",
+            "ES": "En <ruby>日本<rt>にほん</rt></ruby> (Japón), <ruby>日<rt>に</rt></ruby> se lee como 'にち' (nichi). Esta es la lectura on-yomi."
           }
         },
         {
-          "question_text": "きのう【本】を よみました。\n\nQuestion: 【本】の読み方は？",
+          "question_text": "<ruby>昨日<rt>きのう</rt></ruby>【<ruby>本<rt>ほん</rt></ruby>】を <ruby>読<rt>よ</rt></ruby>みました。\n\nQuestion: 【<ruby>本<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "ほん",
           "answer_2": "もと",
           "answer_3": "ぽん",
           "answer_4": "ぼん",
           "correct_answer": 1,
           "explanation": {
-            "EN": "本 meaning 'book' is read as 'ほん' (hon). This is the on-yomi reading.",
-            "ES": "本 que significa 'libro' se lee como 'ほん' (hon). Esta es la lectura on-yomi."
+            "EN": "<ruby>本<rt>ほん</rt></ruby> meaning 'book' is read as 'ほん' (hon). This is the on-yomi reading.",
+            "ES": "<ruby>本<rt>ほん</rt></ruby> que significa 'libro' se lee como 'ほん' (hon). Esta es la lectura on-yomi."
           }
         }
       ]
@@ -234,27 +234,68 @@
       "name": "Kanji Writing",
       "questions": [
         {
-          "question_text": "わたしは まいにち【がっこう】へ いきます。\n\nQuestion: 【がっこう】の漢字は？",
+          "question_text": "わたしは <ruby>毎日<rt>まいにち</rt></ruby>【がっこう】へ いきます。\n\nQuestion: 【がっこう】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
           "answer_1": "学校",
           "answer_2": "学交",
           "answer_3": "字校",
           "answer_4": "字交",
           "correct_answer": 1,
           "explanation": {
-            "EN": "がっこう (school) is written as 学校. 学 means 'study' and 校 means 'school'.",
-            "ES": "がっこう (escuela) se escribe como 学校. 学 significa 'estudio' y 校 significa 'escuela'."
+            "EN": "がっこう (school) is written as <ruby>学校<rt>がっこう</rt></ruby>. <ruby>学<rt>がく</rt></ruby> means 'study' and <ruby>校<rt>こう</rt></ruby> means 'school'.",
+            "ES": "がっこう (escuela) se escribe como <ruby>学校<rt>がっこう</rt></ruby>. <ruby>学<rt>がく</rt></ruby> significa 'estudio' y <ruby>校<rt>こう</rt></ruby> significa 'escuela'."
           }
         },
         {
-          "question_text": "【やま】へ のぼりました。\n\nQuestion: 【やま】の漢字は？",
+          "question_text": "【やま】へ のぼりました。\n\nQuestion: 【やま】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
           "answer_1": "川",
           "answer_2": "山",
           "answer_3": "林",
           "answer_4": "木",
           "correct_answer": 2,
           "explanation": {
-            "EN": "やま (mountain) is written as 山. The kanji itself resembles a mountain with three peaks.",
-            "ES": "やま (montaña) se escribe como 山. El kanji mismo se parece a una montaña con tres picos."
+            "EN": "やま (mountain) is written as <ruby>山<rt>やま</rt></ruby>. The kanji itself resembles a mountain with three peaks.",
+            "ES": "やま (montaña) se escribe como <ruby>山<rt>やま</rt></ruby>. El kanji mismo se parece a una montaña con tres picos."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Katakana Reading",
+      "questions": [
+        {
+          "question_text": "まいにち【コーヒー】を のみます。\n\nQuestion: 【コーヒー】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "answer_1": "coffee",
+          "answer_2": "tea",
+          "answer_3": "milk",
+          "answer_4": "water",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "コーヒー (koohii) is the katakana for 'coffee'. Katakana is used for foreign loan words.",
+            "ES": "コーヒー (koohii) es el katakana para 'café'. El katakana se usa para palabras prestadas extranjeras."
+          }
+        },
+        {
+          "question_text": "あそこに【テレビ】が あります。\n\nQuestion: 【テレビ】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "answer_1": "radio",
+          "answer_2": "television",
+          "answer_3": "computer",
+          "answer_4": "telephone",
+          "correct_answer": 2,
+          "explanation": {
+            "EN": "テレビ (terebi) is the katakana for 'television', shortened from テレビジョン.",
+            "ES": "テレビ (terebi) es el katakana para 'televisión', acortado de テレビジョン."
+          }
+        },
+        {
+          "question_text": "【パン】と <ruby>卵<rt>たまご</rt></ruby>を たべます。\n\nQuestion: 【パン】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "answer_1": "bread",
+          "answer_2": "rice",
+          "answer_3": "meat",
+          "answer_4": "fish",
+          "correct_answer": 1,
+          "explanation": {
+            "EN": "パン (pan) is the katakana for 'bread', borrowed from Portuguese 'pão'.",
+            "ES": "パン (pan) es el katakana para 'pan', tomado del portugués 'pão'."
           }
         }
       ]

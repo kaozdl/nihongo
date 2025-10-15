@@ -76,23 +76,23 @@
                     <div class="row">
                         <div class="col-md-8">
                             <h5 class="card-title">
-                                <i class="bi bi-chat-square-text"></i> {{ question.question_text[:100] }}
+                                <i class="bi bi-chat-square-text"></i> {{ question.question_text[:100]|safe }}
                                 {% if question.question_text|length > 100 %}...{% endif %}
                             </h5>
                             
                             <div class="mt-3">
                                 <div class="row">
                                     <div class="col-md-6 mb-2">
-                                        <span class="badge bg-light text-dark">1</span> {{ question.answer_1 }}
+                                        <span class="badge bg-light text-dark">1</span> {{ question.answer_1|safe }}
                                     </div>
                                     <div class="col-md-6 mb-2">
-                                        <span class="badge bg-light text-dark">2</span> {{ question.answer_2 }}
+                                        <span class="badge bg-light text-dark">2</span> {{ question.answer_2|safe }}
                                     </div>
                                     <div class="col-md-6 mb-2">
-                                        <span class="badge bg-light text-dark">3</span> {{ question.answer_3 }}
+                                        <span class="badge bg-light text-dark">3</span> {{ question.answer_3|safe }}
                                     </div>
                                     <div class="col-md-6 mb-2">
-                                        <span class="badge bg-light text-dark">4</span> {{ question.answer_4 }}
+                                        <span class="badge bg-light text-dark">4</span> {{ question.answer_4|safe }}
                                     </div>
                                 </div>
                             </div>

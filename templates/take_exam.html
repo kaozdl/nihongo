@@ -83,7 +83,7 @@
                         </div>
                         {% endif %}
 
-                        <p class="lead">{{ item.question.question_text }}</p>
+                        <p class="lead">{{ item.question.question_text|safe }}</p>
 
                         <div class="answers mt-4">
                             {% for i in range(1, 5) %}
@@ -96,7 +96,7 @@
                                        name="question_{{ item.question.id }}" 
                                        value="{{ i }}"
                                        {% if is_selected %}checked{% endif %}>
-                                <strong>{{ i }}.</strong> {{ answer_text }}
+                                <strong>{{ i }}.</strong> {{ answer_text|safe }}
                             </label>
                             {% endfor %}
                         </div>

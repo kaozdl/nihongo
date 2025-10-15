@@ -1,6 +1,5 @@
 from flask_admin import Admin, BaseView, expose
 from flask_admin.contrib.sqla import ModelView
-from flask_admin.contrib.sqla.form import InlineModelConverter
 from flask_login import current_user
 from flask import redirect, url_for, request, flash
 from wtforms import TextAreaField

@@ -120,13 +120,13 @@
                     </div>
                     {% endif %}
 
-                    <p><strong>{{ result.question.question_text }}</strong></p>
+                    <p><strong>{{ result.question.question_text|safe }}</strong></p>
                     
                     <div class="mt-2">
                         <p class="mb-1">
                             <span class="answer-label user">{{ _('Your Answer') }}</span>
                             {% if result.user_answer %}
-                                {{ result.question['answer_' + result.user_answer|string] }}
+                                {{ result.question['answer_' + result.user_answer|string]|safe }}
                             {% else %}
                                 <em>{{ _('Not answered') }}</em>
                             {% endif %}
@@ -135,14 +135,14 @@
                         {% if not result.is_correct %}
                         <p class="mb-1">
                             <span class="answer-label correct">{{ _('Correct Answer') }}</span>
-                            {{ result.question['answer_' + result.question.correct_answer|string] }}
+                            {{ result.question['answer_' + result.question.correct_answer|string]|safe }}
                         </p>
                         {% endif %}
                         
                         {% if result.explanation %}
                         <div class="alert alert-info mt-3">
                             <strong><i class="bi bi-lightbulb"></i> {{ _('Explanation') }}:</strong><br>
-                            {{ result.explanation }}
+                            {{ result.explanation|safe }}
                         </div>
                         {% endif %}
                     </div>
