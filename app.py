@@ -5,25 +5,25 @@ _parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _parent not in sys.path:
     sys.path.insert(0, _parent)
 
-from flask import Flask, render_template, redirect, url_for, request, flash, send_file, session
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from flask_babel import Babel, gettext, get_locale
-from nihongo.models import db
-from nihongo.models.user import User
-from nihongo.models.exam import Exam
-from nihongo.models.test import Test
-from nihongo.models.test_answer import TestAnswer
-from nihongo.models.exam_section import ExamSection
-from nihongo.models.section_question import SectionQuestion
-from nihongo.models.section import Section
-from nihongo.models.utils import get_explanation
-from nihongo.admin import init_admin
-from nihongo.mycontent_routes import mycontent_bp
-from nihongo.config import get_config
-from datetime import datetime
-import json
-import random
-from io import BytesIO
+from flask import Flask, render_template, redirect, url_for, request, flash, send_file, session  # noqa: E402
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user  # noqa: E402
+from flask_babel import Babel, gettext, get_locale  # noqa: E402
+from nihongo.models import db  # noqa: E402
+from nihongo.models.user import User  # noqa: E402
+from nihongo.models.exam import Exam  # noqa: E402
+from nihongo.models.test import Test  # noqa: E402
+from nihongo.models.test_answer import TestAnswer  # noqa: E402
+from nihongo.models.exam_section import ExamSection  # noqa: E402
+from nihongo.models.section_question import SectionQuestion  # noqa: E402
+from nihongo.models.section import Section  # noqa: E402
+from nihongo.models.utils import get_explanation  # noqa: E402
+from nihongo.admin import init_admin  # noqa: E402
+from nihongo.mycontent_routes import mycontent_bp  # noqa: E402
+from nihongo.config import get_config  # noqa: E402
+from datetime import datetime  # noqa: E402
+import json  # noqa: E402
+import random  # noqa: E402
+from io import BytesIO  # noqa: E402
 
 
 # Create Flask app with configuration

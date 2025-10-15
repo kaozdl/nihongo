@@ -5,7 +5,7 @@
       "name": "Grammar",
       "questions": [
         {
-          "question_text": "あした___<ruby>時<rt>じ</rt></ruby>に うちへ きますか。",
+          "question_text": "<ruby>明日<rt>あした</rt></ruby>___<ruby>時<rt>じ</rt></ruby>に うちへ <ruby>来<rt>き</rt></ruby>ますか。",
           "answer_1": "なん",
           "answer_2": "なに",
           "answer_3": "どの",
@@ -17,7 +17,7 @@
           }
         },
         {
-          "question_text": "たなかさんは びょうき___、がっこうを やすみました。",
+          "question_text": "<ruby>田中<rt>たなか</rt></ruby>さんは <ruby>病気<rt>びょうき</rt></ruby>___、<ruby>学校<rt>がっこう</rt></ruby>を <ruby>休<rt>やす</rt></ruby>みました。",
           "answer_1": "で",
           "answer_2": "だから",
           "answer_3": "が",
@@ -30,38 +30,38 @@
         },
         {
           "question_text": "この かばんは___です。",
-          "answer_1": "わたし",
-          "answer_2": "わたしの",
-          "answer_3": "わたしが",
-          "answer_4": "わたしを",
+          "answer_1": "<ruby>私<rt>わたし</rt></ruby>",
+          "answer_2": "<ruby>私<rt>わたし</rt></ruby>の",
+          "answer_3": "<ruby>私<rt>わたし</rt></ruby>が",
+          "answer_4": "<ruby>私<rt>わたし</rt></ruby>を",
           "correct_answer": 2,
           "explanation": {
-            "EN": "わたしの means 'my/mine'. The particle の indicates possession.",
-            "ES": "わたしの significa 'mi/mío'. La partícula の indica posesión."
+            "EN": "<ruby>私<rt>わたし</rt></ruby>の means 'my/mine'. The particle の indicates possession.",
+            "ES": "<ruby>私<rt>わたし</rt></ruby>の significa 'mi/mío'. La partícula の indica posesión."
           }
         },
         {
-          "question_text": "A:「コーヒーを のみませんか。」 B:「___。」",
-          "answer_1": "はい、のみません",
-          "answer_2": "いいえ、のみます",
-          "answer_3": "はい、のみましょう",
-          "answer_4": "いいえ、のみましょう",
+          "question_text": "A:「コーヒーを <ruby>飲<rt>の</rt></ruby>みませんか。」 B:「___。」",
+          "answer_1": "はい、<ruby>飲<rt>の</rt></ruby>みません",
+          "answer_2": "いいえ、<ruby>飲<rt>の</rt></ruby>みます",
+          "answer_3": "はい、<ruby>飲<rt>の</rt></ruby>みましょう",
+          "answer_4": "いいえ、<ruby>飲<rt>の</rt></ruby>みましょう",
           "correct_answer": 3,
           "explanation": {
-            "EN": "When accepting an invitation (のみませんか), use はい、のみましょう (Yes, let's drink).",
-            "ES": "Al aceptar una invitación (のみませんか), usa はい、のみましょう (Sí, bebamos)."
+            "EN": "When accepting an invitation (<ruby>飲<rt>の</rt></ruby>みませんか), use はい、<ruby>飲<rt>の</rt></ruby>みましょう (Yes, let's drink).",
+            "ES": "Al aceptar una invitación (<ruby>飲<rt>の</rt></ruby>みませんか), usa はい、<ruby>飲<rt>の</rt></ruby>みましょう (Sí, bebamos)."
           }
         },
         {
-          "question_text": "ここで しゃしんを___も いいですか。",
-          "answer_1": "とり",
-          "answer_2": "とる",
-          "answer_3": "とって",
-          "answer_4": "とった",
+          "question_text": "ここで <ruby>写真<rt>しゃしん</rt></ruby>を___も いいですか。",
+          "answer_1": "<ruby>撮<rt>と</rt></ruby>り",
+          "answer_2": "<ruby>撮<rt>と</rt></ruby>る",
+          "answer_3": "<ruby>撮<rt>と</rt></ruby>って",
+          "answer_4": "<ruby>撮<rt>と</rt></ruby>った",
           "correct_answer": 3,
           "explanation": {
-            "EN": "～てもいいですか means 'Is it okay to...?'. Use te-form: とって.",
-            "ES": "～てもいいですか significa '¿Está bien...?'. Usa la forma te: とって."
+            "EN": "～てもいいですか means 'Is it okay to...?'. Use te-form: <ruby>撮<rt>と</rt></ruby>って.",
+            "ES": "～てもいいですか significa '¿Está bien...?'. Usa la forma te: <ruby>撮<rt>と</rt></ruby>って."
           }
         }
       ]
@@ -70,51 +70,51 @@
       "name": "Vocabulary",
       "questions": [
         {
-          "question_text": "きょうは あめが___います。かさを もって いきましょう。",
-          "answer_1": "ふって",
+          "question_text": "<ruby>今日<rt>きょう</rt></ruby>は <ruby>雨<rt>あめ</rt></ruby>が___います。かさを もって <ruby>行<rt>い</rt></ruby>きましょう。",
+          "answer_1": "<ruby>降<rt>ふ</rt></ruby>って",
           "answer_2": "ふいて",
           "answer_3": "ふえて",
           "answer_4": "ふんで",
           "correct_answer": 1,
           "explanation": {
-            "EN": "ふっている means 'it's raining'. From the verb ふる (to fall/rain).",
-            "ES": "ふっている significa 'está lloviendo'. Del verbo ふる (caer/llover)."
+            "EN": "<ruby>降<rt>ふ</rt></ruby>っている means 'it's raining'. From the verb <ruby>降<rt>ふ</rt></ruby>る (to fall/rain).",
+            "ES": "<ruby>降<rt>ふ</rt></ruby>っている significa 'está lloviendo'. Del verbo <ruby>降<rt>ふ</rt></ruby>る (caer/llover)."
           }
         },
         {
-          "question_text": "___は あついですから、まどを あけましょう。",
-          "answer_1": "へや",
-          "answer_2": "そと",
-          "answer_3": "つくえ",
-          "answer_4": "いす",
+          "question_text": "___は <ruby>暑<rt>あつ</rt></ruby>いですから、<ruby>窓<rt>まど</rt></ruby>を <ruby>開<rt>あ</rt></ruby>けましょう。",
+          "answer_1": "<ruby>部屋<rt>へや</rt></ruby>",
+          "answer_2": "<ruby>外<rt>そと</rt></ruby>",
+          "answer_3": "<ruby>机<rt>つくえ</rt></ruby>",
+          "answer_4": "<ruby>椅子<rt>いす</rt></ruby>",
           "correct_answer": 1,
           "explanation": {
-            "EN": "へや (room) makes sense: 'The room is hot, so let's open the window'.",
-            "ES": "へや (habitación) tiene sentido: 'La habitación está caliente, así que abramos la ventana'."
+            "EN": "<ruby>部屋<rt>へや</rt></ruby> (room) makes sense: 'The room is hot, so let's open the window'.",
+            "ES": "<ruby>部屋<rt>へや</rt></ruby> (habitación) tiene sentido: 'La habitación está caliente, así que abramos la ventana'."
           }
         },
         {
-          "question_text": "A:「おなかが すきましたね。」 B:「___を たべましょう。」",
-          "answer_1": "なにか",
+          "question_text": "A:「おなかが すきましたね。」 B:「___を <ruby>食<rt>た</rt></ruby>べましょう。」",
+          "answer_1": "<ruby>何<rt>なに</rt></ruby>か",
           "answer_2": "だれか",
           "answer_3": "どこか",
           "answer_4": "いつか",
           "correct_answer": 1,
           "explanation": {
-            "EN": "なにか means 'something'. 'Let's eat something' when hungry.",
-            "ES": "なにか significa 'algo'. 'Comamos algo' cuando tienes hambre."
+            "EN": "<ruby>何<rt>なに</rt></ruby>か means 'something'. 'Let's eat something' when hungry.",
+            "ES": "<ruby>何<rt>なに</rt></ruby>か significa 'algo'. 'Comamos algo' cuando tienes hambre."
           }
         },
         {
-          "question_text": "わたしの___は サッカーです。まいしゅう やります。",
-          "answer_1": "しごと",
-          "answer_2": "しゅみ",
-          "answer_3": "べんきょう",
-          "answer_4": "せんせい",
+          "question_text": "<ruby>私<rt>わたし</rt></ruby>の___は サッカーです。<ruby>毎週<rt>まいしゅう</rt></ruby> やります。",
+          "answer_1": "<ruby>仕事<rt>しごと</rt></ruby>",
+          "answer_2": "<ruby>趣味<rt>しゅみ</rt></ruby>",
+          "answer_3": "<ruby>勉強<rt>べんきょう</rt></ruby>",
+          "answer_4": "<ruby>先生<rt>せんせい</rt></ruby>",
           "correct_answer": 2,
           "explanation": {
-            "EN": "しゅみ means 'hobby'. Playing soccer every week indicates it's a hobby.",
-            "ES": "しゅみ significa 'pasatiempo'. Jugar fútbol cada semana indica que es un pasatiempo."
+            "EN": "<ruby>趣味<rt>しゅみ</rt></ruby> means 'hobby'. Playing soccer every week indicates it's a hobby.",
+            "ES": "<ruby>趣味<rt>しゅみ</rt></ruby> significa 'pasatiempo'. Jugar fútbol cada semana indica que es un pasatiempo."
           }
         }
       ]
@@ -123,27 +123,27 @@
       "name": "Reading Comprehension",
       "questions": [
         {
-          "question_text": "やまださんは <ruby>東京<rt>とうきょう</rt></ruby>に すんでいます。まいあさ <ruby>七時<rt>しちじ</rt></ruby>に いえを でます。でんしゃで かいしゃに いきます。<ruby>八時<rt>はちじ</rt></ruby>に かいしゃに つきます。\n\nQuestion: やまださんは なんで かいしゃに いきますか。",
-          "answer_1": "あるいて",
-          "answer_2": "でんしゃで",
-          "answer_3": "じてんしゃで",
+          "question_text": "やまださんは <ruby>東京<rt>とうきょう</rt></ruby>に <ruby>住<rt>す</rt></ruby>んでいます。<ruby>毎朝<rt>まいあさ</rt></ruby> <ruby>七時<rt>しちじ</rt></ruby>に <ruby>家<rt>いえ</rt></ruby>を でます。<ruby>電車<rt>でんしゃ</rt></ruby>で <ruby>会社<rt>かいしゃ</rt></ruby>に <ruby>行<rt>い</rt></ruby>きます。<ruby>八時<rt>はちじ</rt></ruby>に <ruby>会社<rt>かいしゃ</rt></ruby>に つきます。\n\nQuestion: やまださんは なんで <ruby>会社<rt>かいしゃ</rt></ruby>に <ruby>行<rt>い</rt></ruby>きますか。",
+          "answer_1": "<ruby>歩<rt>ある</rt></ruby>いて",
+          "answer_2": "<ruby>電車<rt>でんしゃ</rt></ruby>で",
+          "answer_3": "<ruby>自転車<rt>じてんしゃ</rt></ruby>で",
           "answer_4": "バスで",
           "correct_answer": 2,
           "explanation": {
-            "EN": "The text says 'でんしゃでかいしゃにいきます' (goes to work by train).",
-            "ES": "El texto dice 'でんしゃでかいしゃにいきます' (va al trabajo en tren)."
+            "EN": "The text says '<ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます' (goes to work by train).",
+            "ES": "El texto dice '<ruby>電車<rt>でんしゃ</rt></ruby>で<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます' (va al trabajo en tren)."
           }
         },
         {
-          "question_text": "すずきさんは えいごの せんせいです。げつようびから きんようびまで がっこうで はたらきます。どようびと にちようびは やすみです。\n\nQuestion: すずきさんは なんようびに はたらきますか。",
-          "answer_1": "まいにち",
+          "question_text": "すずきさんは えいごの <ruby>先生<rt>せんせい</rt></ruby>です。<ruby>月曜日<rt>げつようび</rt></ruby>から <ruby>金曜日<rt>きんようび</rt></ruby>まで <ruby>学校<rt>がっこう</rt></ruby>で <ruby>働<rt>はたら</rt></ruby>きます。<ruby>土曜日<rt>どようび</rt></ruby>と <ruby>日曜日<rt>にちようび</rt></ruby>は <ruby>休<rt>やす</rt></ruby>みです。\n\nQuestion: すずきさんは なんようびに <ruby>働<rt>はたら</rt></ruby>きますか。",
+          "answer_1": "<ruby>毎日<rt>まいにち</rt></ruby>",
           "answer_2": "<ruby>月曜日<rt>げつようび</rt></ruby>から <ruby>金曜日<rt>きんようび</rt></ruby>まで",
           "answer_3": "<ruby>土曜日<rt>どようび</rt></ruby>と <ruby>日曜日<rt>にちようび</rt></ruby>",
           "answer_4": "<ruby>日曜日<rt>にちようび</rt></ruby>だけ",
           "correct_answer": 2,
           "explanation": {
-            "EN": "The text says 'げつようびからきんようびまではたらきます' (works Monday to Friday).",
-            "ES": "El texto dice 'げつようびからきんようびまではたらきます' (trabaja de lunes a viernes)."
+            "EN": "The text says '<ruby>月曜日<rt>げつようび</rt></ruby>から<ruby>金曜日<rt>きんようび</rt></ruby>まで<ruby>働<rt>はたら</rt></ruby>きます' (works Monday to Friday).",
+            "ES": "El texto dice '<ruby>月曜日<rt>げつようび</rt></ruby>から<ruby>金曜日<rt>きんようび</rt></ruby>まで<ruby>働<rt>はたら</rt></ruby>きます' (trabaja de lunes a viernes)."
           }
         }
       ]
@@ -152,27 +152,27 @@
       "name": "Sentence Ordering",
       "questions": [
         {
-          "question_text": "わたしは ___ ___ _X_ ___。",
+          "question_text": "<ruby>私<rt>わたし</rt></ruby>は _X_ ___ ___ ___。",
           "answer_1": "が",
-          "answer_2": "すき",
+          "answer_2": "<ruby>好<rt>す</rt></ruby>き",
           "answer_3": "です",
           "answer_4": "りんご",
           "correct_answer": 4,
           "explanation": {
-            "EN": "The sentence is 'わたしはりんごがすきです' (I like apples). Order: りんご → が → すき → です. X position is りんご.",
-            "ES": "La oración es 'わたしはりんごがすきです' (Me gustan las manzanas). Orden: りんご → が → すき → です. La posición X es りんご."
+            "EN": "The sentence is '<ruby>私<rt>わたし</rt></ruby>はりんごが<ruby>好<rt>す</rt></ruby>きです' (I like apples). Order: りんご → が → <ruby>好<rt>す</rt></ruby>き → です. X position is りんご.",
+            "ES": "La oración es '<ruby>私<rt>わたし</rt></ruby>はりんごが<ruby>好<rt>す</rt></ruby>きです' (Me gustan las manzanas). Orden: りんご → が → <ruby>好<rt>す</rt></ruby>き → です. La posición X es りんご."
           }
         },
         {
-          "question_text": "きのう ___ ___ _X_ ___。",
-          "answer_1": "てんき",
-          "answer_2": "よかった",
+          "question_text": "<ruby>昨日<rt>きのう</rt></ruby> _X_ ___ ___ ___。",
+          "answer_1": "<ruby>天気<rt>てんき</rt></ruby>",
+          "answer_2": "<ruby>良<rt>よ</rt></ruby>かった",
           "answer_3": "は",
           "answer_4": "です",
           "correct_answer": 1,
           "explanation": {
-            "EN": "The sentence is 'きのうてんきはよかったです' (The weather was good yesterday). Order: てんき → は → よかった → です. X position is てんき.",
-            "ES": "La oración es 'きのうてんきはよかったです' (El clima estuvo bueno ayer). Orden: てんき → は → よかった → です. La posición X es てんき."
+            "EN": "The sentence is '<ruby>昨日<rt>きのう</rt></ruby><ruby>天気<rt>てんき</rt></ruby>は<ruby>良<rt>よ</rt></ruby>かったです' (The weather was good yesterday). Order: <ruby>天気<rt>てんき</rt></ruby> → は → <ruby>良<rt>よ</rt></ruby>かった → です. X position is <ruby>天気<rt>てんき</rt></ruby>.",
+            "ES": "La oración es '<ruby>昨日<rt>きのう</rt></ruby><ruby>天気<rt>てんき</rt></ruby>は<ruby>良<rt>よ</rt></ruby>かったです' (El clima estuvo bueno ayer). Orden: <ruby>天気<rt>てんき</rt></ruby> → は → <ruby>良<rt>よ</rt></ruby>かった → です. La posición X es <ruby>天気<rt>てんき</rt></ruby>."
           }
         }
       ]
@@ -181,7 +181,7 @@
       "name": "Kanji Reading",
       "questions": [
         {
-          "question_text": "わたしは まいにち【<ruby>九<rt>?</rt></ruby>】<ruby>時<rt>じ</rt></ruby>に ねます。\n\nQuestion: 【<ruby>九<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "<ruby>私<rt>わたし</rt></ruby>は <ruby>毎日<rt>まいにち</rt></ruby>【<ruby>九<rt>?</rt></ruby>】<ruby>時<rt>じ</rt></ruby>に <ruby>寝<rt>ね</rt></ruby>ます。\n\nQuestion: 【<ruby>九<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "きゅう",
           "answer_2": "く",
           "answer_3": "ここの",
@@ -193,7 +193,7 @@
           }
         },
         {
-          "question_text": "きょうは【<ruby>金<rt>?</rt></ruby>】<ruby>曜日<rt>ようび</rt></ruby>です。\n\nQuestion: 【<ruby>金<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
+          "question_text": "<ruby>今日<rt>きょう</rt></ruby>は【<ruby>金<rt>?</rt></ruby>】<ruby>曜日<rt>ようび</rt></ruby>です。\n\nQuestion: 【<ruby>金<rt>?</rt></ruby>】の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>は？",
           "answer_1": "かね",
           "answer_2": "きん",
           "answer_3": "かな",
@@ -222,7 +222,7 @@
       "name": "Kanji Writing",
       "questions": [
         {
-          "question_text": "【みず】を のみます。\n\nQuestion: 【みず】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
+          "question_text": "【みず】を <ruby>飲<rt>の</rt></ruby>みます。\n\nQuestion: 【みず】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
           "answer_1": "<ruby>氷<rt>こおり</rt></ruby>",
           "answer_2": "<ruby>水<rt>みず</rt></ruby>",
           "answer_3": "<ruby>永<rt>えい</rt></ruby>",
@@ -246,7 +246,7 @@
           }
         },
         {
-          "question_text": "まいにち【でんしゃ】で がっこうへ いきます。\n\nQuestion: 【でんしゃ】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
+          "question_text": "<ruby>毎日<rt>まいにち</rt></ruby>【でんしゃ】で がっこうへ <ruby>行<rt>い</rt></ruby>きます。\n\nQuestion: 【でんしゃ】の<ruby>漢字<rt>かんじ</rt></ruby>は？",
           "answer_1": "<ruby>電車<rt>でんしゃ</rt></ruby>",
           "answer_2": "<ruby>電者<rt>でんしゃ</rt></ruby>",
           "answer_3": "<ruby>伝車<rt>でんしゃ</rt></ruby>",
@@ -275,7 +275,7 @@
           }
         },
         {
-          "question_text": "【カメラ】で <ruby>写真<rt>しゃしん</rt></ruby>を とります。\n\nQuestion: 【カメラ】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "question_text": "【カメラ】で <ruby>写真<rt>しゃしん</rt></ruby>を <ruby>撮<rt>と</rt></ruby>ります。\n\nQuestion: 【カメラ】は<ruby>何<rt>なん</rt></ruby>ですか。",
           "answer_1": "computer",
           "answer_2": "telephone",
           "answer_3": "camera",
@@ -287,7 +287,7 @@
           }
         },
         {
-          "question_text": "<ruby>朝<rt>あさ</rt></ruby>【ジュース】を のみます。\n\nQuestion: 【ジュース】は<ruby>何<rt>なん</rt></ruby>ですか。",
+          "question_text": "<ruby>朝<rt>あさ</rt></ruby>【ジュース】を <ruby>飲<rt>の</rt></ruby>みます。\n\nQuestion: 【ジュース】は<ruby>何<rt>なん</rt></ruby>ですか。",
           "answer_1": "juice",
           "answer_2": "coffee",
           "answer_3": "tea",

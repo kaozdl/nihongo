@@ -8,14 +8,14 @@ _parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _parent not in sys.path:
     sys.path.insert(0, _parent)
 
-import pytest
-import tempfile
-from nihongo.app import app as flask_app
-from nihongo.models import db
-from nihongo.models.user import User
-from nihongo.models.question import Question
-from nihongo.models.section import Section
-from nihongo.models.exam import Exam
+import pytest  # noqa: E402
+import tempfile  # noqa: E402
+from nihongo.app import app as flask_app  # noqa: E402
+from nihongo.models import db  # noqa: E402
+from nihongo.models.user import User  # noqa: E402
+from nihongo.models.question import Question  # noqa: E402
+from nihongo.models.section import Section  # noqa: E402
+from nihongo.models.exam import Exam  # noqa: E402
 
 
 @pytest.fixture

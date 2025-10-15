@@ -13,8 +13,8 @@ _parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _parent not in sys.path:
     sys.path.insert(0, _parent)
 
-from nihongo.app import app as flask_app
-from nihongo.models import db
+from nihongo.app import app as flask_app  # noqa: E402
+from nihongo.models import db  # noqa: E402
 
 # Import all models for autogenerate support
 

@@ -15,15 +15,15 @@ _parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _parent not in sys.path:
     sys.path.insert(0, _parent)
 
-from nihongo.app import app
-from nihongo.models import db
-from nihongo.models.user import User
-from nihongo.models.question import Question
-from nihongo.models.section import Section
-from nihongo.models.section_question import SectionQuestion
-from nihongo.models.exam import Exam
-from nihongo.models.exam_section import ExamSection
-from nihongo.models.utils import set_explanation
+from nihongo.app import app  # noqa: E402
+from nihongo.models import db  # noqa: E402
+from nihongo.models.user import User  # noqa: E402
+from nihongo.models.question import Question  # noqa: E402
+from nihongo.models.section import Section  # noqa: E402
+from nihongo.models.section_question import SectionQuestion  # noqa: E402
+from nihongo.models.exam import Exam  # noqa: E402
+from nihongo.models.exam_section import ExamSection  # noqa: E402
+from nihongo.models.utils import set_explanation  # noqa: E402
 
 
 def create_sample_data():

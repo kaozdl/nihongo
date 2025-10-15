@@ -20,14 +20,18 @@ _parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _parent not in sys.path:
     sys.path.insert(0, _parent)
 
-from nihongo.app import app, db
-from nihongo.import_exam import reload_exam_from_file
-from nihongo.models.user import User
+from nihongo.app import app, db  # noqa: E402
+from nihongo.import_exam import reload_exam_from_file, import_exam_from_file  # noqa: E402
+from nihongo.models.user import User  # noqa: E402
 
 
-def reload_all_standard_exams():
+def reload_all_standard_exams(create=False):
     """
     Reload all standard exam files (exam_easy.json, exam_medium.json, exam_hard.json).
+    
+    Args:
+        create: If True, creates exams if they don't exist. If False (default), 
+                only updates existing exams.
     """
     with app.app_context():
         # Get the first admin user (or create one if needed)
@@ -53,6 +57,7 @@ def reload_all_standard_exams():
             ('exam_easy.json', 'JLPT N5 Practice Test - Easy (Basic)'),
             ('exam_medium.json', 'JLPT N5 Practice Test - Medium'),
             ('exam_hard.json', 'JLPT N5 Practice Test - Hard (Challenge)'),
+            ('exam_long.json', 'JLPT N5 Practice Test - Hard (Long)'),
         ]
         
         results = []
@@ -66,6 +71,11 @@ def reload_all_standard_exams():
             
             print(f"🔄 Reloading {exam_name}...")
             success, message, exam = reload_exam_from_file(file_path, exam_name, admin.id)
+            
+            # If reload failed because exam doesn't exist and create flag is True, try importing
+            if not success and create and "not found" in message.lower():
+                print("📝 Exam not found, creating new exam...")
+                success, message, exam = import_exam_from_file(file_path, admin.id)
             
             if success:
                 print(f"✅ {message}")
