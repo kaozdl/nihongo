@@ -142,10 +142,12 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(project_home, '.env'))
 
 # Import Flask app
-from app import app as application
+from nihongo.app import app as application
 ```
 
-**Important:** Replace `yourusername` with your actual PythonAnywhere username!
+**Important:** 
+- Replace `yourusername` with your actual PythonAnywhere username!
+- The import statement uses `nihongo.app` (package-qualified) to match the project structure
 
 Save the file (Ctrl+S or click Save).
 
@@ -266,12 +268,23 @@ flask db-upgrade
 
 ## 🐛 Troubleshooting
 
-### **Error: ModuleNotFoundError**
+### **Error: ModuleNotFoundError: No module named 'mycontent_routes'**
+
+This error was fixed by updating all imports to use package-qualified paths (e.g., `from nihongo.models import db`). 
+
+**If you still see this error:**
+1. Ensure your WSGI file uses: `from nihongo.app import app as application`
+2. Check that all Python files use `nihongo.` prefix in imports
+3. Verify the project directory is added to `sys.path` in WSGI file
+4. See `IMPORT_FIX_SUMMARY.md` for details on the fix
+
+### **Error: ModuleNotFoundError (General)**
 
 Check that:
 1. Virtual environment is activated
 2. All dependencies are installed: `pip install -r requirements.txt`
 3. WSGI file points to correct paths
+4. Project directory is in `sys.path`
 
 ### **Error: Database Not Found**
 

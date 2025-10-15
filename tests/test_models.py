@@ -2,15 +2,15 @@
 Tests for database models
 """
 import pytest
-from models import db
-from models.user import User
-from models.question import Question
-from models.section import Section
-from models.section_question import SectionQuestion
-from models.exam import Exam
-from models.exam_section import ExamSection
-from models.test import Test
-from models.test_answer import TestAnswer
+from nihongo.models import db
+from nihongo.models.user import User
+from nihongo.models.question import Question
+from nihongo.models.section import Section
+from nihongo.models.section_question import SectionQuestion
+from nihongo.models.exam import Exam
+from nihongo.models.exam_section import ExamSection
+from nihongo.models.test import Test
+from nihongo.models.test_answer import TestAnswer
 
 
 @pytest.mark.models

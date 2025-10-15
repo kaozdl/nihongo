@@ -4,9 +4,9 @@ Integration tests for complete workflows
 import pytest
 import json
 from io import BytesIO
-from models import db
-from models.test import Test
-from models.test_answer import TestAnswer
+from nihongo.models import db
+from nihongo.models.test import Test
+from nihongo.models.test_answer import TestAnswer
 
 
 @pytest.mark.integration

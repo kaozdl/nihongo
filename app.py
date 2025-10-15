@@ -1,20 +1,26 @@
+# Setup path for package imports (makes 'nihongo' package available in both local dev and deployment)
+import sys
+import os
+_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _parent not in sys.path:
+    sys.path.insert(0, _parent)
+
 from flask import Flask, render_template, redirect, url_for, request, flash, send_file, session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask_babel import Babel, gettext, get_locale
-from models import db
-from models.user import User
-from models.exam import Exam
-from models.test import Test
-from models.test_answer import TestAnswer
-from models.exam_section import ExamSection
-from models.section_question import SectionQuestion
-from models.section import Section
-from models.utils import get_explanation
-from admin import init_admin
-from mycontent_routes import mycontent_bp
-from config import get_config
+from nihongo.models import db
+from nihongo.models.user import User
+from nihongo.models.exam import Exam
+from nihongo.models.test import Test
+from nihongo.models.test_answer import TestAnswer
+from nihongo.models.exam_section import ExamSection
+from nihongo.models.section_question import SectionQuestion
+from nihongo.models.section import Section
+from nihongo.models.utils import get_explanation
+from nihongo.admin import init_admin
+from nihongo.mycontent_routes import mycontent_bp
+from nihongo.config import get_config
 from datetime import datetime
-import os
 import json
 import random
 from io import BytesIO
@@ -533,9 +539,7 @@ def test_results(test_id):
 @app.cli.command()
 def init_db():
     """Initialize the database and load sample exams."""
-    import json
-    import os
-    from import_exam import import_exam_from_json
+    from nihongo.import_exam import import_exam_from_json
     
     # Create all tables
     db.create_all()

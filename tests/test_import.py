@@ -2,10 +2,10 @@
 Tests for exam import functionality
 """
 import pytest
-from import_exam import import_exam_from_json, validate_exam_json
-from models.exam import Exam
-from models.section import Section
-from models.question import Question
+from nihongo.import_exam import import_exam_from_json, validate_exam_json
+from nihongo.models.exam import Exam
+from nihongo.models.section import Section
+from nihongo.models.question import Question
 
 
 @pytest.mark.exam_import

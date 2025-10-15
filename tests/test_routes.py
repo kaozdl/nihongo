@@ -2,9 +2,9 @@
 Tests for application routes
 """
 import pytest
-from models import db
-from models.test import Test
-from models.test_answer import TestAnswer
+from nihongo.models import db
+from nihongo.models.test import Test
+from nihongo.models.test_answer import TestAnswer
 
 
 @pytest.mark.routes

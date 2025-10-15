@@ -4,14 +4,14 @@ Custom routes for /mycontent using app's regular styling (not Flask-Admin)
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash, send_file
 from flask_login import login_required, current_user
-from models import db
-from models.question import Question
-from models.section import Section
-from models.exam import Exam
-from models.section_question import SectionQuestion
-from models.exam_section import ExamSection
-from models.utils import parse_explanation, set_explanation
-from import_exam import import_exam_from_json
+from nihongo.models import db
+from nihongo.models.question import Question
+from nihongo.models.section import Section
+from nihongo.models.exam import Exam
+from nihongo.models.section_question import SectionQuestion
+from nihongo.models.exam_section import ExamSection
+from nihongo.models.utils import parse_explanation, set_explanation
+from nihongo.import_exam import import_exam_from_json
 import json
 from io import BytesIO
 

@@ -8,15 +8,22 @@ Usage:
     >>> create_sample_data()
 """
 
-from app import app
-from models import db
-from models.user import User
-from models.question import Question
-from models.section import Section
-from models.section_question import SectionQuestion
-from models.exam import Exam
-from models.exam_section import ExamSection
-from models.utils import set_explanation
+# Setup path for package imports
+import sys
+import os
+_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _parent not in sys.path:
+    sys.path.insert(0, _parent)
+
+from nihongo.app import app
+from nihongo.models import db
+from nihongo.models.user import User
+from nihongo.models.question import Question
+from nihongo.models.section import Section
+from nihongo.models.section_question import SectionQuestion
+from nihongo.models.exam import Exam
+from nihongo.models.exam_section import ExamSection
+from nihongo.models.utils import set_explanation
 
 
 def create_sample_data():

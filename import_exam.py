@@ -5,13 +5,13 @@ This module provides functionality to import exams from JSON files.
 """
 
 import json
-from models import db
-from models.user import User
-from models.question import Question
-from models.section import Section
-from models.section_question import SectionQuestion
-from models.exam import Exam
-from models.exam_section import ExamSection
+from nihongo.models import db
+from nihongo.models.user import User
+from nihongo.models.question import Question
+from nihongo.models.section import Section
+from nihongo.models.section_question import SectionQuestion
+from nihongo.models.exam import Exam
+from nihongo.models.exam_section import ExamSection
 
 
 def import_exam_from_json(json_data, user_id):

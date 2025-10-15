@@ -1,4 +1,4 @@
-from models import db
+from nihongo.models import db
 
 
 class ExamSection(db.Model):

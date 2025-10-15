@@ -8,10 +8,13 @@ from alembic import context
 # Import Flask app and models
 import sys
 import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+# Add parent directory to path for package imports
+_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _parent not in sys.path:
+    sys.path.insert(0, _parent)
 
-from app import app as flask_app
-from models import db
+from nihongo.app import app as flask_app
+from nihongo.models import db
 
 # Import all models for autogenerate support
 

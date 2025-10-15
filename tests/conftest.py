@@ -1,15 +1,21 @@
 """
 Pytest configuration and fixtures
 """
-import pytest
+# Setup path for package imports
+import sys
 import os
+_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _parent not in sys.path:
+    sys.path.insert(0, _parent)
+
+import pytest
 import tempfile
-from app import app as flask_app
-from models import db
-from models.user import User
-from models.question import Question
-from models.section import Section
-from models.exam import Exam
+from nihongo.app import app as flask_app
+from nihongo.models import db
+from nihongo.models.user import User
+from nihongo.models.question import Question
+from nihongo.models.section import Section
+from nihongo.models.exam import Exam
 
 
 @pytest.fixture
@@ -116,7 +122,7 @@ def test_question(app, test_user):
 def test_section(app, test_question):
     """Create a test section with a question"""
     with app.app_context():
-        from models.section_question import SectionQuestion
+        from nihongo.models.section_question import SectionQuestion
         
         section = Section(name='Test Section', number_of_questions=1)
         db.session.add(section)
@@ -140,7 +146,7 @@ def test_section(app, test_question):
 def test_exam(app, test_user, test_section):
     """Create a test exam"""
     with app.app_context():
-        from models.exam_section import ExamSection
+        from nihongo.models.exam_section import ExamSection
         
         exam = Exam(
             name='Test Exam',

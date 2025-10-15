@@ -2,12 +2,12 @@
 Tests for random exam generation functionality
 """
 import pytest
-from models import db
-from models.exam import Exam
-from models.section import Section
-from models.question import Question
-from models.section_question import SectionQuestion
-from models.exam_section import ExamSection
+from nihongo.models import db
+from nihongo.models.exam import Exam
+from nihongo.models.section import Section
+from nihongo.models.question import Question
+from nihongo.models.section_question import SectionQuestion
+from nihongo.models.exam_section import ExamSection
 
 
 @pytest.mark.routes

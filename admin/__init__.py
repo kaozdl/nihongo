@@ -6,7 +6,7 @@ from wtforms import TextAreaField
 from wtforms.widgets import TextArea
 from markupsafe import Markup
 import json
-from models.utils import parse_explanation, set_explanation
+from nihongo.models.utils import parse_explanation, set_explanation
 
 
 class SecureModelView(ModelView):
@@ -229,7 +229,7 @@ class ImportExamView(BaseView):
                 json_data = json.loads(json_content)
                 
                 # Import the exam
-                from import_exam import import_exam_from_json
+                from nihongo.import_exam import import_exam_from_json
                 success, message, exam = import_exam_from_json(json_data, current_user.id)
                 
                 if success:
@@ -280,7 +280,7 @@ class UserImportExamView(BaseView):
                 json_data = json.loads(json_content)
                 
                 # Import the exam (will be owned by current user)
-                from import_exam import import_exam_from_json
+                from nihongo.import_exam import import_exam_from_json
                 success, message, exam = import_exam_from_json(json_data, current_user.id)
                 
                 if success:
@@ -504,14 +504,14 @@ class MyExamView(UserContentView):
 
 def init_admin(app, db):
     """Initialize Flask-Admin with all models"""
-    from models.user import User
-    from models.question import Question
-    from models.section import Section
-    from models.section_question import SectionQuestion
-    from models.exam import Exam
-    from models.exam_section import ExamSection
-    from models.test import Test
-    from models.test_answer import TestAnswer
+    from nihongo.models.user import User
+    from nihongo.models.question import Question
+    from nihongo.models.section import Section
+    from nihongo.models.section_question import SectionQuestion
+    from nihongo.models.exam import Exam
+    from nihongo.models.exam_section import ExamSection
+    from nihongo.models.test import Test
+    from nihongo.models.test_answer import TestAnswer
     
     # Main admin interface (admin users only)
     admin = Admin(app, name='JLPT Admin', template_mode='bootstrap4', endpoint='admin', url='/admin')

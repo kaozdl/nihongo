@@ -13,10 +13,16 @@ Or from Flask shell:
     reload_all_standard_exams()
 """
 
+# Setup path for package imports
+import sys
 import os
-from app import app, db
-from import_exam import reload_exam_from_file
-from models.user import User
+_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _parent not in sys.path:
+    sys.path.insert(0, _parent)
+
+from nihongo.app import app, db
+from nihongo.import_exam import reload_exam_from_file
+from nihongo.models.user import User
 
 
 def reload_all_standard_exams():
